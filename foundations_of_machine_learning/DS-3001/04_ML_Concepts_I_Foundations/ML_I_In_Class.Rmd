@@ -1,0 +1,89 @@
+---
+title: "ML_1"
+author: "Brian Wright"
+date: "2/4/2022"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(class)
+library(psych)
+library(class)
+```
+
+
+```{r}
+#TGS
+View(mtcars)
+#What mental models can we see from this data? What data science questions can we ask? 
+
+View(as.tibble(iris3))#50,4,3 multidimensional array of values. 
+#What about this one? What question(s) can we ask with this data? 
+str(iris3)
+glimpse(iris3)
+```
+[Array_references](https://www.geeksforgeeks.org/multidimensional-array-in-r/)
+
+
+## Let's look at a quick K Nearest Neighbour Example
+```{r}
+#View(iris)
+
+#?knn
+train <- rbind(iris3[1:25,,1], iris3[1:25,,2], iris3[1:25,,3])#index on row,column,array
+
+View(train)
+#What do we mean by training data? 
+test <- rbind(iris3[26:50,,1], iris3[26:50,,2], iris3[26:50,,3])
+View(test)
+#Why is testing a thing? 
+target <- factor(c(rep("s",25), rep("c",25), rep("v",25)))#why can we create the target 
+#in this manner?
+target
+#What is a target?
+knn_model <- knn(train, test, target, k = 10, prob=TRUE)
+# How did we do?
+summary(knn_model)
+table(target)
+
+# How would we use this model? 
+# How would we know if it's working?
+
+#Adjust the k value higher and see what happens, did it get better?
+```
+
+## What patterns are being learned here?
+```{r}
+#Do we seen pattern difference? 
+tapply(iris$Sepal.Length, iris$Species, summary)#?tapply, used to apply a function to a factor in a data frame. 
+
+tapply(iris$Sepal.Width, iris$Species, summary)
+
+tapply(iris$Petal.Length, iris$Species, summary)
+
+tapply(iris$Petal.Width, iris$Species, summary)
+?tapply
+
+#Where is the model error? 
+summary(knn_model)
+table(target)            
+
+```
+
+```{r}
+library(plotly)
+
+fig <- plot_ly(data = iris, x = ~Sepal.Length, y = ~Petal.Length, z=~Petal.Width, color = ~Species)
+
+fig
+```
+
+
+

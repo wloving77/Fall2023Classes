@@ -1,0 +1,231 @@
+---
+title: "ml_bootcamp"
+author: "Brian Wright"
+date: "1/30/2020"
+output:
+  html_document:
+    toc: TRUE
+    theme: journal
+    toc_float: TRUE
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(psych)
+library(mltools)
+library(data.table)
+library(caret)
+#library(gradDescent)
+library(mice)
+```
+[caret documentation](http://topepo.github.io/caret/index.html)
+
+## Phase I
+[Cereal_Data_Dictionary](https://www.kaggle.com/crawford/80-cereals)
+
+```{r}
+# Working to developed a model than can predict cereal quality rating. 
+
+# Target variable?
+
+# Assuming we are able to optimizing and make recommendations 
+# how does this translate into a business context? 
+
+# Prediction problem: Classification or Regression?
+
+# Independent Business Metric - Assuming that higher ratings results in higher sales, can we predict which new cereals that enter the market over the next year will perform the best?
+
+
+```
+
+## Phase II 
+
+### Scale/Center/Normalizing/Variable Classes
+
+```{r}
+cereal <- read_csv("data/cereal.csv")
+str(cereal)# Let's check the structure of the dataset and see if we have any 
+#issues with variable classes (usually it's converting things to factors)
+
+(column_index <- tibble(colnames(cereal)))#creates a single column dataframe of our column names. 
+
+str(cereal)
+
+#We can use the column index in combination with str to find the columns we 
+# need to convert to factors. Looks like columns 2,3,12 and 13 
+# need to be converted to factors
+cereal[,c(2,3,12,13)] <- lapply(cereal[,c(2,3,12,13)], as.factor)# lapply is one of several functionals that are commonly used in R. Apply and Sapply are the others. Functional takes a function and outputs a vector/dataframe.
+
+```
+
+
+## Let's take a closer look at mfr and type. 
+```{r}
+table(cereal$mfr)# Table simple displays factor or character variables as a horizontal table. We should collapse this factor, it has maybe too many small categories G,K and everyone else. Usually don't want more than 5 categories  
+
+cereal$mfr <- fct_collapse(cereal$mfr, #fct_collapse is in the forcats package 
+                           # that is a part of tidyverse. 
+                           G="G", #New to Old
+                           K="K",
+                        other = c("A","N","P","Q","R")
+                        )
+
+table(cereal$mfr)# more better
+table(cereal$type)#looks ok
+table(cereal$vitamins)#also good
+table(cereal$weight)# what about this one? 
+```
+[forcats documentation](https://forcats.tidyverse.org/reference/index.html)
+
+## Now we can move forward in normalizing the numeric values and create a index based on numeric columns:
+```{r}
+(sodium_c <- scale(cereal$sodium, center = TRUE, scale = FALSE))#center but not standardized
+
+(sodium_sc <- scale(cereal$sodium, center = TRUE, scale = TRUE))#center and standardized 
+
+
+# Let's look at min-max scaling, placing the numbers between 0 and 1. 
+
+###Build our own normalizer, which is maybe how I would go if given the option. If you need to do multiple columns use lapply. See this referred to as a min-max scaler function.
+str(cereal)
+
+normalize <- function(x){
+  # x is a numeric vector because the functions min and max require
+  #numeric inputs
+ (x - min(x)) / (max(x) - min(x))#numerator subtracts the minimum value of x from the entire column, denominator essentially calculates the range of x
+}
+
+(cereal$sodium)-min(cereal$sodium)#function broken into pieces
+(max(cereal$sodium)-min(cereal$sodium))
+View(cereal)
+
+#Normalized Version
+(sodium_n <- normalize(cereal$sodium))
+
+#Let's check just to be sure 
+
+sodium_density <- density(cereal$sodium)
+plot(sodium_density)
+
+sodium_density_n <- density(sodium_n)
+plot(sodium_density_n)
+
+abc <- names(select_if(cereal, is.numeric))# select function to find the numeric variables and create a character string  
+abc
+
+#Use lapply to normalize the numeric values 
+
+cereal[abc] <- lapply(cereal[abc], normalize)#use apply again with the normalizer function we created. 
+
+str(cereal)
+
+```
+
+## One-hot Encoding 
+[ML Tools One-Hot Overview](https://www.rdocumentation.org/packages/mltools/versions/0.3.5/topics/one_hot)
+
+```{r}
+# Next let's one-hot encode those factor variables/character 
+class(cereal)
+?one_hot#what issue will we run into here? 
+
+cereal_1h <- one_hot(as.data.table(cereal),cols = "auto",sparsifyNAs = TRUE,naCols = FALSE,dropCols = TRUE,dropUnusedLevels = TRUE)#one_hot function requires a data.table class so we coerce the format.
+?one_hot# looks at the various arguments
+str(cereal_1h)#what looks different?
+```
+
+
+## Baseline/Prevalance 
+```{r}
+#Essentially the target to which we are trying to out perform with our model. Percentage represented by the positive class in the target variable. Continuous we are going to turn this into a Boolean to be used for classification by selecting the top quartile of values. 
+
+(box <- boxplot(cereal_1h$rating, horizontal = TRUE)) 
+box$stats
+fivenum(cereal$rating)
+?fivenum#thanks Tukey!
+
+#added this a predictor versus replacing the numeric version
+(cereal_1h$rating_f <- cut(cereal_1h$rating,c(-1,.43,1),labels = c(0,1)))#why the NA? If we want two segments we input three numbers, start, cut and stop values
+?cut
+View(cereal_1h)
+
+#So no let's check the prevalence 
+(prevalence <- table(cereal_1h$rating_f)[[2]]/length(cereal_1h$rating_f))#we are using [[]] to pull at the second entry/column in the table
+table(cereal_1h$rating_f)
+21/(21+55)
+
+
+```
+
+![](Boxplot.png)
+
+## Dropping Variables and Partitioning   
+```{r}
+# Training|Evaluation, Tune|Evaluation, Test|Evaluation
+# Divide up our data into three parts, Training, Tuning, and Test
+
+#There is not a easy way to create 3 partitions using the createDataPartitions
+
+#so we are going to use it twice. Mostly because we want to stratify on the variable we are working to predict. What does that mean?  
+
+#clean up our dataset a bit by dropping the original ranking variable and the cereal name which we can't really use. 
+
+cereal_dt <- cereal_1h[,-c("name","rating")]#using indexing to drop these two columns, creating a new dataframe so we don't delete these columns from our working environment. 
+view(cereal_dt)
+
+part_index_1 <- caret::createDataPartition(cereal_dt$rating_f,
+                                           times=1,#number of splits
+                                           p = 0.70,#percentage of split
+                                           groups=1,
+                                           list=FALSE)
+View(part_index_1)
+dim(cereal_dt)
+
+train <- cereal_dt[part_index_1,]#index the 70%
+tune_and_test <- cereal_dt[-part_index_1, ]#index everything but the %70
+
+#The we need to use the function again to create the tuning set 
+
+tune_and_test_index <- createDataPartition(tune_and_test$rating_f,
+                                           p = .5,
+                                           list = FALSE,
+                                           times = 1)
+
+tune <- tune_and_test[tune_and_test_index, ]
+test <- tune_and_test[-tune_and_test_index, ]
+
+dim(train)
+dim(tune)
+dim(test)
+
+table(train$rating_f)#check the prevalance
+15/(40+15)
+table(test$rating_f)
+3/(8+3)
+table(tune$rating_f)# same as above
+
+
+```
+
+
+
+```{r}
+df <- read.csv("https://query.data.world/s/ttvvwduzk3hwuahxgxe54jgfyjaiul", header=TRUE, stringsAsFactors=FALSE)
+
+job <- read_csv("https://raw.githubusercontent.com/DG1606/CMS-R-2020/master/Placement_Data_Full_Class.csv")
+View(job)
+
+
+
+
+
+
+```
+
+
