@@ -1,0 +1,110 @@
+---
+title: "Assignment 1 - Getting Started with R (10 pts)"
+author: "FIRST NAME LAST NAME (UVA computing ID)"
+
+output: html_document
+---
+
+
+## Question 1 (1 point)
+```{r}
+# Write an equation using addition
+
+x = 2 + 3
+x
+
+```
+
+## Question 1 (1 point)
+```{r}
+# write an equation and assign it to 'x' so 'x' will be equal to 11
+
+x = x + 6
+x
+
+```
+
+## Question 2 (1 point)
+```{r}
+# write an equation and save it to 'y' so 'y' will be equal to 7
+
+y = 10 - 3
+y
+
+```
+
+## Question 3 (1 point)
+```{r}
+# write an equation between 'x' and 'y' that gives an output of 100
+## you can be as straight forward or creative as you want (remember PEMDAS)
+
+z = x * y + 23
+z
+
+
+```
+
+## Question 4 (1 point)
+```{r}
+v <- c(25, 11, 6, 27, 4, 2)
+
+# What is the class of 'v'?
+
+class(v)
+
+```
+
+## Question 5 (1 point)
+```{r}
+# Select the number 6 from the vector 'v'
+
+v[3]
+
+```
+
+## Question 6 (1 point)
+```{r}
+# What is the number is the 4th position in the vector 'v'?
+
+v[4]
+
+```
+
+## Question 7 (1 point)
+```{r}
+# Select the first 3 elements of the vector 'v' using c()
+
+v[c(1:3)]
+
+```
+
+## Question 8 (1 point)
+```{r}
+# Select the first 3 elements of the vector 'v' using a :
+
+v[1:3]
+
+```
+
+## Question 9 (1 point)
+```{r}
+# Select the first 2 elements and the last element of the vector 'v'
+
+v[c(1:3, 6)]
+
+```
+
+## Question 10 (1 point)
+```{r}
+# Using a logical operator, compare the elements in vector 'v' to > 5
+
+v[1] > 5
+v[2] > 5
+v[3] > 5
+v[4] > 5
+v[5] > 5
+v[6] > 5
+
+
+```
+
