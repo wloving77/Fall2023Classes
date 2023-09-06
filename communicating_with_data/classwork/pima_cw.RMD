@@ -1,0 +1,60 @@
+
+```{r}
+library(readr)
+```
+
+```{r}
+pima <- read_csv("../files/pima_data.csv")
+```
+
+```{r}
+summary(pima)
+```
+
+```{r}
+str(pima)
+```
+
+```{r}
+colnames(pima)
+```
+
+```{r}
+#4
+summary(pima[c('age', 'bmi')])
+```
+
+```{r}
+#5
+nrow(pima)
+```
+
+```{r}
+#6
+head(pima[c(1:4)])
+```
+
+```{r}
+#7
+pima[pima$bmi >= 50, ]
+```
+
+```{r}
+#8
+nrow(pima[pima$bmi >=30, ])/nrow(pima)
+```
+
+```{r}
+#9
+mean(pima$bmi)
+median(pima$bmi)
+```
+
+```{r}
+abs(mean(pima$bmi) - median(pima$bmi))
+```
+
+```{r}
+#10
+hist(pima$bmi)
+```

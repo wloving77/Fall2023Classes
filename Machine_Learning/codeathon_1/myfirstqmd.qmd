@@ -1,0 +1,11 @@
+---
+title: "OpenAI Uses Sweatshop Data Scientists"
+output: html
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+
+
+```

@@ -1,0 +1,65 @@
+---
+title: "'We are a little bit scared’: OpenAI CEO warns of risks of artificial intelligence"
+date: 2023/05/09
+author: William Loving
+format:
+    html:
+        toc: True
+        toc-title: "Table of Contents"
+        toc-depth: 2
+        toc-location: left
+        smooth-scroll: true
+        theme: darkly
+---
+
+
+# Chapter 1:
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+```
+
+# Chapter 2:
+
+## [HyperLink To Article](https://www.theguardian.com/technology/2023/mar/17/openai-sam-altman-artificial-intelligence-warning-gpt4)
+
+# Chapter 3 - 4 sections:
+
+## Section 1:
+- Sam Altman is worried that the growth of AI may be detrimental for the world as people could weaponize this newfound access to information for nefarious purposes.
+
+## Section 2:
+- This applies to our class as we are learning about machine learning concepts and are hoping to develop machine learning models.
+
+## Section 3:
+- The author of this article works for the guardian and has written many different articles about AI and Chatbot news.
+
+# Funny Image!: 
+
+![](https://www.shutterstock.com/shutterstock/photos/1905929728/display_1500/stock-photo-skeptic-surprised-cat-thinking-dont-know-what-to-do-big-eyes-closeup-tabby-cat-look-side-dont-1905929728.jpg)
+
+
+> Here is some tabbed text
+
+>> Here is some double tabbed text
+
+>>> OML TRIPLE TABBED
+
+
+```{python}
+
+df = pd.read_csv("data/LogReg.csv")
+
+df.head()
+
+```
+
+# An excellent plot for your viewing pleasure ------> 
+
+```{python}
+
+plt.plot(df['gre'], df['gpa'])
+plt.show()
+
+```
