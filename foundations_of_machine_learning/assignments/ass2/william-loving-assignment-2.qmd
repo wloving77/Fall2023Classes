@@ -10,6 +10,7 @@ format:
         toc-location: left
         smooth-scroll: true
         theme: darkly
+jupyter: python3
 ---
 
 
@@ -46,10 +47,11 @@ import matplotlib.pyplot as plt
 
 >>> OML TRIPLE TABBED
 
+>>>> 4 TABS??!???!
 
 ```{python}
 
-df = pd.read_csv("data/LogReg.csv")
+df = pd.read_csv("../data/LogReg.csv")
 
 df.head()
 
