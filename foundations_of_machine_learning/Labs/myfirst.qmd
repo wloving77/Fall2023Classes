@@ -1,0 +1,13 @@
+---
+title: "OpenAI Employs Sweatshop Data Scientists"
+format: html
+jupyter: python3
+---
+
+
+# And So it begins.
+
+```{python}
+import pandas as pd
+```
+
