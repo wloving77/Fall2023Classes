@@ -1,0 +1,71 @@
+---
+title: "Quiz1"
+output: html_document
+date: "2023-09-08"
+---
+
+# Question 1:
+
+```{r}
+library(readxl)
+
+data <- read_excel('data/DS_ Class_Data-1.xlsx')
+
+```
+
+# Question 2:
+
+```{r}
+
+str(data)
+
+```
+
+# Question 3:
+
+```{r}
+
+View(data)
+
+```
+
+# Question 4:
+
+```{r}
+
+head(data)
+tail(data)
+
+
+```
+
+# Question 5:
+
+```{r}
+
+colnames(data)
+
+```
+
+# Question 6: 
+
+```{r}
+print(mean(data$Age))
+print(max(data$States))
+print(median(data$Siblings))
+
+```
+
+
+# Dplyr way
+```{r}
+summary_df <- data %>%
+  summarize(
+    Mean = mean(Age),
+    Max = max(States),
+    Median = median(Siblings)
+  )
+
+summary(summary_df)
+
+```
