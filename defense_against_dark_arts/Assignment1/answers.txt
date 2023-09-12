@@ -1,0 +1,127 @@
+// Name: William Loving
+// UVA computing ID: wfl9zy 
+// Honor Pledge: I pledge that I have neither given nor received aid on this assignment nor am I aware of anybody who has. 
+
+// Use a text editor of your choice to type in your responses to the following questions.  Add additional space as needed for your responses..
+
+// NOTE:  When a question asks for the address of a variable, your answer
+should be of the form of the effective/register-relative address of the variable.
+For example, 55(\%ebp), 25(\%esp), 10(\%eax)
+
+Part 1:  Analyzing Assembly Code (Analyze code.s)
+
+1. What is the address of local variable i of function main?
+
+
+-12(%ebp)
+
+
+2. What is the address of local variable sum of function main?
+
+
+-16(%ebp)
+
+
+3. What is the address of local variable x of function main?
+
+
+-20(%ebp)
+
+
+4. What is the address of local variable buffer of function main?
+
+
+-84(%ebp)
+
+
+5. What is the address of the address of the parameter vector of function baz? 
+
+
+Based on the code it is at 0x8(%ebp), but based on what we learned it should be at 0x16(ebp), I am unsure why the assembly didn't push the parameters in reverse order like we learned. %edx ends up storing the address vector[i]. 
+
+
+6. What is the address of parameter len of function baz?
+
+
+12(%ebp)
+
+
+7. What is the address of parameter value of function baz?
+
+
+16(%ebp) though we would expect it to be 8(%ebp) based on the c calling convention.
+
+
+
+8. What is the address of local variable i of function baz?
+
+
+(-4(%ebp))
+
+
+Part 2:  Analyzing Disassembled Code (Analyze your disassembly of funcs.exe)
+
+
+1. List the names of the functions called in main.
+
+- f1
+- f2
+- f3
+- printf
+
+2. How many parameters does the function f1 take?
+
+
+- f1 takes 3 parameters
+
+
+3. How many parameters does the function f2 take?
+
+
+- f2 takes 2 parameters
+
+
+4. How many parameters does the function f3 take?
+
+
+- f3 takes 2 parameters
+
+
+5. Does f1 have any local variables? If so, how many and at what memory addresses? 
+
+
+- f1 does not have any local variables
+
+
+6. Does f2 have any local variables? If so, how many and at what memory addresses? 
+
+
+- f2 has one local variables and it is stored at -4(%ebp), the space is allocated by subtracting 16 from %esp. 
+
+
+7. Does f3 have any local variables? If so, how many and at what memory addresses? 
+
+
+- f3 does not have any local variables
+
+
+8. Describe the calculation that function f1 performs.
+
+- f1 loads the 3rd parameter from the stack at 0x8(%ebp) and adds the other two passed parameters to it (0xC(%ebp) and 0x10(%ebp) respectively)
+- It then returns with the calculated value still on the floating point stack. 
+
+9. Describe the calculation that function f2 performs.
+
+- f2 saves space for a local variable by subtracting 16 from %esp
+- It then loads the second parameter of the function into %eax and integer multiplies that value by the first parameter 
+- It finishes by writing the result of the multiplication to -4(%ebp) so that it is saved in the local variable.
+
+10. Describe the calculation that function f3 performs.
+
+- f3 performs a division operation on the two parameters passed to it. 
+- It first loads the first parameter of the function into %eax and prepares it for division by calling cltd.
+- This is followed by the division operation between the Extended %edx:%eax and the second parameter of the function stored at 0x8(%ebp). 
+- The function then returns. 
+
+
+
