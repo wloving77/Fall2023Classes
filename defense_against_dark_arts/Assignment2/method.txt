@@ -1,0 +1,16 @@
+Method: 
+
+    I approached the problem by first disassembling the target executable and finding a suitable location full of NOP's. I then launched the executable using ghex
+    so that I could find the exact offset to begin inserting. I found this offset to be at 0x447 within the executable. This overwrites the call instruction as
+    well as the leave and ret instructions. I then begin my own execution. I start by saving the value at (%esp) as this will be my foundation to calculate other
+    addresses from. I then inject code to call puts@plt using my own injected string "Wahoo Virus Activated!". I then replace the original string address within (%esp)
+    and call puts@plt again to continue normal execution of the program then calling leave and return to continue normal execution.
+
+    a. 
+        <main> is located at the offset 0x49B in the target.exe file.
+
+    b.
+        <TerminateApplication> is located at the offset 0x426 in the target.exe file.
+
+    c.
+        <InitializeApplication> is located at the offset 0x480 in the target.exe file.
