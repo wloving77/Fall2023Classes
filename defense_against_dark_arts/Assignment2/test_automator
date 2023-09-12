@@ -1,0 +1,7 @@
+#!/bin/bash
+
+gcc -o infect infect.c
+
+./infect
+
+objdump -d infected-target.exe > infect_disas.txt
