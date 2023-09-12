@@ -422,6 +422,30 @@ data &lt;- read_excel(&#39;data/DS_ Class_Data-1.xlsx&#39;)</code></pre>
 <pre class="r"><code>print(median(data$Siblings))</code></pre>
 <pre><code>## [1] 1</code></pre>
 </div>
+<div id="dplyr-way" class="section level1">
+<h1>Dplyr way</h1>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>summary_df &lt;- data %&gt;%
+  summarize(
+    Mean = mean(Age),
+    Max = max(States),
+    Median = median(Siblings)
+  )
+
+str(summary_df)</code></pre>
+<pre><code>## tibble [1 × 3] (S3: tbl_df/tbl/data.frame)
+##  $ Mean  : num 20.2
+##  $ Max   : num 49
+##  $ Median: num 1</code></pre>
+</div>
 
 
 

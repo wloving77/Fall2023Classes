@@ -1,0 +1,418 @@
+::1 - - [28/Aug/2023:13:41:04 -0400] "GET / HTTP/1.1" 200 46
+::1 - - [28/Aug/2023:13:42:35 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2023:13:42:37 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2023:13:43:35 -0400] "-" 408 -
+::1 - - [28/Aug/2023:13:47:10 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2023:13:47:13 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:48:10 -0400] "-" 408 -
+::1 - - [28/Aug/2023:13:48:17 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:48:18 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:48:18 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:48:18 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:49:17 -0400] "-" 408 -
+::1 - - [28/Aug/2023:13:50:07 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2023:13:50:10 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:51:07 -0400] "-" 408 -
+::1 - - [28/Aug/2023:13:51:21 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:51:22 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:51:22 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:51:22 -0400] "GET /server-status HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:51:26 -0400] "GET /server HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:13:52:21 -0400] "-" 408 -
+::1 - - [28/Aug/2023:13:54:11 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [28/Aug/2023:14:06:30 -0400] "GET /app HTTP/1.1" 404 196
+::1 - - [28/Aug/2023:14:06:37 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [28/Aug/2023:14:06:38 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:06:38 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:06:38 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:06:38 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [28/Aug/2023:14:07:18 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [28/Aug/2023:14:07:18 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [28/Aug/2023:14:07:18 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:07:18 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:07:18 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:08:51 -0400] "GET /app/ HTTP/1.1" 403 274
+::1 - - [28/Aug/2023:14:09:49 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [28/Aug/2023:14:09:49 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:09:49 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:09:49 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [28/Aug/2023:14:09:49 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [30/Aug/2023:13:06:49 -0400] "GET / HTTP/1.1" 200 46
+127.0.0.1 - - [30/Aug/2023:13:06:49 -0400] "GET / HTTP/1.1" 200 46
+127.0.0.1 - - [30/Aug/2023:13:06:49 -0400] "GET /favicon.ico HTTP/1.1" 404 196
+127.0.0.1 - - [30/Aug/2023:13:07:49 -0400] "-" 408 -
+williams-laptop - - [30/Aug/2023:13:08:27 -0400] "GET /server-status HTTP/1.1" 403 199
+::1 - - [30/Aug/2023:13:09:27 -0400] "-" 408 -
+::1 - - [30/Aug/2023:13:20:49 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:21:49 -0400] "-" 408 -
+::1 - - [30/Aug/2023:13:21:55 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:21:58 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:22:00 -0400] "GET /cgi-bin/printenv HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:13:22:03 -0400] "GET /cgi-bin HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:13:23:00 -0400] "-" 408 -
+::1 - - [30/Aug/2023:13:23:53 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:24:10 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:24:11 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:25:11 -0400] "-" 408 -
+williams-laptop - - [30/Aug/2023:13:27:04 -0400] "GET /server-status HTTP/1.1" 403 199
+::1 - - [30/Aug/2023:13:27:39 -0400] "GET /cgi-bin HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:13:27:57 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:28:57 -0400] "-" 408 -
+williams-laptop - - [30/Aug/2023:13:29:20 -0400] "GET /server-status HTTP/1.1" 403 199
+williams-laptop - - [30/Aug/2023:13:29:38 -0400] "GET /server-status HTTP/1.1" 403 199
+williams-laptop - - [30/Aug/2023:13:30:35 -0400] "GET /server-status HTTP/1.1" 403 199
+williams-laptop - - [30/Aug/2023:13:30:35 -0400] "GET /server-status HTTP/1.1" 403 199
+williams-laptop - - [30/Aug/2023:13:30:46 -0400] "GET /server-status HTTP/1.1" 403 199
+williams-laptop - - [30/Aug/2023:13:32:46 -0400] "GET /server-status HTTP/1.1" 403 199
+::1 - - [30/Aug/2023:13:33:46 -0400] "-" 408 -
+::1 - - [30/Aug/2023:13:34:20 -0400] "GET /acm HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:13:34:26 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [30/Aug/2023:13:34:26 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:13:34:26 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:13:34:26 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:13:34:26 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [30/Aug/2023:13:34:29 -0400] "GET /app HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:13:34:31 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [30/Aug/2023:13:34:31 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:13:34:31 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:13:34:31 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [30/Aug/2023:13:34:31 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+williams-laptop - - [30/Aug/2023:13:34:34 -0400] "GET /server-status HTTP/1.1" 403 199
+::1 - - [30/Aug/2023:13:35:00 -0400] "GET /server-status HTTP/1.1" 200 2833
+::1 - - [30/Aug/2023:13:35:18 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:35:18 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:13:36:18 -0400] "-" 408 -
+::1 - - [30/Aug/2023:14:03:01 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [30/Aug/2023:14:03:01 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:14:03:01 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:14:03:01 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [30/Aug/2023:14:03:01 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [30/Aug/2023:14:03:09 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:14:03:10 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:14:04:10 -0400] "-" 408 -
+::1 - - [30/Aug/2023:14:34:34 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3774
+::1 - - [30/Aug/2023:14:35:34 -0400] "-" 408 -
+williams-laptop - - [30/Aug/2023:14:49:00 -0400] "GET /server-status HTTP/1.1" 403 199
+::1 - - [30/Aug/2023:14:50:11 -0400] "GET /server-status HTTP/1.1" 200 2630
+::1 - - [30/Aug/2023:14:50:16 -0400] "GET /cgi-bin/ HTTP/1.1" 403 199
+::1 - - [30/Aug/2023:14:50:23 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3642
+::1 - - [30/Aug/2023:15:27:08 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3674
+::1 - - [30/Aug/2023:15:27:15 -0400] "GET /cgi-bin/html/form HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:15:27:18 -0400] "GET /cgi-bin/html/form.html HTTP/1.1" 500 530
+::1 - - [30/Aug/2023:15:28:15 -0400] "-" 408 -
+::1 - - [30/Aug/2023:15:31:13 -0400] "GET /cgi-bin/html/form.html HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:15:31:18 -0400] "GET /form HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:15:31:23 -0400] "GET /form.html HTTP/1.1" 200 86
+::1 - - [30/Aug/2023:15:32:18 -0400] "-" 408 -
+::1 - - [30/Aug/2023:15:33:28 -0400] "GET /form.html HTTP/1.1" 200 489
+::1 - - [30/Aug/2023:15:33:34 -0400] "POST /form.html HTTP/1.1" 200 489
+::1 - - [30/Aug/2023:15:34:34 -0400] "-" 408 -
+::1 - - [30/Aug/2023:15:41:11 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3674
+::1 - - [30/Aug/2023:15:41:15 -0400] "POST /form.html HTTP/1.1" 200 507
+::1 - - [30/Aug/2023:15:42:11 -0400] "-" 408 -
+::1 - - [30/Aug/2023:15:44:08 -0400] "POST /form.html HTTP/1.1" 200 508
+::1 - - [30/Aug/2023:15:44:13 -0400] "POST /cgi-bin/printenv.pl HTTP/1.1" 200 3828
+::1 - - [30/Aug/2023:15:44:36 -0400] "POST /cgi-bin/printenv.pl HTTP/1.1" 200 3828
+::1 - - [30/Aug/2023:15:44:39 -0400] "POST /form.html HTTP/1.1" 200 507
+::1 - - [30/Aug/2023:15:44:43 -0400] "POST /cgi-bin/process.pl HTTP/1.1" 200 127
+::1 - - [30/Aug/2023:15:45:25 -0400] "POST /cgi-bin/process.pl HTTP/1.1" 200 127
+::1 - - [30/Aug/2023:15:45:54 -0400] "-" 408 -
+::1 - - [30/Aug/2023:15:46:04 -0400] "POST /cgi-bin/process.pl HTTP/1.1" 200 127
+::1 - - [30/Aug/2023:15:46:57 -0400] "-" 408 -
+::1 - - [30/Aug/2023:15:48:09 -0400] "GET /server-status HTTP/1.1" 200 2941
+::1 - - [30/Aug/2023:15:48:41 -0400] "GET / HTTP/1.1" 200 46
+::1 - - [30/Aug/2023:15:48:49 -0400] "GET /server-status HTTP/1.1" 200 2920
+::1 - - [30/Aug/2023:15:48:58 -0400] "GET /form.html HTTP/1.1" 200 507
+::1 - - [30/Aug/2023:15:49:04 -0400] "GET /form HTTP/1.1" 404 196
+::1 - - [30/Aug/2023:15:49:14 -0400] "POST /cgi-bin/process.pl HTTP/1.1" 200 128
+::1 - - [30/Aug/2023:15:50:14 -0400] "-" 408 -
+::1 - - [30/Aug/2023:16:00:43 -0400] "POST /cgi-bin/process.pl HTTP/1.1" 200 124
+::1 - - [30/Aug/2023:16:00:57 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3642
+::1 - - [30/Aug/2023:16:01:06 -0400] "GET /cgi-bin/process.pl HTTP/1.1" 200 118
+::1 - - [30/Aug/2023:16:01:13 -0400] "GET /form.html HTTP/1.1" 304 -
+::1 - - [30/Aug/2023:16:01:20 -0400] "POST /cgi-bin/process.pl HTTP/1.1" 200 130
+::1 - - [01/Sep/2023:13:33:53 -0400] "GET / HTTP/1.1" 200 46
+::1 - - [01/Sep/2023:13:33:53 -0400] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [01/Sep/2023:13:33:57 -0400] "GET /form.html HTTP/1.1" 200 373
+::1 - - [01/Sep/2023:13:34:53 -0400] "-" 408 -
+::1 - - [01/Sep/2023:13:35:41 -0400] "GET /form.html HTTP/1.1" 200 967
+::1 - - [01/Sep/2023:13:36:41 -0400] "-" 408 -
+::1 - - [01/Sep/2023:13:37:45 -0400] "GET /form.html HTTP/1.1" 200 957
+::1 - - [01/Sep/2023:13:38:09 -0400] "GET /my-fit.html HTTP/1.1" 200 938
+::1 - - [01/Sep/2023:13:39:09 -0400] "-" 408 -
+::1 - - [01/Sep/2023:13:44:42 -0400] "GET /my-fit2.html HTTP/1.1" 200 75
+::1 - - [01/Sep/2023:13:45:42 -0400] "-" 408 -
+::1 - - [01/Sep/2023:13:46:33 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [01/Sep/2023:14:01:50 -0400] "GET /my-fit2.html HTTP/1.1" 200 540
+::1 - - [01/Sep/2023:14:01:51 -0400] "GET /my-fit2.html? HTTP/1.1" 200 540
+::1 - - [01/Sep/2023:14:01:53 -0400] "GET /my-fit2.html? HTTP/1.1" 304 -
+::1 - - [01/Sep/2023:14:02:50 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:03:02 -0400] "GET /my-fit2.html? HTTP/1.1" 200 711
+::1 - - [01/Sep/2023:14:03:04 -0400] "GET /Shirt HTTP/1.1" 404 196
+::1 - - [01/Sep/2023:14:03:06 -0400] "GET /Pants HTTP/1.1" 404 196
+::1 - - [01/Sep/2023:14:03:18 -0400] "GET /my-fit2.html? HTTP/1.1" 200 724
+::1 - - [01/Sep/2023:14:04:18 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:05:53 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:05:53 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:07:39 -0400] "GET /my-fit2.html? HTTP/1.1" 200 827
+::1 - - [01/Sep/2023:14:08:14 -0400] "GET /my-fit2.html? HTTP/1.1" 200 707
+::1 - - [01/Sep/2023:14:08:44 -0400] "GET /my-fit2.html? HTTP/1.1" 200 746
+::1 - - [01/Sep/2023:14:09:44 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:10:14 -0400] "GET /my-fit2.html? HTTP/1.1" 200 880
+::1 - - [01/Sep/2023:14:11:14 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:11:51 -0400] "GET /my-fit2.html? HTTP/1.1" 200 1002
+::1 - - [01/Sep/2023:14:12:31 -0400] "GET /my-fit2.html? HTTP/1.1" 200 1083
+::1 - - [01/Sep/2023:14:13:08 -0400] "GET /my-fit2.html? HTTP/1.1" 200 2783
+::1 - - [01/Sep/2023:14:13:35 -0400] "GET /my-fit2.html? HTTP/1.1" 200 1102
+::1 - - [01/Sep/2023:14:13:57 -0400] "GET /my-fit2.html? HTTP/1.1" 200 1088
+::1 - - [01/Sep/2023:14:14:10 -0400] "GET /my-fit2.html? HTTP/1.1" 200 2800
+::1 - - [01/Sep/2023:14:14:40 -0400] "GET /my-fit2.html? HTTP/1.1" 200 2872
+::1 - - [01/Sep/2023:14:14:41 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 2872
+::1 - - [01/Sep/2023:14:14:55 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=Moncler&Price=500&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 2872
+::1 - - [01/Sep/2023:14:15:14 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=Moncler&Price=500&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 3016
+::1 - - [01/Sep/2023:14:15:55 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=Moncler&Price=500&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 3017
+::1 - - [01/Sep/2023:14:16:55 -0400] "-" 408 -
+::1 - - [01/Sep/2023:14:17:11 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=Moncler&Price=500&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 3023
+::1 - - [01/Sep/2023:14:17:21 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 3023
+::1 - - [01/Sep/2023:14:17:33 -0400] "GET /my-fit2.html?clothes=Socks&Brand=&Price=&clothes=Jacket&Brand=&Price=&clothes=Socks&Brand=&Price= HTTP/1.1" 200 3023
+::1 - - [01/Sep/2023:14:17:50 -0400] "GET /my-fit2.html?clothes=Socks&Brand=&Price=&clothes=Jacket&Brand=&Price=&clothes=Socks&Brand=&Price= HTTP/1.1" 200 3024
+::1 - - [01/Sep/2023:14:17:54 -0400] "GET /my-fit2.html?clothes=Socks&Brand=&Price=&clothes=Jacket&Brand=&Price=&clothes=Socks&Brand=&Price= HTTP/1.1" 304 -
+::1 - - [01/Sep/2023:14:17:55 -0400] "GET /my-fit2.html?clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price=&clothes=Shirt&Brand=&Price= HTTP/1.1" 200 3024
+::1 - - [01/Sep/2023:14:18:50 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:01:23 -0400] "GET / HTTP/1.1" 200 46
+::1 - - [04/Sep/2023:13:01:23 -0400] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [04/Sep/2023:13:01:28 -0400] "GET /server-status HTTP/1.1" 200 2895
+::1 - - [04/Sep/2023:13:01:35 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [04/Sep/2023:13:01:35 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [04/Sep/2023:13:01:35 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [04/Sep/2023:13:01:35 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [04/Sep/2023:13:01:35 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [04/Sep/2023:13:01:55 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3642
+::1 - - [04/Sep/2023:13:01:59 -0400] "GET /form.html HTTP/1.1" 404 196
+::1 - - [04/Sep/2023:13:02:16 -0400] "GET /my-fit2.html HTTP/1.1" 200 3024
+::1 - - [04/Sep/2023:13:02:51 -0400] "GET /my-fit2.html?clothes=Pants&Brand=Moncler&Price=500&clothes=Shoes&Brand=Moncler&Price=500&clothes=Underwear&Brand=Moncler&Price=500 HTTP/1.1" 200 3024
+::1 - - [04/Sep/2023:13:03:23 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [04/Sep/2023:13:04:23 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:10:25 -0400] "GET /my-fit2.html?clothes=Pants&Brand=Moncler&Price=500&clothes=Shoes&Brand=Moncler&Price=500&clothes=Underwear&Brand=Moncler&Price=500 HTTP/1.1" 200 3073
+::1 - - [04/Sep/2023:13:10:32 -0400] "GET /my-fit2.html?clothes=Pants&Brand=Moncler&Price=500&clothes=Shoes&Brand=Moncler&Price=500&clothes=Underwear&Brand=Moncler&Price=500 HTTP/1.1" 304 -
+::1 - - [04/Sep/2023:13:11:00 -0400] "GET /my-fit2.html?clothes=Pants&Brand=Moncler&Price=500&clothes=Shoes&Brand=Moncler&Price=500&clothes=Underwear&Brand=Moncler&Price=500 HTTP/1.1" 200 3079
+::1 - - [04/Sep/2023:13:12:00 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:16:32 -0400] "GET /myfit.html HTTP/1.1" 404 196
+::1 - - [04/Sep/2023:13:17:02 -0400] "GET /my-fit.html HTTP/1.1" 200 731
+::1 - - [04/Sep/2023:13:17:08 -0400] "GET /my-fit.html HTTP/1.1" 200 729
+::1 - - [04/Sep/2023:13:18:08 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:20:34 -0400] "GET /my-fit.html HTTP/1.1" 200 793
+::1 - - [04/Sep/2023:13:20:43 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [04/Sep/2023:13:21:43 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:29:04 -0400] "GET /my-fit.html HTTP/1.1" 200 1207
+::1 - - [04/Sep/2023:13:29:23 -0400] "GET /my-fit.html HTTP/1.1" 200 1196
+::1 - - [04/Sep/2023:13:29:42 -0400] "GET /my-fit.html HTTP/1.1" 200 1204
+::1 - - [04/Sep/2023:13:29:55 -0400] "GET /my-fit.html HTTP/1.1" 200 1223
+::1 - - [04/Sep/2023:13:30:55 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:34:01 -0400] "GET /my-fit.html HTTP/1.1" 200 1318
+::1 - - [04/Sep/2023:13:34:08 -0400] "GET /my-fit.html HTTP/1.1" 200 1318
+::1 - - [04/Sep/2023:13:35:08 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:36:19 -0400] "GET /my-fit.html HTTP/1.1" 200 1190
+::1 - - [04/Sep/2023:13:36:30 -0400] "GET /my-fit.html HTTP/1.1" 200 1176
+::1 - - [04/Sep/2023:13:36:36 -0400] "GET /my-fit.html HTTP/1.1" 200 1183
+::1 - - [04/Sep/2023:13:37:36 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:37:59 -0400] "GET /my-fit.html HTTP/1.1" 200 1272
+::1 - - [04/Sep/2023:13:38:55 -0400] "GET /my-fit.html HTTP/1.1" 200 1502
+::1 - - [04/Sep/2023:13:39:55 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:41:31 -0400] "GET /my-fit.html HTTP/1.1" 200 1333
+::1 - - [04/Sep/2023:13:42:31 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:43:19 -0400] "GET /my-fit.html HTTP/1.1" 200 1469
+::1 - - [04/Sep/2023:13:43:50 -0400] "GET /my-fit.html HTTP/1.1" 200 1469
+::1 - - [04/Sep/2023:13:44:03 -0400] "GET /my-fit.html HTTP/1.1" 200 1475
+::1 - - [04/Sep/2023:13:44:25 -0400] "GET /my-fit.html HTTP/1.1" 200 1470
+::1 - - [04/Sep/2023:13:45:10 -0400] "GET /my-fit.html HTTP/1.1" 200 1467
+::1 - - [04/Sep/2023:13:46:10 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:46:47 -0400] "GET /my-fit.html HTTP/1.1" 200 1501
+::1 - - [04/Sep/2023:13:46:59 -0400] "GET /my-fit.html HTTP/1.1" 200 1509
+::1 - - [04/Sep/2023:13:47:59 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:47:59 -0400] "GET /my-fit.html HTTP/1.1" 200 1597
+::1 - - [04/Sep/2023:13:48:59 -0400] "-" 408 -
+::1 - - [04/Sep/2023:13:49:17 -0400] "GET /my-fit.html HTTP/1.1" 200 1490
+::1 - - [04/Sep/2023:13:49:37 -0400] "GET /my-fit.html HTTP/1.1" 200 1543
+::1 - - [04/Sep/2023:13:49:38 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [04/Sep/2023:13:49:53 -0400] "GET /my-fit.html HTTP/1.1" 200 1591
+::1 - - [04/Sep/2023:13:50:38 -0400] "GET /my-fit.html HTTP/1.1" 200 1514
+::1 - - [04/Sep/2023:14:42:26 -0400] "GET /my-fit.html HTTP/1.1" 200 1723
+::1 - - [04/Sep/2023:14:43:09 -0400] "GET /my-fit.html HTTP/1.1" 200 1723
+::1 - - [04/Sep/2023:14:43:51 -0400] "GET /my-fit.html HTTP/1.1" 200 1748
+::1 - - [04/Sep/2023:14:44:51 -0400] "-" 408 -
+::1 - - [04/Sep/2023:14:44:53 -0400] "GET /my-fit.html HTTP/1.1" 200 1734
+::1 - - [04/Sep/2023:14:45:53 -0400] "-" 408 -
+::1 - - [04/Sep/2023:22:49:00 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:02:14 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:02:14 -0400] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [06/Sep/2023:13:02:19 -0400] "GET /my-fit.html HTTP/1.1" 200 1734
+::1 - - [06/Sep/2023:13:03:19 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:04:42 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:04:58 -0400] "GET / HTTP/1.1" 200 116
+::1 - - [06/Sep/2023:13:05:58 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:06:01 -0400] "GET / HTTP/1.1" 200 124
+::1 - - [06/Sep/2023:13:07:01 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:07:22 -0400] "GET / HTTP/1.1" 200 120
+::1 - - [06/Sep/2023:13:07:33 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:08:33 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:09:20 -0400] "GET /my-fit.html HTTP/1.1" 200 1790
+::1 - - [06/Sep/2023:13:09:58 -0400] "GET /my-fit.html HTTP/1.1" 200 1829
+::1 - - [06/Sep/2023:13:10:58 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:11:46 -0400] "GET /my-fit.html HTTP/1.1" 200 1875
+::1 - - [06/Sep/2023:13:12:11 -0400] "GET /my-fit.html HTTP/1.1" 200 1878
+::1 - - [06/Sep/2023:13:13:11 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:13:45 -0400] "GET /my-fit.html HTTP/1.1" 200 1910
+::1 - - [06/Sep/2023:13:14:45 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:15:35 -0400] "GET /my-fit.html HTTP/1.1" 200 2121
+::1 - - [06/Sep/2023:13:16:07 -0400] "GET /my-fit.html HTTP/1.1" 200 2208
+::1 - - [06/Sep/2023:13:16:50 -0400] "GET /my-fit.html HTTP/1.1" 200 2266
+::1 - - [06/Sep/2023:13:17:19 -0400] "GET /my-fit.html HTTP/1.1" 200 2228
+::1 - - [06/Sep/2023:13:17:55 -0400] "GET /my-fit.html HTTP/1.1" 200 2209
+::1 - - [06/Sep/2023:13:18:35 -0400] "GET /my-fit.html HTTP/1.1" 200 2214
+::1 - - [06/Sep/2023:13:19:08 -0400] "GET /my-fit.html HTTP/1.1" 200 2265
+::1 - - [06/Sep/2023:13:19:37 -0400] "GET /my-fit.html HTTP/1.1" 200 2279
+::1 - - [06/Sep/2023:13:19:45 -0400] "GET /my-fit.html HTTP/1.1" 200 2297
+::1 - - [06/Sep/2023:13:19:52 -0400] "GET /my-fit.html HTTP/1.1" 200 2295
+::1 - - [06/Sep/2023:13:20:43 -0400] "GET /my-fit.html HTTP/1.1" 200 2285
+::1 - - [06/Sep/2023:13:21:07 -0400] "GET /my-fit.html HTTP/1.1" 200 2301
+::1 - - [06/Sep/2023:13:21:12 -0400] "GET /my-fit.html HTTP/1.1" 200 2301
+::1 - - [06/Sep/2023:13:21:39 -0400] "GET /my-fit.html HTTP/1.1" 200 2356
+::1 - - [06/Sep/2023:13:21:57 -0400] "GET /my-fit.html HTTP/1.1" 200 2416
+::1 - - [06/Sep/2023:13:22:14 -0400] "GET /my-fit.html HTTP/1.1" 200 2436
+::1 - - [06/Sep/2023:13:22:29 -0400] "GET /my-fit.html HTTP/1.1" 200 2438
+::1 - - [06/Sep/2023:13:23:23 -0400] "GET /my-fit.html HTTP/1.1" 200 2443
+::1 - - [06/Sep/2023:13:24:23 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:24:40 -0400] "GET /my-fit.html HTTP/1.1" 200 2525
+::1 - - [06/Sep/2023:13:25:03 -0400] "GET /my-fit.html HTTP/1.1" 200 2531
+::1 - - [06/Sep/2023:13:25:15 -0400] "GET /my-fit.html HTTP/1.1" 200 2537
+::1 - - [06/Sep/2023:13:25:31 -0400] "GET /my-fit.html HTTP/1.1" 200 2536
+::1 - - [06/Sep/2023:13:25:55 -0400] "GET /my-fit.html HTTP/1.1" 200 2548
+::1 - - [06/Sep/2023:13:26:16 -0400] "GET /my-fit.html HTTP/1.1" 200 2546
+::1 - - [06/Sep/2023:13:26:45 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:27:18 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:27:31 -0400] "GET /my-fit.html HTTP/1.1" 200 2476
+::1 - - [06/Sep/2023:13:27:40 -0400] "GET /my-fit.html HTTP/1.1" 200 2494
+::1 - - [06/Sep/2023:13:27:55 -0400] "GET /my-fit.html HTTP/1.1" 200 2491
+::1 - - [06/Sep/2023:13:28:27 -0400] "GET /my-fit.html HTTP/1.1" 200 2452
+::1 - - [06/Sep/2023:13:28:44 -0400] "GET /my-fit.html HTTP/1.1" 200 2491
+::1 - - [06/Sep/2023:13:29:44 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:29:59 -0400] "GET /my-fit.html HTTP/1.1" 200 2520
+::1 - - [06/Sep/2023:13:30:59 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:31:05 -0400] "GET /my-fit.html HTTP/1.1" 200 2540
+::1 - - [06/Sep/2023:13:31:29 -0400] "GET /my-fit.html HTTP/1.1" 200 2562
+::1 - - [06/Sep/2023:13:31:53 -0400] "GET /my-fit.html HTTP/1.1" 200 2540
+::1 - - [06/Sep/2023:13:32:53 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:33:56 -0400] "GET /my-fit.html HTTP/1.1" 200 2572
+::1 - - [06/Sep/2023:13:34:49 -0400] "GET /my-fit.html HTTP/1.1" 200 2617
+::1 - - [06/Sep/2023:13:34:49 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:34:50 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:35:00 -0400] "GET /my-fit.html HTTP/1.1" 200 2617
+::1 - - [06/Sep/2023:13:35:01 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:35:01 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:35:01 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:35:28 -0400] "GET /my-fit.html HTTP/1.1" 200 2656
+::1 - - [06/Sep/2023:13:36:28 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:38:34 -0400] "GET /my-fit.html HTTP/1.1" 200 2783
+::1 - - [06/Sep/2023:13:38:35 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:13:38:48 -0400] "GET /my-fit.html HTTP/1.1" 200 2757
+::1 - - [06/Sep/2023:13:38:56 -0400] "GET /my-fit.html HTTP/1.1" 200 2756
+::1 - - [06/Sep/2023:13:39:56 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:41:25 -0400] "GET /my-fit.html HTTP/1.1" 200 2863
+::1 - - [06/Sep/2023:13:42:25 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:43:09 -0400] "GET /my-fit.html HTTP/1.1" 200 3080
+::1 - - [06/Sep/2023:13:43:30 -0400] "GET /my-fit.html HTTP/1.1" 200 3080
+::1 - - [06/Sep/2023:13:44:30 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:44:57 -0400] "GET /my-fit.html HTTP/1.1" 200 2964
+::1 - - [06/Sep/2023:13:45:07 -0400] "GET /my-fit.html HTTP/1.1" 200 2963
+::1 - - [06/Sep/2023:13:46:07 -0400] "-" 408 -
+::1 - - [06/Sep/2023:13:46:11 -0400] "GET /my-fit.html HTTP/1.1" 200 3014
+::1 - - [06/Sep/2023:13:46:24 -0400] "GET /my-fit.html HTTP/1.1" 200 3013
+::1 - - [06/Sep/2023:13:47:05 -0400] "GET /my-fit.html HTTP/1.1" 200 3013
+::1 - - [06/Sep/2023:13:47:50 -0400] "GET /my-fit.html HTTP/1.1" 200 3013
+::1 - - [06/Sep/2023:13:48:36 -0400] "GET /my-fit.html HTTP/1.1" 200 3052
+::1 - - [06/Sep/2023:13:48:42 -0400] "GET /my-fit.html HTTP/1.1" 200 3013
+::1 - - [06/Sep/2023:13:49:42 -0400] "-" 408 -
+::1 - - [06/Sep/2023:14:10:16 -0400] "GET /my-fit.html HTTP/1.1" 200 3047
+::1 - - [06/Sep/2023:14:10:38 -0400] "GET /my-fit.html HTTP/1.1" 200 2991
+::1 - - [06/Sep/2023:14:11:24 -0400] "GET /my-fit.html HTTP/1.1" 200 2996
+::1 - - [06/Sep/2023:14:11:35 -0400] "GET /my-fit.html HTTP/1.1" 200 2993
+::1 - - [06/Sep/2023:14:11:44 -0400] "GET /my-fit.html HTTP/1.1" 200 2988
+::1 - - [06/Sep/2023:14:11:57 -0400] "GET /my-fit.html HTTP/1.1" 200 2990
+::1 - - [06/Sep/2023:14:12:07 -0400] "GET /my-fit.html HTTP/1.1" 200 2985
+::1 - - [06/Sep/2023:14:12:19 -0400] "GET /my-fit.html HTTP/1.1" 200 2982
+::1 - - [06/Sep/2023:14:12:50 -0400] "GET /my-fit.html HTTP/1.1" 200 2988
+::1 - - [06/Sep/2023:14:13:00 -0400] "GET /my-fit.html HTTP/1.1" 200 2990
+::1 - - [06/Sep/2023:14:13:37 -0400] "GET /my-fit.html HTTP/1.1" 200 2991
+::1 - - [06/Sep/2023:14:13:46 -0400] "GET /my-fit.html HTTP/1.1" 200 2992
+::1 - - [06/Sep/2023:14:14:46 -0400] "-" 408 -
+::1 - - [06/Sep/2023:14:15:36 -0400] "GET /my-fit.html HTTP/1.1" 200 3075
+::1 - - [06/Sep/2023:14:15:43 -0400] "GET /my-fit.html HTTP/1.1" 200 3070
+::1 - - [06/Sep/2023:14:16:03 -0400] "GET /my-fit.html HTTP/1.1" 200 3094
+::1 - - [06/Sep/2023:14:16:12 -0400] "GET /my-fit.html HTTP/1.1" 200 3094
+::1 - - [06/Sep/2023:14:17:12 -0400] "-" 408 -
+::1 - - [06/Sep/2023:14:17:49 -0400] "GET /my-fit.html HTTP/1.1" 200 3108
+::1 - - [06/Sep/2023:14:18:09 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [06/Sep/2023:14:18:40 -0400] "GET /my-fit.html HTTP/1.1" 200 3110
+::1 - - [06/Sep/2023:14:18:50 -0400] "GET /my-fit.html HTTP/1.1" 200 3110
+::1 - - [06/Sep/2023:14:19:50 -0400] "-" 408 -
+::1 - - [11/Sep/2023:12:56:35 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:12:56:36 -0400] "GET /favicon.ico HTTP/1.1" 404 196
+::1 - - [11/Sep/2023:12:56:37 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:12:56:57 -0400] "GET /shoppingList.html HTTP/1.1" 200 5525
+::1 - - [11/Sep/2023:12:57:57 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:02:59 -0400] "GET /cgi-bin/printenv.pl HTTP/1.1" 200 3939
+::1 - - [11/Sep/2023:13:03:07 -0400] "GET /server-status HTTP/1.1" 200 2887
+::1 - - [11/Sep/2023:13:04:07 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:04:26 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:04:36 -0400] "GET /shoppingList.html HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:13:05:36 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:08:08 -0400] "GET /shoppingList.html HTTP/1.1" 200 5534
+::1 - - [11/Sep/2023:13:09:08 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:09:29 -0400] "GET /shoppingList.html HTTP/1.1" 200 5608
+::1 - - [11/Sep/2023:13:09:42 -0400] "GET /shoppingList.html HTTP/1.1" 200 5613
+::1 - - [11/Sep/2023:13:09:50 -0400] "GET /shoppingList.html HTTP/1.1" 200 5610
+::1 - - [11/Sep/2023:13:10:28 -0400] "GET /shoppingList.html HTTP/1.1" 200 5743
+::1 - - [11/Sep/2023:13:10:38 -0400] "GET /shoppingList.html HTTP/1.1" 200 5769
+::1 - - [11/Sep/2023:13:10:53 -0400] "GET /shoppingList.html HTTP/1.1" 200 5781
+::1 - - [11/Sep/2023:13:11:04 -0400] "GET /shoppingList.html HTTP/1.1" 200 5777
+::1 - - [11/Sep/2023:13:11:13 -0400] "GET /shoppingList.html HTTP/1.1" 200 5775
+::1 - - [11/Sep/2023:13:12:13 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:12:20 -0400] "GET /shoppingList.html HTTP/1.1" 200 5786
+::1 - - [11/Sep/2023:13:13:20 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:34:28 -0400] "GET /myFitData.html HTTP/1.1" 200 279
+::1 - - [11/Sep/2023:13:35:28 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:38:55 -0400] "GET /myFitData.html HTTP/1.1" 200 754
+::1 - - [11/Sep/2023:13:39:03 -0400] "GET /myFitData.html HTTP/1.1" 200 778
+::1 - - [11/Sep/2023:13:40:03 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:41:46 -0400] "GET /myFitData.html HTTP/1.1" 200 719
+::1 - - [11/Sep/2023:13:41:51 -0400] "GET /myFitData.html HTTP/1.1" 200 675
+::1 - - [11/Sep/2023:13:42:09 -0400] "GET /myFitData.html HTTP/1.1" 200 675
+::1 - - [11/Sep/2023:13:42:09 -0400] "GET /data/fitData.json HTTP/1.1" 404 196
+::1 - - [11/Sep/2023:13:43:00 -0400] "GET /myFitData.html HTTP/1.1" 200 792
+::1 - - [11/Sep/2023:13:43:00 -0400] "GET /data/fitData.json HTTP/1.1" 404 196
+::1 - - [11/Sep/2023:13:44:00 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:44:14 -0400] "GET /myFitData.html HTTP/1.1" 200 789
+::1 - - [11/Sep/2023:13:44:14 -0400] "GET /data/fitData.json HTTP/1.1" 200 911
+::1 - - [11/Sep/2023:13:45:14 -0400] "-" 408 -
+::1 - - [11/Sep/2023:13:48:51 -0400] "GET /myFitData.html HTTP/1.1" 200 887
+::1 - - [11/Sep/2023:13:49:08 -0400] "GET /myFitData.html HTTP/1.1" 200 858
+::1 - - [11/Sep/2023:13:49:08 -0400] "GET /data/fitData.json HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:13:49:47 -0400] "GET /myFitData.html HTTP/1.1" 200 907
+::1 - - [11/Sep/2023:13:49:53 -0400] "GET /myFitData.html HTTP/1.1" 200 901
+::1 - - [11/Sep/2023:13:50:53 -0400] "-" 408 -
+::1 - - [11/Sep/2023:14:03:46 -0400] "GET /myFitData.html HTTP/1.1" 200 1349
+::1 - - [11/Sep/2023:14:04:00 -0400] "GET /myFitData.html HTTP/1.1" 200 1328
+::1 - - [11/Sep/2023:14:04:25 -0400] "GET /myFitData.html HTTP/1.1" 200 1339
+::1 - - [11/Sep/2023:14:05:25 -0400] "-" 408 -
+::1 - - [11/Sep/2023:14:08:02 -0400] "GET /myFitData.html HTTP/1.1" 200 1944
+::1 - - [11/Sep/2023:14:08:11 -0400] "GET /myFitData.html HTTP/1.1" 200 1966
+::1 - - [11/Sep/2023:14:08:11 -0400] "GET /data/fitData.json HTTP/1.1" 200 911
+::1 - - [11/Sep/2023:14:08:11 -0400] "GET /myFitData.html HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:14:08:13 -0400] "GET /myFitData.html HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:14:09:06 -0400] "GET /myFitData.html HTTP/1.1" 200 1995
+::1 - - [11/Sep/2023:14:09:06 -0400] "GET /data/fitData.json HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:14:10:06 -0400] "-" 408 -
+::1 - - [11/Sep/2023:14:10:56 -0400] "GET /myFitData.html HTTP/1.1" 200 2003
+::1 - - [11/Sep/2023:14:10:56 -0400] "GET /data/fitData.json HTTP/1.1" 304 -
+::1 - - [11/Sep/2023:14:11:56 -0400] "-" 408 -
