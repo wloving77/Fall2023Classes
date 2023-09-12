@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "Store": "Kroger",
+        "Products": [
+            {
+                "Type": "Cereal",
+                "Price": 4.00
+            },
+            {
+                "Type": "Coffee",
+                "Price": 12.50
+            },
+            {
+                "Type": "93/7 Ground Beef",
+                "Price": 15.00
+            },
+            {
+                "Type": "Tortillas",
+                "Price": 12.49
+            },
+            {
+                "Type": "Yogurt",
+                "Price": 7.50
+            }
+        ]
+    }
+]

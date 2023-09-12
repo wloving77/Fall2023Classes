@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Shopping </title>
+</head>
+
+<body>
+    <h1> Products Available for Purchase: </h1>
+    <table id="ProductList" Border="1">
+        <thead>
+            <tr>
+                <th> Products </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <table id="StoreList" Border="1">
+        <thead>
+            <tr>
+                <th> Stores </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button id="recommendationGenerator" onclick="displayShopperRecommendations(shopper)"> Generate Shopping Suggestions
+    </button>
+
+    <br>
+    <br>
+
+    <table id="RecommendationList" Border="1">
+        <thead>
+            <tr>
+                <th> Store </th>
+                <th> Product </th>
+                <th> Price </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <p id="total"> Total: </p>
+
+</body>
+
+</html>
+
+<style>
+    table {
+        border-color: rgb(231, 19, 19);
+        ;
+    }
+
+    button {
+        background-color: azure;
+
+    }
+
+    button:hover {
+        background-color: rgb(59, 255, 59);
+        cursor: pointer;
+    }
+</style>
+
+
+
+<script>
+    class Product {
+        constructor(name, price) {
+            this.name = name;
+            this.price = price;
+        }
+        get_price() {
+            return this.price;
+        }
+        get_name() {
+            return this.name;
+        }
+    }
+
+    class Store {
+        constructor(name, products) {
+            this.name = name;
+            this.products = products;
+        }
+
+        get_name() {
+            return this.name;
+        }
+
+        getPriceForProduct(name) {
+            for (var i = 0; i < this.products.length; i++) {
+                if (this.products[i].get_name() == name) {
+                    return this.products[i].get_price();
+                }
+            }
+        }
+    }
+
+    class Shopper {
+        constructor(products, stores) {
+            this.products = products;
+            this.stores = stores;
+        }
+
+        getBestDeal(product) {
+            let min = Number.MAX_SAFE_INTEGER;
+            let deal = {
+                store: '',
+                product: '',
+                price: -1
+            };
+
+            for (let i = 0; i < this.stores.length; i++) {
+                let productPrice = this.stores[i].getPriceForProduct(product.get_name());
+                if (productPrice < min) {
+                    deal.store = this.stores[i].get_name();
+                    deal.product = product.get_name();
+                    deal.price = productPrice;
+                    min = deal.price;
+                }
+            }
+            return deal;
+        }
+
+        generateShoppingSuggestions() {
+            let best_deals = [];
+            for (let i = 0; i < this.products.length; i++) {
+                best_deals.push(this.getBestDeal(this.products[i]));
+            }
+
+            return best_deals;
+        }
+    }
+
+    function displayAvailableProducts(productList) {
+        let table = document.getElementById("ProductList");
+
+        for (let i = 0; i < productList.length; i++) {
+            let newRow = table.insertRow();
+            let cell1 = newRow.insertCell(0);
+            cell1.innerHTML = productList[i].get_name();
+        }
+    }
+
+    function displayAvailableStores(storeList) {
+        let table = document.getElementById("StoreList");
+
+        for (let i = 0; i < storeList.length; i++) {
+            let newRow = table.insertRow();
+            let cell1 = newRow.insertCell(0);
+            cell1.innerHTML = storeList[i].get_name();
+        }
+    }
+
+    function displayShopperRecommendations(shopper) {
+        let table = document.getElementById("RecommendationList");
+
+        //this is to prevent the code from adding more rows to the table
+        if (document.getElementsByClassName("Generated").length != 0) {
+            return 0;
+        }
+        table.classList.add("Generated");
+
+        let best_deals = shopper.generateShoppingSuggestions();
+
+        let total = 0;
+
+        for (let i = 0; i < best_deals.length; i++) {
+            let newRow = table.insertRow();
+            let cell1 = newRow.insertCell(0)
+            let cell2 = newRow.insertCell(1);
+            let cell3 = newRow.insertCell(2);
+
+            cell1.innerHTML = best_deals[i].store;
+            cell2.innerHTML = best_deals[i].product;
+            cell3.innerHTML = best_deals[i].price;
+
+            total += best_deals[i].price;
+        }
+
+        let totalParagraph = document.getElementById("total");
+
+        totalParagraph.innerHTML = "Total: $" + total;
+
+        return 0;
+
+    }
+
+    // Now to define some defaults to use:
+
+    store_products1 = [new Product("Cereal", 12.50)
+        , new Product("Coffee", 15.00)
+        , new Product("Keurig", 125.00)
+        , new Product("93/7 Ground Beef", 11.50)
+        , new Product("Toilet Paper", 7.00)];
+
+    store_products2 = [new Product("Cereal", 11.50)
+        , new Product("Coffee", 17.00)
+        , new Product("Keurig", 100.00)
+        , new Product("93/7 Ground Beef", 13.50)
+        , new Product("Toilet Paper", 5.00)];
+
+    stores = [new Store("Kroger", store_products1)
+        , new Store("Harris Teeter", store_products2)];
+
+    displayAvailableProducts(store_products1);
+
+    displayAvailableStores(stores);
+
+    shopper = new Shopper(store_products1, stores);
+
+</script>
