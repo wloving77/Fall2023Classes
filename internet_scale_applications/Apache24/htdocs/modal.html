@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title> Modal Page! </title>
+    <h1> Modal Page! </h1>
+</head>
+
+<body>
+    <h1>Modal Window demo</h1>
+
+    <button id="myBtn">Open Modal </button>
+
+    <div id="modal1" class="modal">
+        <!-- html structure of modal window-->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p> Some Text! </p>
+            <p><img id="storeImage" src="img/shoes1.jpg"></p>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-attachment: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close:hover .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+</style>
+
+
+<script>
+    var modal = document.getElementById("modal1");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function () {
+        modal.style.display = "block";
+        var xTimer = setInterval(rotateImage, 2000);
+        xTimer = 0;
+    }
+
+    var i = 0;
+    function rotateImage() {
+        //this function rotates the image within the modal window
+        let images = ["img/shoes1.jpg", "img/shoes2.jpg", "img/shoes3.jpg"];
+
+        if (i >= images.length) {
+            i = 0
+        }
+        document.getElementById("storeImage").setAttribute("src", images[i]);
+        i++;
+    }
+
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
