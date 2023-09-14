@@ -1,0 +1,67 @@
+---
+title: "Rvest testing"
+author: "WFL"
+date: "2023-09-13"
+output: html_document
+---
+
+```{r}
+
+library(rvest)
+library(dplyr)
+
+tennis<-read_html("https://www.espn.com/tennis/rankings/_/type/wta")
+
+```
+
+# Data acquired
+
+
+```{r}
+names<-tennis%>%
+  html_nodes(".mr7 .AnchorLink")%>%
+  html_text()
+```
+
+```{r}
+
+names
+
+```
+
+
+```{r}
+
+points <- tennis%>%
+  html_nodes(".mr7+ .Table__TD span")%>%
+  html_text()
+
+```
+
+```{r}
+
+points
+
+```
+```{r}
+age<-tennis%>%
+  html_nodes(".mr7~ .Table__TD+ .Table__TD span")%>%
+  html_text()
+age
+```
+
+
+
+```{r}
+
+points<-as.numeric(gsub(",","",points))
+
+age<-as.numeric(age)
+
+wta_data<-data.frame(names,points,age)
+
+head(wta_data)
+
+```
+
+

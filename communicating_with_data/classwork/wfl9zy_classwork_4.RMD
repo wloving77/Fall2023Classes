@@ -1,0 +1,43 @@
+---
+title: "Classwork 4"
+author: "WFL"
+date: "2023-09-14"
+output: html_document
+---
+
+# Question 1
+
+```{r}
+
+library(readxl)
+
+data <- read_xlsx("data/DS_ Class_Data-1.xlsx")
+
+```
+
+# Question 2:
+
+```{r}
+library(dplyr)
+
+data_filtered <- data%>%
+  filter(States > 20)
+
+sdata <- data_filtered%>%
+  select(Age, Courses, States)
+
+
+head(sdata)
+
+```
+
+# Question 3:  
+
+```{r}
+
+data <- data%>%
+  rename(Degree=Major, YearUVA=Year)
+
+head(data)
+
+```
