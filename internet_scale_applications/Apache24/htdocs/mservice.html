@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Mircro Services and Using Async!</title>
+</head>
+
+<body>
+    <h1> Here is my test page! </h1>
+    <p id="selection">
+    </p>
+    <p id="output"></p>
+</body>
+
+</html>
+
+<script>
+    /* draw a list on the page with 1 item for each in optionData.json */
+    data = fetch("data/optionData.json");
+
+
+    async function pageSetup() {
+        // get my number from optionData
+        let optionCount = await getOptionCount();
+
+        console.log(optionCount);
+
+        const targetSelection = document.getElementById("selection");
+
+        let list = document.createElement("ul");
+
+        for (let i = 0; i < optionCount; i++) {
+            let li = document.createElement("li");
+            li.setAttribute("id", "li" + i);
+            li.innerHTML = "Delay for " + i;
+            li.onclick = () => fillOutput();
+            list.appendChild(li);
+        }
+
+        targetSelection.append(list);
+    }
+
+    async function getOptionCount() {
+        let optionValue = await fetch("data/optionData.json")
+            .then(response => response.json())
+            .then(t => { return t.optionCount });
+
+        return optionValue;
+    }
+
+    function fillOutput(option) {
+        let promiseObject = fetch("/cgi-bin/timedScript.pl?option=" + option);
+
+        promiseObject.then(res => res.text())
+            .then(t => {
+                document.getElementById("output").innerHTML += t;
+            })
+    }
+
+    pageSetup();
+
+</script>
