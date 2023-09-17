@@ -1,0 +1,135 @@
+---
+title: "Quiz2"
+author: "wfl9zy and gwu8ek"
+date: "2023-09-15"
+output: html_document
+---
+
+
+# Group wfl9zy and gwu8ek
+
+```{r}
+
+library(rvest)
+library(dplyr)
+
+premier_league <- read_html("https://www.premierleague.com/tables")
+
+```
+
+
+# Getting Club Names For Each League
+```{r}
+club_names_PL <- premier_league%>%
+  html_nodes(".long")%>%
+  html_text()
+
+```
+
+# Games Won At Each League
+
+```{r}
+
+games_won_PL <- premier_league%>%
+  html_nodes("td:nth-child(4)")%>%
+  html_text()
+
+```
+
+# Games Drawn At Each League
+
+```{r}
+
+games_drawn_PL <- premier_league%>%
+  html_nodes("td:nth-child(5)")%>%
+  html_text()
+```
+
+# GF Per League
+
+```{r}
+
+GF_PL <- premier_league%>%
+  html_nodes(".hideSmall:nth-child(7)")%>%
+  html_text()
+
+GF_PL <- GF_PL[GF_PL!="GF"]
+
+```
+
+
+# Combine Data Into 3 DataFrames, one for each League
+
+```{r}
+
+epl_table <- data.frame(clubNamePL=club_names_PL, winCountPL=games_won_PL, drawCountPL=games_drawn_PL,GFCountPL=GF_PL)
+
+head(epl_table)
+```
+
+# Converting to Numeric 
+
+```{r}
+
+epl_table$winCountPL <- as.numeric(epl_table$winCountPL)
+epl_table$drawCountPL <- as.numeric(epl_table$drawCountPL)
+epl_table$GFCountPL <- as.numeric(epl_table$GFCountPL)
+
+
+glimpse(epl_table)
+
+```
+
+# Adding the League Column:
+
+```{r}
+
+epl_table2 <- epl_table
+
+
+epl_table2$league <- 3 * epl_table$winCountPL + 1 * epl_table$drawCountPL
+
+
+
+head(epl_table2)
+
+```
+# Question 3:
+
+```{r}
+
+
+epl_table3<-epl_table2%>%
+mutate(league=c(rep("Premier League",20),
+rep("First Division",26),
+rep("U18",26)))%>%
+slice(1:46)
+
+head(epl_table3)
+
+
+```
+
+# Description:
+- This function adds a League Column and populates the first 20 with Premier League and the back 26 with "First Division". It then Slices the Dataframe grabbing rows 1->46.
+
+
+# Question 4:
+```{r}
+
+epl_premier <- epl_table3[epl_table3$league=="Premier League",]
+
+median_premier <- median(epl_premier$GFCountPL)
+
+epl_first_division <- epl_table3[epl_table3$league=="First Division",]
+
+median_first_division <- median(epl_first_division$GFCountPL)
+
+
+print(median_premier)
+print(median_first_division)
+
+```
+
+
+
