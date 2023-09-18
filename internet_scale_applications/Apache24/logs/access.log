@@ -574,3 +574,38 @@ williams-laptop - - [30/Aug/2023:14:49:00 -0400] "GET /server-status HTTP/1.1" 4
 ::1 - - [15/Sep/2023:13:47:02 -0400] "GET /localhost/cgi-bin/timedScript.pl?option=undefined HTTP/1.1" 404 196
 ::1 - - [15/Sep/2023:13:47:11 -0400] "GET /mservice.html HTTP/1.1" 200 1537
 ::1 - - [15/Sep/2023:13:47:12 -0400] "GET /cgi-bin/timedScript.pl?option=undefined HTTP/1.1" 200 44
+::1 - - [18/Sep/2023:13:05:26 -0400] "GET /mservice.html HTTP/1.1" 200 1538
+::1 - - [18/Sep/2023:13:05:26 -0400] "GET /data/optionData.json HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:05:29 -0400] "GET /cgi-bin/timedScript.pl?option=2 HTTP/1.1" 200 36
+::1 - - [18/Sep/2023:13:05:31 -0400] "GET /cgi-bin/timedScript.pl?option=2 HTTP/1.1" 200 36
+::1 - - [18/Sep/2023:13:05:38 -0400] "GET /cgi-bin/timedScript.pl?option=0 HTTP/1.1" 200 36
+::1 - - [18/Sep/2023:13:05:41 -0400] "GET /cgi-bin/timedScript.pl?option=2 HTTP/1.1" 200 36
+::1 - - [18/Sep/2023:13:06:25 -0400] "GET / HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:07:25 -0400] "-" 408 -
+::1 - - [18/Sep/2023:13:07:29 -0400] "GET /myFitData.html HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:07:29 -0400] "GET /data/fitData.json HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:07:31 -0400] "GET /shoppingList.html HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:07:36 -0400] "GET /my-fit.html HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:08:36 -0400] "-" 408 -
+::1 - - [18/Sep/2023:13:08:44 -0400] "-" 408 -
+::1 - - [18/Sep/2023:13:10:08 -0400] "GET /app/ HTTP/1.1" 200 3594
+::1 - - [18/Sep/2023:13:10:08 -0400] "GET /app/assets/bootstrap.css HTTP/1.1" 502 358
+::1 - - [18/Sep/2023:13:10:08 -0400] "GET /app/assets/custom.css HTTP/1.1" 502 358
+::1 - - [18/Sep/2023:13:10:08 -0400] "GET /app/images/discord_logo_small.png HTTP/1.1" 502 358
+::1 - - [18/Sep/2023:13:10:08 -0400] "GET /app/js/events.js HTTP/1.1" 502 354
+::1 - - [18/Sep/2023:13:10:13 -0400] "GET /mservice.html HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:10:16 -0400] "GET /cgi-bin/timedScript.pl?option=2 HTTP/1.1" 200 36
+::1 - - [18/Sep/2023:13:11:13 -0400] "-" 408 -
+::1 - - [18/Sep/2023:13:12:57 -0400] "GET /mservice.html HTTP/1.1" 304 -
+::1 - - [18/Sep/2023:13:13:21 -0400] "GET /api HTTP/1.1" 404 196
+::1 - - [18/Sep/2023:13:13:24 -0400] "GET /api:3000 HTTP/1.1" 403 199
+::1 - - [18/Sep/2023:13:29:51 -0400] "GET /api HTTP/1.1" 503 299
+::1 - - [18/Sep/2023:13:30:08 -0400] "GET /api HTTP/1.1" 200 40
+::1 - - [18/Sep/2023:13:31:08 -0400] "-" 408 -
+::1 - - [18/Sep/2023:13:38:03 -0400] "GET /api HTTP/1.1" 200 -
+::1 - - [18/Sep/2023:13:39:03 -0400] "-" 408 -
+::1 - - [18/Sep/2023:13:41:17 -0400] "GET /api HTTP/1.1" 200 -
+::1 - - [18/Sep/2023:13:41:29 -0400] "GET /api/gameboard HTTP/1.1" 200 9
+::1 - - [18/Sep/2023:13:41:34 -0400] "GET /api/move HTTP/1.1" 200 4
+::1 - - [18/Sep/2023:13:41:54 -0400] "GET /api/move/134 HTTP/1.1" 200 4
+::1 - - [18/Sep/2023:13:42:54 -0400] "-" 408 -

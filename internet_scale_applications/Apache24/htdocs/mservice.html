@@ -33,7 +33,7 @@
             let li = document.createElement("li");
             li.setAttribute("id", "li" + i);
             li.innerHTML = "Delay for " + i;
-            li.onclick = () => fillOutput();
+            li.onclick = () => fillOutput(i);
             list.appendChild(li);
         }
 
