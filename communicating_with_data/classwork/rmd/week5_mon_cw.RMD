@@ -1,0 +1,89 @@
+
+# Classwork 9/18/2023
+
+
+# Questions 1 + 2:
+
+```{r}
+library(tidyverse)
+
+View(diamonds)
+
+```
+
+
+# Question 3:
+```{r}
+
+df <- diamonds
+
+
+structure(df)
+
+```
+
+
+```{r}
+
+df[c(1,2,3,7)]
+
+df$table <- NULL
+
+structure(df)
+
+```
+
+```{r}
+
+c_columns <- df[, grep('^c', names(df))]
+
+head(c_columns)
+
+```
+
+
+# Filter applies a filter to select specific rows, select applies a filter to select specific columns
+
+```{r}
+
+filtered_df = filter(df, grepl("Good", cut))
+
+head(filtered_df)
+
+```
+
+
+```{r}
+
+price_subset = filter(df, df$price > 2000)
+
+
+tail(price_subset)
+
+```
+
+
+
+
+```{r}
+
+price_10k_subset = filter(df, df$price > 10000)
+
+ratio_of_total = nrow(price_10k_subset) / nrow(df)
+
+ratio_of_total
+
+```
+
+
+```{r}
+
+result <- df %>%
+  group_by(cut) %>%
+  summarize(mean_price = mean(price))
+
+
+result
+
+
+```

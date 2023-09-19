@@ -708,3 +708,13 @@ Apache server interrupted...
 [Mon Sep 18 13:29:03.731444 2023] [mpm_winnt:notice] [pid 20204:tid 340] AH00354: Child: Starting 64 worker threads.
 [Mon Sep 18 13:29:55.312668 2023] [proxy:error] [pid 20204:tid 1004] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
 [Mon Sep 18 13:29:55.312668 2023] [proxy_http:error] [pid 20204:tid 1004] [client ::1:20192] AH01114: HTTP: failed to make connection to backend: localhost
+[Mon Sep 18 14:10:16.411013 2023] [mpm_winnt:crit] [pid 20204:tid 340] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Mon Sep 18 14:10:16.411013 2023] [mpm_winnt:warn] [pid 20204:tid 1072] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Mon Sep 18 14:10:16.411013 2023] [mpm_winnt:warn] [pid 20204:tid 1048] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Mon Sep 18 14:10:18.425806 2023] [mpm_winnt:notice] [pid 20204:tid 340] AH00364: Child: All worker threads have exited.
+[Mon Sep 18 20:07:39.472855 2023] [core:warn] [pid 10712:tid 356] AH00098: pid file C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Mon Sep 18 20:07:39.472855 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Mon Sep 18 20:07:39.472855 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Mon Sep 18 20:07:39.472855 2023] [core:notice] [pid 10712:tid 356] AH00094: Command line: 'httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Mon Sep 18 20:07:39.472855 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00418: Parent: Created child process 13712
+[Mon Sep 18 20:07:39.935841 2023] [mpm_winnt:notice] [pid 13712:tid 348] AH00354: Child: Starting 64 worker threads.
