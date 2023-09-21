@@ -727,3 +727,13 @@ pm_winnt:notice] [pid 13712:tid 348] AH00354: Child: Starting 64 worker threads.
 [Wed Sep 20 13:40:23.950133 2023] [core:notice] [pid 11764:tid 364] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
 [Wed Sep 20 13:40:23.956167 2023] [mpm_winnt:notice] [pid 11764:tid 364] AH00418: Parent: Created child process 21080
 [Wed Sep 20 13:40:24.589591 2023] [mpm_winnt:notice] [pid 21080:tid 352] AH00354: Child: Starting 64 worker threads.
+[Thu Sep 21 11:09:13.304108 2023] [mpm_winnt:crit] [pid 21080:tid 352] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Thu Sep 21 11:09:13.304108 2023] [mpm_winnt:warn] [pid 21080:tid 1008] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Thu Sep 21 11:09:13.304108 2023] [mpm_winnt:warn] [pid 21080:tid 1140] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Thu Sep 21 11:09:15.330931 2023] [mpm_winnt:notice] [pid 21080:tid 352] AH00364: Child: All worker threads have exited.
+[Thu Sep 21 12:53:00.377492 2023] [core:warn] [pid 18732:tid 344] AH00098: pid file C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Sep 21 12:53:00.377492 2023] [mpm_winnt:notice] [pid 18732:tid 344] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Thu Sep 21 12:53:00.377492 2023] [mpm_winnt:notice] [pid 18732:tid 344] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Thu Sep 21 12:53:00.377492 2023] [core:notice] [pid 18732:tid 344] AH00094: Command line: 'httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Thu Sep 21 12:53:00.377492 2023] [mpm_winnt:notice] [pid 18732:tid 344] AH00418: Parent: Created child process 18192
+[Thu Sep 21 12:53:00.820115 2023] [mpm_winnt:notice] [pid 18192:tid 348] AH00354: Child: Starting 64 worker threads.

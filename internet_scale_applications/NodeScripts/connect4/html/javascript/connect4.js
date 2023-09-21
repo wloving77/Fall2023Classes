@@ -1,41 +1,4 @@
-const http = require("http");
-const url = require("url");
-
-const server = http.createServer();
-
-server.on("request", (request, response) => {
-    response.writeHead(200, { "Content-type": "text/html" });
-    let q = url.parse(request.url, true);
-    console.log(q);
-    response.end(handleUserAction(q.pathname));
-})
-
-
-server.on("request", (request, response) => {
-    const { method, url } = request;
-    console.log("Logging Method, " + method + " and Url, " + url);
-})
-
-server.on("error'", error => console.error(error.stack));
-
-server.listen(3000, "127.0.0.1", () => console.log("Server Running at http://localhost:3000"));
-
-function handleUserAction(urlStr) {
-    //parse request from pathname
-
-    let clientUrl = urlStr.split("/");
-    let returnString = "";
-    if (clientUrl[1] == "gameboard") {
-        returnString = "gameboard";
-    } else if (clientUrl[1] == "move") {
-        returnString = "move";
-    } else {
-        returnString = "";
-    }
-
-    return returnString;
-
-}
+/* Connect4 Logic Below: */
 
 class Player {
     constructor(playerName, playerNumber) {
@@ -51,7 +14,7 @@ class Connect4 {
     constructor(rows, cols) {
         this.rows = rows;
         this.cols = cols;
-        this.board = this.createBoard(this.rows, this.cols);
+        this.board = this.createBoard(this.cols, this.rows);
         this.players = [];
         this.currentPlayer = 0;
         this.gameOver = false;
@@ -68,15 +31,17 @@ class Connect4 {
     makeMove(colIndex, player) {
         for (let i = this.board[colIndex].length - 1; i >= 0; i--) {
             if (this.board[colIndex][i] == -1) {
-                this.board[colIndex][i] == player.playerNumber;
+                this.board[colIndex][i] = player.playerNumber;
                 //check if this move resulted in a winning state
                 this.checkBoard(colIndex, i, player.playerNumber);
+                //switch player
                 this.switchPlayer();
-            } else if (i == 0) {
-                console.log("Column is Full, Please Choose Different Column");
+                return true;
             }
-        }
 
+        }
+        console.log("Column is full, please try a different column");
+        return false;
     }
 
     //checks if there is a winning state on the board.
@@ -113,7 +78,7 @@ class Connect4 {
             }
 
             if (count >= 4) {
-                this.gameOver = True;
+                this.gameOver = true;
                 return true;
             }
 
@@ -126,7 +91,7 @@ class Connect4 {
 
     isValidPosition(colIndex, rowIndex) {
         // Check if the position is within the bounds of the board
-        return rowIndex >= 0 && rowIndex < this.rows && colIndex >= 0 && col < this.cols;
+        return rowIndex >= 0 && rowIndex < this.rows && colIndex >= 0 && colIndex < this.cols;
     }
 
     registerPlayers(players) {
@@ -145,8 +110,33 @@ class Connect4 {
         }
     }
 
-
-
-
-
 }
+
+
+// Testing: 
+
+
+game = new Connect4(6, 7);
+console.log(game.board);
+
+player1 = new Player("Chad", 4);
+player2 = new Player("Charles", 2);
+
+players = [];
+players.push(player1);
+players.push(player2);
+
+game.registerPlayers(players);
+
+console.log(game.players);
+
+game.makeMove(0, game.players[0]);
+game.makeMove(1, game.players[1]);
+game.makeMove(2, game.players[0]);
+game.makeMove(3, game.players[1]);
+
+
+console.log(game.board[0][game.board[0].length - 1]);
+
+
+console.log(game.board);
