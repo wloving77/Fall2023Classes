@@ -717,4 +717,13 @@ Apache server interrupted...
 [Mon Sep 18 20:07:39.472855 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
 [Mon Sep 18 20:07:39.472855 2023] [core:notice] [pid 10712:tid 356] AH00094: Command line: 'httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
 [Mon Sep 18 20:07:39.472855 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00418: Parent: Created child process 13712
-[Mon Sep 18 20:07:39.935841 2023] [mpm_winnt:notice] [pid 13712:tid 348] AH00354: Child: Starting 64 worker threads.
+Apache server shutdown initiated...
+pm_winnt:notice] [pid 13712:tid 348] AH00354: Child: Starting 64 worker threads.
+[Mon Sep 18 22:13:03.747878 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Mon Sep 18 22:13:05.757877 2023] [mpm_winnt:notice] [pid 13712:tid 348] AH00364: Child: All worker threads have exited.
+[Mon Sep 18 22:13:05.784055 2023] [mpm_winnt:notice] [pid 10712:tid 356] AH00430: Parent: Child process 13712 exited successfully.
+[Wed Sep 20 13:40:23.950133 2023] [mpm_winnt:notice] [pid 11764:tid 364] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Wed Sep 20 13:40:23.950133 2023] [mpm_winnt:notice] [pid 11764:tid 364] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Wed Sep 20 13:40:23.950133 2023] [core:notice] [pid 11764:tid 364] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Wed Sep 20 13:40:23.956167 2023] [mpm_winnt:notice] [pid 11764:tid 364] AH00418: Parent: Created child process 21080
+[Wed Sep 20 13:40:24.589591 2023] [mpm_winnt:notice] [pid 21080:tid 352] AH00354: Child: Starting 64 worker threads.

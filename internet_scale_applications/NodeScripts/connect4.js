@@ -70,7 +70,7 @@ class Connect4 {
             if (this.board[colIndex][i] == -1) {
                 this.board[colIndex][i] == player.playerNumber;
                 //check if this move resulted in a winning state
-                this.checkBoard(colIndex, i);
+                this.checkBoard(colIndex, i, player.playerNumber);
                 this.switchPlayer();
             } else if (i == 0) {
                 console.log("Column is Full, Please Choose Different Column");
@@ -79,15 +79,55 @@ class Connect4 {
 
     }
 
-    //checks if there is a winning state on the board. The player argument is so it knows who made the previous move and thus who won.
-    checkBoard(colIndex, rowIndex) {
+    //checks if there is a winning state on the board.
+    checkBoard(colIndex, rowIndex, playerNumber) {
 
-        // need to check up, down, left, right, up-left, up-right, down-left, down-right
+        //These are the different directions we need to check to validate a new move. 
+        const directions = [
+            [1, 0],   // Up-Down
+            [0, 1],   // Right-Left
+            [1, 1],   // Diagonal (positive slope)
+            [1, -1],  // Diagonal (negative slope)
+        ];
 
-        this.gameOver = true;
+        // initialize to 1 because we just made a valid move.
+
+        for (const [dx, dy] of directions) {
+            let count = 1;
+            let newCol = colIndex + dy;
+            let newRow = rowIndex + dx;
+
+            while (this.isValidPosition(newCol, newRow) && this.board[newCol][newRow] == playerNumber) {
+                count++;
+                newRow += dx;
+                newCol += dy;
+            }
+
+            newCol = colIndex - dy;
+            newRow = rowIndex - dx;
+
+            while (this.isValidPosition(newCol, newRow) && this.board[newCol][newRow] == playerNumber) {
+                count++;
+                newRow -= dx;
+                newCol -= dy;
+            }
+
+            if (count >= 4) {
+                this.gameOver = True;
+                return true;
+            }
+
+        }
+
+        return false;
+
 
     }
 
+    isValidPosition(colIndex, rowIndex) {
+        // Check if the position is within the bounds of the board
+        return rowIndex >= 0 && rowIndex < this.rows && colIndex >= 0 && col < this.cols;
+    }
 
     registerPlayers(players) {
         if (players.length == 2) {

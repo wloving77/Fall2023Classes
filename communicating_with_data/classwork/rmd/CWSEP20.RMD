@@ -1,0 +1,34 @@
+---
+title: "CWSEP20"
+author: "wfl9zy"
+date: "2023-09-20"
+output: html_document
+---
+
+# Necessary Libraries:
+```{r}
+library(dplyr)
+library(readxl)
+
+```
+
+# Load Data:
+
+```{r}
+
+data <- read_xlsx("../data/DS_ Class_Data-1.xlsx")
+
+View(data)
+
+```
+
+# Transformation using Recode:
+
+```{r}
+
+transformed_data <- data%>%
+  mutate(yearUVA = recode(Year, "First"="Freshman", "Second"="Sophomore", "Third"="Junior", "Fourth"="Senior"))
+
+head(transformed_data$Year)
+head(transformed_data$yearUVA)
+```
