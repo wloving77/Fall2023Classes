@@ -115,28 +115,27 @@ class Connect4 {
 
 // Testing: 
 
+// game = new Connect4(6, 7);
+// console.log(game.board);
 
-game = new Connect4(6, 7);
-console.log(game.board);
+// player1 = new Player("Chad", 4);
+// player2 = new Player("Charles", 2);
 
-player1 = new Player("Chad", 4);
-player2 = new Player("Charles", 2);
+// players = [];
+// players.push(player1);
+// players.push(player2);
 
-players = [];
-players.push(player1);
-players.push(player2);
+// game.registerPlayers(players);
 
-game.registerPlayers(players);
+// console.log(game.players);
 
-console.log(game.players);
-
-game.makeMove(0, game.players[0]);
-game.makeMove(1, game.players[1]);
-game.makeMove(2, game.players[0]);
-game.makeMove(3, game.players[1]);
-
-
-console.log(game.board[0][game.board[0].length - 1]);
+// game.makeMove(0, game.players[0]);
+// game.makeMove(1, game.players[1]);
+// game.makeMove(2, game.players[0]);
+// game.makeMove(3, game.players[1]);
 
 
-console.log(game.board);
+// console.log(game.board[0][game.board[0].length - 1]);
+
+
+// console.log(game.board);
