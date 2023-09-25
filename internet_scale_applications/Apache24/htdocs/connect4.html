@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> Connect4!</title>
+    <h1> Welcome Connect4 Players!</h1>
+</head>
+
+<body>
+    <div class='gameBoard'>
+
+    </div>
+    <button id="startGame" onClick="startGame()">New Game?</button>
+
+    <br>
+
+    <div class="toggle-container">
+        <span class="toggle-text">Player1</span>
+        <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+        </label>
+        <span class="toggle-text">Player2</span>
+    </div>
+</body>
+
+</html>
+
+
+
+<script>
+
+    // this function loads the current game, I then set an interval to reload it every 3 seconds
+    loadGame();
+    const intervalId = setInterval(loadGame, 500);
+
+    function loadGame() {
+        const apiUrl = "/api/gameState";
+
+        //console.log(`Fetching from URL: ${apiUrl}`);
+        fetch(apiUrl, { method: "GET" })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error retrieving game state on load");
+                } else {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                if (Number(data['gameActive']) != 0) {
+                    console.log("Game Rendering...");
+                    renderBoard(data);
+                } else {
+                    //renderBoard(data);
+                    //console.log("No Game Currently Active.");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+    }
+
+    function startGame() {
+
+        const apiUrl = "/api/startGame";
+
+        // grab fresh table state from backend.
+        //console.log(`Starting Game by Hitting URL: ${apiUrl}`);
+        fetch(apiUrl, {
+            method: "POST"
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Error Starting Game, Apologies.");
+                } else {
+                    return response.json();
+                }
+            })
+            .then(data => {
+                renderBoard(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+    }
+
+    // function for handling a player making a choice
+    function makeMove(event) {
+
+        const apiUrl = "/api/makeMove";
+
+        const columnID = event.currentTarget.id;
+
+        let json = {}
+        json['columnValue'] = columnID;
+        json['currentPlayer'] = Number(document.getElementById("toggleSwitch").checked);
+
+        fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(json)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Failed to Post Player Move to Backend, status: " + response.status);
+                }
+            })
+            .catch((error) => { console.error("Error Making Move: " + error) });
+
+
+    }
+
+    function renderBoard(gameDataJson) {
+
+        const gameBoardTable = document.querySelector(".gameBoard");
+
+        gameBoardTable.innerHTML = '';
+
+        // retrieve table state
+        const gameBoardData = gameDataJson['gameBoard'];
+
+        let numCols = gameBoardData.length;
+        let numRows = gameBoardData[0].length;
+
+        for (let colIndex = 0; colIndex < numCols; colIndex++) {
+            const ul = document.createElement("ul");
+
+            //for tracking and styling
+            ul.id = colIndex;
+            ul.className = 'tableColumn';
+
+            ul.addEventListener("click", makeMove);
+
+            for (let rowIndex = 0; rowIndex < numRows; rowIndex++) {
+                const li = document.createElement('li');
+                li.className = 'listItem';
+                li.textContent = gameBoardData[colIndex][rowIndex];
+                ul.appendChild(li)
+            }
+
+            gameBoardTable.appendChild(ul);
+
+        }
+
+    }
+
+</script>
+
+
+<style>
+    .gameBoard {
+        border: 2px solid;
+        margin-right: 500px;
+        padding-left: 40px;
+        background-color: burlywood;
+    }
+
+    .tableColumn {
+        border: 2px solid;
+        display: inline-table;
+        list-style-type: none;
+        margin-right: 10px;
+        height: auto;
+        width: auto;
+
+    }
+
+    .tableColumn:hover {
+        background-color: aqua;
+        cursor: pointer;
+    }
+
+    .listItem {
+        margin-right: 40px;
+    }
+
+
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(26px);
+    }
+
+    .toggle-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .toggle-text {
+        margin: 0 10px;
+    }
+</style>
