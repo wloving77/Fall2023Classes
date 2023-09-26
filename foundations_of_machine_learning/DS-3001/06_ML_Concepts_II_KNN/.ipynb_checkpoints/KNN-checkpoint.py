@@ -134,16 +134,16 @@ neigh.fit(X_train, y_train)
 #%%
 # now, we check the model's accuracy on the test data:
 
-X_test = test.drop(['signed up_1'], axis=1).values
-y_test = test['signed up_1'].values
+X_val = val.drop(['signed up_1'], axis=1).values
+y_val = val['signed up_1'].values
 
 print(neigh.score(X_test, y_test))
 
 #%%
 # now, we test the accuracy on our validation data.
 
-X_val = val.drop(['signed up_1'], axis=1).values
-y_val = val['signed up_1'].values
+X_test = test.drop(['signed up_1'], axis=1).values
+y_test = test['signed up_1'].values
 
 print(neigh.score(X_val, y_val))
 
