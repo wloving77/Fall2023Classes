@@ -12,7 +12,7 @@ const port = 3000;
 app.use(express.json());
 
 
-//initializting game logic:
+//initializting game logic, game active tracks if a game is currently active, game is just initialized here so it is global:
 var gameActive = 0;
 var game;
 
@@ -21,16 +21,13 @@ app.post("/makeMove", (request, response) => {
     const data = request.body;
 
     if (data && "columnValue" in data && "currentPlayer" in data) {
+
         let columnValue = Number(data["columnValue"]);
-        let gamePlayer = Number(data['currentPlayer']);
+        let gamePlayer = Number(data["currentPlayer"]);
+
         if (gamePlayer == game.currentPlayer) {
-            let gameContinue = game.makeMove(columnValue, game.currentPlayer);
-            if (gameContinue) {
-                response.status(200).send("Move Made");
-            } else {
-                gameActive = 0;
-                response.status(200).send("Move Made, but Game Over");
-            }
+            game.makeMove(columnValue, game.currentPlayer);
+            response.status(200).send("Move Made, Game Over");
         } else {
             response.status(200).send("Not Currently Active Player, Move Cancelled");
         }
@@ -40,13 +37,9 @@ app.post("/makeMove", (request, response) => {
 });
 
 app.post("/startGame", (request, response) => {
+
     //initialize game:
     game = new Connect4(6, 7);
-    player0 = new Player(0);
-    player1 = new Player(1);
-    game.players.push(player0);
-    game.players.push(player1);
-
     let gameData = game.board;
     gameActive = 1;
 
@@ -64,8 +57,6 @@ app.get("/gameState", (request, response) => {
 
     if (gameActive == 1) {
 
-        //console.log("Retrieving Active Game...");
-
         let json = {}
         let gameData = game.board;
         json['gameActive'] = gameActive;
@@ -74,11 +65,16 @@ app.get("/gameState", (request, response) => {
 
         response.status(200).json(json);
 
+        //if the game is over, we want to render one final board with the connected-4
+        if (game.gameOver) {
+            gameActive = 0;
+        }
+
+
     } else if (gameActive == 0) {
 
         let json = {}
         json['gameActive'] = gameActive;
-
 
         response.status(200).json(json);
     }
@@ -103,9 +99,8 @@ class Connect4 {
     // could potentially allow for variable boa
     constructor(rows, cols) {
         this.rows = rows;
-        this.cols = cols;
+        this.cols = cols
         this.board = this.createBoard(this.cols, this.rows);
-        this.players = [];
         this.currentPlayer = 0;
         this.gameOver = false;
     };
@@ -123,10 +118,10 @@ class Connect4 {
             if (this.board[colIndex][i] == -1) {
                 this.board[colIndex][i] = playerNumber;
                 //check if this move resulted in a winning state
-                let continueBool = this.checkBoard(colIndex, i, playerNumber);
+                this.checkBoard(colIndex, i, playerNumber);
                 //switch player
                 this.switchPlayer();
-                return !continueBool;
+                return true;
             }
 
         }
@@ -176,20 +171,11 @@ class Connect4 {
 
         return false;
 
-
     }
 
     isValidPosition(colIndex, rowIndex) {
         // Check if the position is within the bounds of the board
         return rowIndex >= 0 && rowIndex < this.rows && colIndex >= 0 && colIndex < this.cols;
-    }
-
-    registerPlayers(players) {
-        if (players.length == 2) {
-            this.players = players;
-        } else {
-            console.log("Incorrect Number of Players");
-        }
     }
 
     switchPlayer() {
@@ -204,21 +190,14 @@ class Connect4 {
 // game = new Connect4(6, 7);
 // console.log(game.board);
 
-// player1 = new Player("Chad", 4);
-// player2 = new Player("Charles", 2);
 
-// players = [];
-// players.push(player1);
-// players.push(player2);
-
-// game.registerPlayers(players);
-
-// console.log(game.players);
-
-// game.makeMove(0, game.players[0]);
-// game.makeMove(1, game.players[0]);
-// game.makeMove(2, game.players[0]);
-// game.makeMove(3, game.players[0]);
+// game.makeMove(0, 0);
+// game.currentPlayer = 0;
+// game.makeMove(1, 0);
+// game.currentPlayer = 0;
+// game.makeMove(2, 0);
+// game.currentPlayer = 0;
+// game.makeMove(3, 0);
 
 
 // console.log(game.board);

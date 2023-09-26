@@ -32,13 +32,12 @@
 <script>
 
     // this function loads the current game, I then set an interval to reload it every 3 seconds
-    loadGame();
     const intervalId = setInterval(loadGame, 500);
 
     function loadGame() {
+
         const apiUrl = "/api/gameState";
 
-        //console.log(`Fetching from URL: ${apiUrl}`);
         fetch(apiUrl, { method: "GET" })
             .then(response => {
                 if (!response.ok) {
@@ -48,16 +47,15 @@
                 }
             })
             .then(data => {
-                if (Number(data['gameActive']) != 0) {
+                if (data['gameActive'] != 0) {
                     console.log("Game Rendering...");
                     renderBoard(data);
                 } else {
-                    //renderBoard(data);
-                    //console.log("No Game Currently Active.");
+                    console.log("No Game Active");
                 }
             })
             .catch(error => {
-                console.error(error);
+                console.error("Something Went Wrong Loading the Game" + error);
             })
 
     }
@@ -67,7 +65,6 @@
         const apiUrl = "/api/startGame";
 
         // grab fresh table state from backend.
-        //console.log(`Starting Game by Hitting URL: ${apiUrl}`);
         fetch(apiUrl, {
             method: "POST"
         })
@@ -97,6 +94,8 @@
         let json = {}
         json['columnValue'] = columnID;
         json['currentPlayer'] = Number(document.getElementById("toggleSwitch").checked);
+
+        console.log(json['currentPlayer']);
 
         fetch(apiUrl, {
             method: "POST",
