@@ -1117,3 +1117,105 @@ Apache server interrupted...
 Apache server interrupted...
 [Mon Sep 25 20:52:51.029386 2023] [mpm_winnt:notice] [pid 20036:tid 332] AH00364: Child: All worker threads have exited.
 [Mon Sep 25 20:52:51.060272 2023] [mpm_winnt:notice] [pid 19800:tid 336] AH00430: Parent: Child process 20036 exited successfully.
+[Tue Sep 26 17:29:08.053784 2023] [mpm_winnt:notice] [pid 11712:tid 352] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Tue Sep 26 17:29:08.053784 2023] [mpm_winnt:notice] [pid 11712:tid 352] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Tue Sep 26 17:29:08.053784 2023] [core:notice] [pid 11712:tid 352] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Tue Sep 26 17:29:08.061795 2023] [mpm_winnt:notice] [pid 11712:tid 352] AH00418: Parent: Created child process 17164
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 17164:tid 368] AH00354: Child: Starting 64 worker threads.
+[Tue Sep 26 17:50:07.455123 2023] [proxy:error] [pid 17164:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 17:50:07.456146 2023] [proxy_http:error] [pid 17164:tid 968] [client ::1:9086] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 18:03:35.696931 2023] [proxy:error] [pid 17164:tid 960] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 18:03:35.696931 2023] [proxy_http:error] [pid 17164:tid 960] [client ::1:9523] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 18:12:30.307319 2023] [mpm_winnt:notice] [pid 11712:tid 352] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Tue Sep 26 18:12:32.319177 2023] [mpm_winnt:notice] [pid 17164:tid 368] AH00364: Child: All worker threads have exited.
+[Tue Sep 26 18:12:32.367074 2023] [mpm_winnt:notice] [pid 11712:tid 352] AH00430: Parent: Child process 17164 exited successfully.
+[Tue Sep 26 23:19:53.034064 2023] [mpm_winnt:notice] [pid 17732:tid 348] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Tue Sep 26 23:19:53.034064 2023] [mpm_winnt:notice] [pid 17732:tid 348] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Tue Sep 26 23:19:53.034064 2023] [core:notice] [pid 17732:tid 348] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Tue Sep 26 23:19:53.042094 2023] [mpm_winnt:notice] [pid 17732:tid 348] AH00418: Parent: Created child process 14276
+Apache server interrupted...
+[Tue Sep 26 23:19:53.804842 2023] [mpm_winnt:notice] [pid 17732:tid 348] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+14276:tid 356] AH00354: Child: Starting 64 worker threads.
+[Tue Sep 26 23:19:53.818080 2023] [mpm_winnt:error] [pid 14276:tid 996] (OS 10038)An operation was attempted on something that is not a socket.  : AH00332: winnt_accept: getsockname error on listening socket, is IPv6 available?
+[Tue Sep 26 23:19:53.818080 2023] [mpm_winnt:error] [pid 14276:tid 988] (OS 10038)An operation was attempted on something that is not a socket.  : AH00332: winnt_accept: getsockname error on listening socket, is IPv6 available?
+[Tue Sep 26 23:19:55.824344 2023] [mpm_winnt:notice] [pid 14276:tid 356] AH00364: Child: All worker threads have exited.
+[Tue Sep 26 23:19:55.844756 2023] [mpm_winnt:notice] [pid 17732:tid 348] AH00430: Parent: Child process 14276 exited successfully.
+[Tue Sep 26 23:20:11.945936 2023] [mpm_winnt:notice] [pid 19200:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Tue Sep 26 23:20:11.945936 2023] [mpm_winnt:notice] [pid 19200:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Tue Sep 26 23:20:11.945936 2023] [core:notice] [pid 19200:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Tue Sep 26 23:20:11.953937 2023] [mpm_winnt:notice] [pid 19200:tid 336] AH00418: Parent: Created child process 21660
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 21660:tid 332] AH00354: Child: Starting 64 worker threads.
+[Tue Sep 26 23:29:17.891460 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:17.891460 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:10196] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:18.676411 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:18.677052 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:10197] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:21.954415 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:21.954415 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:10203] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:26.045647 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:26.045841 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:10207] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:30.107646 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:30.107646 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:10209] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:34.171916 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:34.171916 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:10212] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:38.241671 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:38.241671 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:10216] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:40.893799 2023] [proxy:error] [pid 21660:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:40.893799 2023] [proxy_http:error] [pid 21660:tid 976] [client ::1:10220] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:41.379313 2023] [proxy:error] [pid 21660:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:41.379313 2023] [proxy_http:error] [pid 21660:tid 972] [client ::1:10222] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:41.861380 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:41.861380 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:10218] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:42.279546 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:42.279546 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:10225] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:42.887861 2023] [proxy:error] [pid 21660:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:42.887861 2023] [proxy_http:error] [pid 21660:tid 968] [client ::1:10227] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:43.392661 2023] [proxy:error] [pid 21660:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:43.392661 2023] [proxy_http:error] [pid 21660:tid 964] [client ::1:10230] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:44.947514 2023] [proxy:error] [pid 21660:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:44.947514 2023] [proxy_http:error] [pid 21660:tid 976] [client ::1:10236] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:45.454542 2023] [proxy:error] [pid 21660:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:45.454542 2023] [proxy_http:error] [pid 21660:tid 972] [client ::1:10239] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:29:45.922241 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:29:45.922241 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:10241] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:33:38.260640 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:33:38.260640 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:10256] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Tue Sep 26 23:33:42.331769 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Tue Sep 26 23:33:42.331769 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:10257] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Wed Sep 27 11:58:34.990708 2023] [proxy:error] [pid 21660:tid 992] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Wed Sep 27 11:58:34.990708 2023] [proxy_http:error] [pid 21660:tid 992] [client ::1:14714] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Wed Sep 27 11:58:39.076130 2023] [proxy:error] [pid 21660:tid 1000] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Wed Sep 27 11:58:39.076130 2023] [proxy_http:error] [pid 21660:tid 1000] [client ::1:14730] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Wed Sep 27 12:32:08.820907 2023] [mpm_winnt:notice] [pid 19200:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+[Wed Sep 27 12:32:10.864063 2023] [mpm_winnt:notice] [pid 21660:tid 332] AH00364: Child: All worker threads have exited.
+[Wed Sep 27 12:32:10.927081 2023] [mpm_winnt:notice] [pid 19200:tid 336] AH00430: Parent: Child process 21660 exited successfully.
+[Wed Sep 27 12:33:40.311554 2023] [mpm_winnt:notice] [pid 16728:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Wed Sep 27 12:33:40.311554 2023] [mpm_winnt:notice] [pid 16728:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Wed Sep 27 12:33:40.311554 2023] [core:notice] [pid 16728:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Wed Sep 27 12:33:40.327256 2023] [mpm_winnt:notice] [pid 16728:tid 336] AH00418: Parent: Created child process 15116
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 15116:tid 336] AH00354: Child: Starting 64 worker threads.
+[Wed Sep 27 14:30:59.995543 2023] [mpm_winnt:notice] [pid 16728:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+[Wed Sep 27 14:31:02.030252 2023] [mpm_winnt:notice] [pid 15116:tid 336] AH00364: Child: All worker threads have exited.
+[Wed Sep 27 14:31:02.078243 2023] [mpm_winnt:notice] [pid 16728:tid 336] AH00430: Parent: Child process 15116 exited successfully.
+[Wed Sep 27 14:32:03.460154 2023] [mpm_winnt:notice] [pid 5924:tid 340] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Wed Sep 27 14:32:03.461182 2023] [mpm_winnt:notice] [pid 5924:tid 340] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Wed Sep 27 14:32:03.461182 2023] [core:notice] [pid 5924:tid 340] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Wed Sep 27 14:32:03.461182 2023] [mpm_winnt:notice] [pid 5924:tid 340] AH00418: Parent: Created child process 4352
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 4352:tid 336] AH00354: Child: Starting 64 worker threads.
+[Wed Sep 27 20:47:48.982242 2023] [mpm_winnt:notice] [pid 5924:tid 340] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Wed Sep 27 20:47:50.994088 2023] [mpm_winnt:notice] [pid 4352:tid 336] AH00364: Child: All worker threads have exited.
+[Wed Sep 27 20:47:51.025299 2023] [mpm_winnt:notice] [pid 5924:tid 340] AH00430: Parent: Child process 4352 exited successfully.

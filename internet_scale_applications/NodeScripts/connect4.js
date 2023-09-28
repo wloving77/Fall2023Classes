@@ -16,9 +16,24 @@ app.use(express.json());
 var gameActive = 0;
 var game;
 
+function getGameState(game, gameActive) {
+    let json = {};
+
+    json['gameActive'] = gameActive;
+    json['gameBoard'] = game.board;
+    json['currentPlayer'] = game.currentPlayer;
+    json['gameOver'] = game.gameOver;
+
+    return json;
+
+}
+
 
 app.post("/makeMove", (request, response) => {
     const data = request.body;
+
+    //grab current game state to return in the response
+    let json;
 
     if (data && "columnValue" in data && "currentPlayer" in data) {
 
@@ -26,13 +41,19 @@ app.post("/makeMove", (request, response) => {
         let gamePlayer = Number(data["currentPlayer"]);
 
         if (gamePlayer == game.currentPlayer) {
+
             game.makeMove(columnValue, game.currentPlayer);
-            response.status(200).send("Move Made, Game Over");
+            game.switchPlayer();
+            json = getGameState(game, gameActive);
+            response.json(json).status(200);
+
         } else {
-            response.status(200).send("Not Currently Active Player, Move Cancelled");
+            json = getGameState(game, gameActive);
+            json['noMove'] = 1;
+            response.json(json).status(200);
         }
     } else {
-        response.status(400).send("Error Parsing Post request, Move Not Made");
+        response.status(400);
     }
 });
 
@@ -40,16 +61,12 @@ app.post("/startGame", (request, response) => {
 
     //initialize game:
     game = new Connect4(6, 7);
-    let gameData = game.board;
     gameActive = 1;
 
-    let json = {};
-    json['gameActive'] = gameActive;
-    json['gameBoard'] = gameData;
-    json['currentPlayer'] = game.currentPlayer;
+    //send entire gameState
+    let json = getGameState(game, gameActive);
 
-
-    response.status(200).json(json);
+    response.json(json).status(200);
 
 });
 
@@ -57,13 +74,10 @@ app.get("/gameState", (request, response) => {
 
     if (gameActive == 1) {
 
-        let json = {}
-        let gameData = game.board;
-        json['gameActive'] = gameActive;
-        json['gameBoard'] = gameData;
-        json['currentPlayer'] = game.currentPlayer;
+        //send state of the game
+        let json = getGameState(game, gameActive);
 
-        response.status(200).json(json);
+        response.json(json).status(200);
 
         //if the game is over, we want to render one final board with the connected-4
         if (game.gameOver) {
@@ -76,7 +90,8 @@ app.get("/gameState", (request, response) => {
         let json = {}
         json['gameActive'] = gameActive;
 
-        response.status(200).json(json);
+        //only state where there is no game information to send.
+        response.json(json).status(200);
     }
 
 });
@@ -120,7 +135,6 @@ class Connect4 {
                 //check if this move resulted in a winning state
                 this.checkBoard(colIndex, i, playerNumber);
                 //switch player
-                this.switchPlayer();
                 return true;
             }
 

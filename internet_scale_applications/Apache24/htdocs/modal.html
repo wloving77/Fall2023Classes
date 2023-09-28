@@ -70,20 +70,6 @@
 
     btn.onclick = function () {
         modal.style.display = "block";
-        var xTimer = setInterval(rotateImage, 2000);
-        xTimer = 0;
-    }
-
-    var i = 0;
-    function rotateImage() {
-        //this function rotates the image within the modal window
-        let images = ["img/shoes1.jpg", "img/shoes2.jpg", "img/shoes3.jpg"];
-
-        if (i >= images.length) {
-            i = 0
-        }
-        document.getElementById("storeImage").setAttribute("src", images[i]);
-        i++;
     }
 
     span.onclick = function () {
@@ -94,6 +80,19 @@
         if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
+
+    var xTimer = setInterval(rotateImage, 2000);
+    var i = 0;
+    function rotateImage() {
+        //this function rotates the image within the modal window
+        let images = ["img/shoes1.jpg", "img/shoes2.jpg", "img/shoes3.jpg"];
+
+        if (i >= images.length) {
+            i = 0
+        }
+        document.getElementById("storeImage").setAttribute("src", images[i]);
+        i++;
     }
 
 </script>

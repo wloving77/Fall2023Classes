@@ -11,17 +11,19 @@
     <div class='gameBoard'>
 
     </div>
+    <br><br>
+
     <button id="startGame" onClick="startGame()">New Game?</button>
 
-    <br>
+    <br><br>
 
     <div class="toggle-container">
-        <span class="toggle-text">Player1</span>
+        <span class="toggle-text" id="player1">Player1</span>
         <label class="switch">
             <input type="checkbox" id="toggleSwitch">
             <span class="slider"></span>
         </label>
-        <span class="toggle-text">Player2</span>
+        <span class="toggle-text" id="player2">Player2</span>
     </div>
 </body>
 
@@ -31,84 +33,102 @@
 
 <script>
 
+
     // this function loads the current game, I then set an interval to reload it every 3 seconds
     const intervalId = setInterval(loadGame, 500);
 
+
+    //loads the game from the gamestate api
     function loadGame() {
 
         const apiUrl = "/api/gameState";
 
         fetch(apiUrl, { method: "GET" })
-            .then(response => {
+            .then((response) => {
                 if (!response.ok) {
                     throw new Error("Error retrieving game state on load");
                 } else {
                     return response.json();
                 }
             })
-            .then(data => {
+            .then((data) => {
                 if (data['gameActive'] != 0) {
-                    console.log("Game Rendering...");
                     renderBoard(data);
-                } else {
-                    console.log("No Game Active");
                 }
-            })
-            .catch(error => {
-                console.error("Something Went Wrong Loading the Game" + error);
-            })
-
-    }
-
-    function startGame() {
-
-        const apiUrl = "/api/startGame";
-
-        // grab fresh table state from backend.
-        fetch(apiUrl, {
-            method: "POST"
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Error Starting Game, Apologies.");
-                } else {
-                    return response.json();
-                }
-            })
-            .then(data => {
-                renderBoard(data);
-            })
-            .catch(error => {
-                console.error(error);
+            }).catch((error) => {
+                console.error("Something Went Wrong Extracting Data from JSON" + error);
             });
 
     }
 
-    // function for handling a player making a choice
+    //starts the game using the startGame url
+    function startGame() {
+
+        const apiUrl = "/api/startGame";
+
+        document.getElementById("player1").style.color = "#0000FF";
+        document.getElementById("player2").style.color = "#000000";
+
+        // grab fresh table state from backend.
+        fetch(apiUrl, {
+            method: "POST"
+        }).then((response) => {
+            if (!response.ok) {
+                throw new Error("Error Starting Game, Apologies.");
+            } else {
+                return response.json();
+            }
+        }).then((json) => {
+            if (json && "gameBoard" in json) {
+                renderBoard(json);
+            }
+        }).catch((error) => {
+            console.log("Error starting new game: " + error);
+        });
+
+    }
+
+    // function for handling a player making a choice, receives an event from 
+    //one of the unordered lists that will be used to specify which column was chosen on the backend
     function makeMove(event) {
 
         const apiUrl = "/api/makeMove";
 
+        //here column is parsed
         const columnID = event.currentTarget.id;
 
         let json = {}
         json['columnValue'] = columnID;
-        json['currentPlayer'] = Number(document.getElementById("toggleSwitch").checked);
 
-        console.log(json['currentPlayer']);
+        //decide which player based on the current state of the toggle switch
+        json['currentPlayer'] = Number(document.getElementById("toggleSwitch").checked);
 
         fetch(apiUrl, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(json)
         })
-            .then(response => {
+            .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to Post Player Move to Backend, status: " + response.status);
+                } else {
+                    return response.json();
                 }
-            })
-            .catch((error) => { console.error("Error Making Move: " + error) });
+            }).then((json) => {
+                if ("noMove" in json) {
+                    return 0;
+                } else { // this logic handles player color switching etc
+                    let currentPlayer = json['currentPlayer'];
+                    currentPlayer++;
 
+                    let nonCurrentPlayer = currentPlayer == 1 ? 2 : 1;
+
+                    document.getElementById("player" + currentPlayer).style.color = "#0000FF";
+                    document.getElementById("player" + nonCurrentPlayer).style.color = "#000000";
+                }
+            }).catch((error) => {
+                console.error("Something Went Wrong" + error);
+            });
 
     }
 
@@ -116,6 +136,7 @@
 
         const gameBoardTable = document.querySelector(".gameBoard");
 
+        //wipeout current board state
         gameBoardTable.innerHTML = '';
 
         // retrieve table state
@@ -131,6 +152,7 @@
             ul.id = colIndex;
             ul.className = 'tableColumn';
 
+            //here we add the listener for the click even per column
             ul.addEventListener("click", makeMove);
 
             for (let rowIndex = 0; rowIndex < numRows; rowIndex++) {
@@ -154,7 +176,7 @@
         border: 2px solid;
         margin-right: 500px;
         padding-left: 40px;
-        background-color: burlywood;
+        background-color: #2196F3;
     }
 
     .tableColumn {
@@ -175,8 +197,6 @@
     .listItem {
         margin-right: 40px;
     }
-
-
 
     .switch {
         position: relative;
