@@ -85,12 +85,19 @@ app.get("/gameState", (request, response) => {
         }
 
 
-    } else if (gameActive == 0) {
+    } else if (gameActive == 0 && game == null) {
 
         let json = {}
         json['gameActive'] = gameActive;
 
         //only state where there is no game information to send.
+        response.json(json).status(200);
+    } else if (gameActive == 0 && game != null) {
+
+        let json = {}
+
+        json = getGameState(game, gameActive);
+        json['gameOver'] = true;
         response.json(json).status(200);
     }
 
@@ -133,7 +140,10 @@ class Connect4 {
             if (this.board[colIndex][i] == -1) {
                 this.board[colIndex][i] = playerNumber;
                 //check if this move resulted in a winning state
-                this.checkBoard(colIndex, i, playerNumber);
+                if (this.checkBoard(colIndex, i, playerNumber)) {
+                    console.log("Game Over!");
+                    return false;
+                }
                 //switch player
                 return true;
             }

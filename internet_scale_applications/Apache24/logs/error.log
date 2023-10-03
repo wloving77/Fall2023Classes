@@ -1219,3 +1219,63 @@ Apache server interrupted...
 Apache server interrupted...
 [Wed Sep 27 20:47:50.994088 2023] [mpm_winnt:notice] [pid 4352:tid 336] AH00364: Child: All worker threads have exited.
 [Wed Sep 27 20:47:51.025299 2023] [mpm_winnt:notice] [pid 5924:tid 340] AH00430: Parent: Child process 4352 exited successfully.
+[Mon Oct 02 22:40:10.283764 2023] [mpm_winnt:notice] [pid 10344:tid 344] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Mon Oct 02 22:40:10.283764 2023] [mpm_winnt:notice] [pid 10344:tid 344] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Mon Oct 02 22:40:10.283764 2023] [core:notice] [pid 10344:tid 344] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Mon Oct 02 22:40:10.294387 2023] [mpm_winnt:notice] [pid 10344:tid 344] AH00418: Parent: Created child process 21080
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 21080:tid 332] AH00354: Child: Starting 64 worker threads.
+[Mon Oct 02 22:58:31.059084 2023] [mpm_winnt:notice] [pid 10344:tid 344] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Mon Oct 02 22:58:33.082931 2023] [mpm_winnt:notice] [pid 21080:tid 332] AH00364: Child: All worker threads have exited.
+[Mon Oct 02 22:58:33.137212 2023] [mpm_winnt:notice] [pid 10344:tid 344] AH00430: Parent: Child process 21080 exited successfully.
+[Mon Oct 02 22:58:39.850996 2023] [mpm_winnt:notice] [pid 23120:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Mon Oct 02 22:58:39.850996 2023] [mpm_winnt:notice] [pid 23120:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Mon Oct 02 22:58:39.850996 2023] [core:notice] [pid 23120:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Mon Oct 02 22:58:39.854036 2023] [mpm_winnt:notice] [pid 23120:tid 336] AH00418: Parent: Created child process 13876
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 13876:tid 336] AH00354: Child: Starting 64 worker threads.
+[Mon Oct 02 23:09:18.358013 2023] [proxy_http:error] [pid 13876:tid 964] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:30867] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:18.358013 2023] [proxy:error] [pid 13876:tid 964] [client ::1:30867] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:18.862236 2023] [proxy_http:error] [pid 13876:tid 984] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:30854] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:18.862236 2023] [proxy:error] [pid 13876:tid 984] [client ::1:30854] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:20.903778 2023] [proxy_http:error] [pid 13876:tid 960] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:30870] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:20.903778 2023] [proxy:error] [pid 13876:tid 960] [client ::1:30870] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:21.454511 2023] [proxy_http:error] [pid 13876:tid 956] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:30873] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:09:21.454511 2023] [proxy:error] [pid 13876:tid 956] [client ::1:30873] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:09.284648 2023] [proxy_http:error] [pid 13876:tid 956] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:31107] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:09.284648 2023] [proxy:error] [pid 13876:tid 956] [client ::1:31107] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:10.260533 2023] [proxy_http:error] [pid 13876:tid 960] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:31109] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:10.260533 2023] [proxy:error] [pid 13876:tid 960] [client ::1:31109] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:11.291355 2023] [proxy_http:error] [pid 13876:tid 984] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:31114] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:11.291355 2023] [proxy:error] [pid 13876:tid 984] [client ::1:31114] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:28.409208 2023] [proxy_http:error] [pid 13876:tid 964] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:31128] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:28.409208 2023] [proxy:error] [pid 13876:tid 964] [client ::1:31128] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:28.670845 2023] [proxy_http:error] [pid 13876:tid 952] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:31132] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:28.670845 2023] [proxy:error] [pid 13876:tid 952] [client ::1:31132] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:29.416678 2023] [proxy_http:error] [pid 13876:tid 948] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:31134] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:29.416678 2023] [proxy:error] [pid 13876:tid 948] [client ::1:31134] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:32.713301 2023] [proxy_http:error] [pid 13876:tid 940] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:31160] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:32.713301 2023] [proxy:error] [pid 13876:tid 940] [client ::1:31160] AH00898: Error reading from remote server returned by /api/makeMove, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:32.713301 2023] [proxy_http:error] [pid 13876:tid 936] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:31162] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:32.713301 2023] [proxy_http:error] [pid 13876:tid 944] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:31136] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:36.782306 2023] [proxy:error] [pid 13876:tid 932] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Mon Oct 02 23:12:36.782306 2023] [proxy:error] [pid 13876:tid 940] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Mon Oct 02 23:12:36.782306 2023] [proxy_http:error] [pid 13876:tid 940] [client ::1:31160] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Mon Oct 02 23:12:36.782306 2023] [proxy_http:error] [pid 13876:tid 932] [client ::1:31165] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Mon Oct 02 23:34:05.692027 2023] [proxy_http:error] [pid 13876:tid 932] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:32023] AH01102: error reading status line from remote server localhost:3000, referer: http://localhost/connect4.html
+[Mon Oct 02 23:36:01.199779 2023] [mpm_winnt:notice] [pid 23120:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+:tid 932] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Mon Oct 02 23:36:01.263357 2023] [proxy_http:error] [pid 13876:tid 932] [client ::1:32153] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Mon Oct 02 23:36:05.362274 2023] [proxy:error] [pid 13876:tid 944] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Mon Oct 02 23:36:05.362274 2023] [proxy_http:error] [pid 13876:tid 944] [client ::1:32156] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Mon Oct 02 23:36:05.425409 2023] [mpm_winnt:notice] [pid 13876:tid 336] AH00364: Child: All worker threads have exited.
+[Mon Oct 02 23:36:05.472758 2023] [mpm_winnt:notice] [pid 23120:tid 336] AH00430: Parent: Child process 13876 exited successfully.

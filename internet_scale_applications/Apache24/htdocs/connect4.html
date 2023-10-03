@@ -25,6 +25,10 @@
         </label>
         <span class="toggle-text" id="player2">Player2</span>
     </div>
+    <br>
+    <span id="switchPlayer"></span>
+    <br>
+    <span id="gameOver"></span>
 </body>
 
 </html>
@@ -35,11 +39,11 @@
 
 
     // this function loads the current game, I then set an interval to reload it every 3 seconds
-    const intervalId = setInterval(loadGame, 500);
+    const intervalId = setInterval(getGameState, 1500);
 
 
     //loads the game from the gamestate api
-    function loadGame() {
+    function getGameState() {
 
         const apiUrl = "/api/gameState";
 
@@ -51,9 +55,15 @@
                     return response.json();
                 }
             })
-            .then((data) => {
-                if (data['gameActive'] != 0) {
-                    renderBoard(data);
+            .then((json) => {
+                if (json['gameActive'] != 0) {
+                    renderBoard(json);
+                    setCurrentPlayer(json);
+                    document.getElementById("gameOver").innerHTML = "";
+                } else if (json['gameOver'] == true) {
+                    document.getElementById("gameOver").innerHTML = "Game Over!";
+                    document.getElementById("switchPlayer").innerHTML = "";
+
                 }
             }).catch((error) => {
                 console.error("Something Went Wrong Extracting Data from JSON" + error);
@@ -81,6 +91,7 @@
         }).then((json) => {
             if (json && "gameBoard" in json) {
                 renderBoard(json);
+                setCurrentPlayer(json);
             }
         }).catch((error) => {
             console.log("Error starting new game: " + error);
@@ -115,16 +126,10 @@
                     return response.json();
                 }
             }).then((json) => {
-                if ("noMove" in json) {
-                    return 0;
-                } else { // this logic handles player color switching etc
-                    let currentPlayer = json['currentPlayer'];
-                    currentPlayer++;
-
-                    let nonCurrentPlayer = currentPlayer == 1 ? 2 : 1;
-
-                    document.getElementById("player" + currentPlayer).style.color = "#0000FF";
-                    document.getElementById("player" + nonCurrentPlayer).style.color = "#000000";
+                if ("noMove" in json && "gameOver" in json && json["gameOver"] != true) {
+                    document.getElementById("switchPlayer").innerHTML = "Switch Player!";
+                } else {
+                    document.getElementById("switchPlayer").innerHTML = "";
                 }
             }).catch((error) => {
                 console.error("Something Went Wrong" + error);
@@ -166,6 +171,16 @@
 
         }
 
+    }
+
+    function setCurrentPlayer(json) {
+        let currentPlayer = json['currentPlayer'];
+        currentPlayer++;
+
+        let nonCurrentPlayer = currentPlayer == 1 ? 2 : 1;
+
+        document.getElementById("player" + currentPlayer).style.color = "#0000FF";
+        document.getElementById("player" + nonCurrentPlayer).style.color = "#000000";
     }
 
 </script>
