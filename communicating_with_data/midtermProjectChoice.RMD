@@ -1,0 +1,31 @@
+---
+title: "Midterm Project Topic and Sources"
+author: "wfl9zy and jes9hd"
+date: "2023-09-28"
+output: html_document
+---
+
+# Group Members:
+- William Loving (wfl9zy)
+- James Sweat (jes9hd)
+
+# Topic For Midterm Project:
+
+- What Jobs In the US are Best for Software Engineering vs. Data Science / Analysis
+
+# Questions: 
+
+1. What jobs have the highest salaries?
+2. What jobs to people report enjoying the most? 
+3. Are there jobs people warn against? 
+4. Is there a correlation between job enjoyment and salary? Is it positive, negative? 
+
+# Potential Data Source:
+
+- Kaggle (50000 records):[Dataset](https://www.kaggle.com/datasets/mexwell/us-software-engineer-jobs)
+
+
+```{r}
+
+
+```

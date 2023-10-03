@@ -1,0 +1,21 @@
+---
+title: "Quiz3"
+author: "wlf9zy"
+date: "2023-09-29"
+output: html_document
+---
+
+```{r}
+
+library(ggplot2)
+library(readxl)
+library(readr)
+
+```
+
+
+# Question 1:
+
+```{r}
+
+```

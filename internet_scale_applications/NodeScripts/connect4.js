@@ -40,10 +40,12 @@ app.post("/makeMove", (request, response) => {
         let columnValue = Number(data["columnValue"]);
         let gamePlayer = Number(data["currentPlayer"]);
 
-        if (gamePlayer == game.currentPlayer) {
+        if (gamePlayer == game.currentPlayer && !game.gameOver) {
 
-            game.makeMove(columnValue, game.currentPlayer);
-            game.switchPlayer();
+            let moveMade = game.makeMove(columnValue, game.currentPlayer);
+            if (moveMade) {
+                game.switchPlayer();
+            }
             json = getGameState(game, gameActive);
             response.json(json).status(200);
 
@@ -85,22 +87,18 @@ app.get("/gameState", (request, response) => {
         }
 
 
-    } else if (gameActive == 0 && game == null) {
+    } else if (game != null && gameActive == 0) {
+        let json = getGameState(game, gameActive);
+        response.json(json).status(200);
+
+    } else if (gameActive == 0) {
 
         let json = {}
-        json['gameActive'] = gameActive;
+        json['gameActive'] = 0;
 
         //only state where there is no game information to send.
         response.json(json).status(200);
-    } else if (gameActive == 0 && game != null) {
-
-        let json = {}
-
-        json = getGameState(game, gameActive);
-        json['gameOver'] = true;
-        response.json(json).status(200);
     }
-
 });
 
 app.get('/', (req, res) => {
@@ -141,7 +139,6 @@ class Connect4 {
                 this.board[colIndex][i] = playerNumber;
                 //check if this move resulted in a winning state
                 if (this.checkBoard(colIndex, i, playerNumber)) {
-                    console.log("Game Over!");
                     return false;
                 }
                 //switch player
@@ -149,7 +146,6 @@ class Connect4 {
             }
 
         }
-        console.log("Column is full, please try a different column");
         return false;
     }
 

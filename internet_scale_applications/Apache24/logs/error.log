@@ -1279,3 +1279,14 @@ Apache server interrupted...
 [Mon Oct 02 23:36:05.362274 2023] [proxy_http:error] [pid 13876:tid 944] [client ::1:32156] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
 [Mon Oct 02 23:36:05.425409 2023] [mpm_winnt:notice] [pid 13876:tid 336] AH00364: Child: All worker threads have exited.
 [Mon Oct 02 23:36:05.472758 2023] [mpm_winnt:notice] [pid 23120:tid 336] AH00430: Parent: Child process 13876 exited successfully.
+[Tue Oct 03 11:53:07.565323 2023] [mpm_winnt:notice] [pid 11996:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Tue Oct 03 11:53:07.565323 2023] [mpm_winnt:notice] [pid 11996:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Tue Oct 03 11:53:07.565323 2023] [core:notice] [pid 11996:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Tue Oct 03 11:53:07.565323 2023] [mpm_winnt:notice] [pid 11996:tid 336] AH00418: Parent: Created child process 14472
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 14472:tid 336] AH00354: Child: Starting 64 worker threads.
+[Tue Oct 03 19:18:59.321847 2023] [mpm_winnt:notice] [pid 11996:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+[Tue Oct 03 19:19:01.332348 2023] [mpm_winnt:notice] [pid 14472:tid 336] AH00364: Child: All worker threads have exited.
+[Tue Oct 03 19:19:01.364083 2023] [mpm_winnt:notice] [pid 11996:tid 336] AH00430: Parent: Child process 14472 exited successfully.
