@@ -1,0 +1,99 @@
+---
+title: "Report Clone"
+author: "wlf9zy"
+date: "2023-10-04"
+output: 
+  html_document:
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Necessary Packages: 
+
+```{r}
+library(readr)
+library(tidyverse)
+```
+
+
+# Duplicated Report! My Data Below:
+
+# Load Data:
+
+```{r}
+flights <- read.csv("../data/flights.csv")
+airports <- read.csv("../data/airports.csv")
+```
+
+# Datasets:
+
+## **Flights**
+
+**A dataset with information about individual flights including: `DayofMonth`, `DayofWeek`, `Carrier`, `OriginAirportID`, `DestAirportID`, `DepDelay`, `ArrDelay`**
+
+```{r}
+head(flights)
+```
+
+## **Airports**
+
+A dataset with the `airport_id`, `city`, `state`, and `name` for 365 airports
+
+
+```{r}
+head(airports)
+```
+
+# Report Objectives:
+
+1. Determine how many airports are in New York, New Jersey, and Connecticut (the tri-state area).
+2. Visualize the average arrival and departure delays at each airport identified in Objective 1.
+3. Analyze which carriers have the most and least departure and arrival delays.
+
+# Objective 1:
+
+**Determine how many airports are in New York, New Jersey, and Connecticut (the tri-state area).**
+
+```{r}
+tristate_airports <- filter(airports, state=="NY",state=="NJ", state=="CT")
+
+n_distinct(tristate_airports$airport_id)
+
+```
+
+# Objective 2:
+
+**Visualize the average arrival and departure delays at each airport identified in Objective 1**
+
+```{r}
+flights <- flights %>%
+  pivot_longer(cols = c('DepDelay', 'ArrDelay'), names_to = 'delay_type', values_to = 'delay_min')
+
+head(flights)
+```
+
+```{r}
+colors = c(ArrDelay = '#a8dadc', DepDelay = '#219ebc')
+
+p <- ggplot(flights, aes(delay_type, delay_min, fill = delay_type)) +
+  geom_bar(position = 'dodge2', stat = 'summary', fun = 'mean') +
+  scale_fill_manual(values = colors) +
+  ylab('Minutes') +
+  xlab('Delay Type') +
+  labs(
+    title = "Average Delay by Departure and Arrival"
+  ) + theme_minimal() +
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        panel.background = element_blank(),
+        legend.position="none") +
+  coord_flip()
+
+p
+```
+
+<center>thank you</center>
+
