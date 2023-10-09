@@ -1,7 +1,7 @@
 
 library(readr)
 
-Ranking<-read.csv("C:\Users\wlovi\Downloads\World_University_Rankings_2023.csv")
+Ranking<-read.csv("../data/World_University_Rankings_2023.csv")
 View(ranking)
 library(ggplot2)
 library(dplyr)
