@@ -1,0 +1,25 @@
+---
+title: "CWD_Project"
+author: "wlf9zy, jes9hd"
+date: "2023-10-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Load Data and Begin Exploring: 
+
+```{r}
+
+library(readr)
+
+
+data <- read.csv("../data/Salary_Dataset_with_Extra_Features.csv")
+
+
+View(data)
+
+```
