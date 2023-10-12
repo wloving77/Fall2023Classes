@@ -44,7 +44,7 @@
     //loads the game from the gamestate api
     function getGameState() {
 
-        const apiUrl = "/api/gameState";
+        const apiUrl = "/api/connect4/gameState";
 
         fetch(apiUrl, { method: "GET" })
             .then((response) => {
@@ -71,7 +71,7 @@
     //starts the game using the startGame url
     function startGame() {
 
-        const apiUrl = "/api/startGame";
+        const apiUrl = "/api/connect4/startGame";
 
         // grab fresh table state from backend.
         fetch(apiUrl, {
@@ -98,7 +98,7 @@
     //one of the unordered lists that will be used to specify which column was chosen on the backend
     function makeMove(event) {
 
-        const apiUrl = "/api/makeMove";
+        const apiUrl = "/api/connect4/makeMove";
 
         //here column is parsed
         const columnID = event.currentTarget.id;
