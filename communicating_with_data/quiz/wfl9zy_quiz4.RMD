@@ -1,0 +1,128 @@
+---
+title: "Quiz4"
+author: "wlf9zy"
+date: "2023-10-13"
+output: html_document
+---
+
+
+# Quiz 4 (wfl9zy)
+
+# Load Data and Import Libraries:
+```{r}
+library(tidyverse)
+library(nycflights13)
+library(ggplot2)
+library(ggthemes)
+
+# load the data:
+data("flights")
+```
+
+# Part 1:
+
+```{r}
+flights_dat <- flights %>%
+  inner_join(airlines, by = "carrier") %>%
+  rename(airline_name = name)
+```
+
+
+## Clean Data For Q1:
+```{r}
+flights_summary <- flights_dat%>%
+  group_by(airline_name, origin)%>%
+  summarize(num_flights = n())
+head(flights_summary)
+```
+# Question 1:
+```{r}
+ggplot(flights_summary, aes(x=airline_name, y=num_flights, fill=origin)) +
+  geom_bar(stat="identity", position="dodge") +
+  labs(
+    x="Airline", 
+    y="Number of Flights", 
+    fill="origin",
+    title="The Distribution of Flights by Airline and NYC Airport") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  theme(legend.position="top")
+```
+
+
+# Question 2:
+
+
+## Answer: The above change centered the title text directly above the visual!
+```{r}
+ggplot(flights_summary, aes(x=airline_name, y=num_flights, fill=origin)) +
+  geom_bar(stat="identity", position="dodge") +
+  labs(
+    x="Airline", 
+    y="Number of Flights", 
+    fill="origin",
+    title="The Distribution of Flights by Airline and NYC Airport") + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+  theme(legend.position="top") + 
+  theme(plot.title = element_text(hjust=0.5))
+```
+
+
+# Question 3:
+
+## NOTE: In the visual displayed for the quiz, the colors do not match the hints, I followed the hints with JFK=tomato, LGA=turquoise, EWR=skyblue
+
+## Generate Plot:
+
+```{r}
+ggplot(flights_dat, aes(x = origin, y = air_time, fill = origin)) +
+  geom_boxplot(outlier.color = "purple", na.rm = TRUE) +
+  scale_fill_manual(
+    values = c("JFK" = "tomato", "LGA" = "turquoise", "EWR" = "skyblue")) +
+  labs(
+    x = "Origin",
+    y = "Air Time",
+    title = "Distribution and Quantiles of Flights by Origin"
+  ) +
+  scale_x_discrete(limits = c("JFK", "LGA", "EWR"))  # Order of boxplots
+```
+
+# Question 4:
+
+## Answer: The theme_classic removed the background grey grid to give the visual a cleaner and more sleak look.
+
+```{r}
+ggplot(flights_dat, aes(x = origin, y = air_time, fill = origin)) +
+  geom_boxplot(outlier.color = "purple", na.rm = TRUE) +
+  scale_fill_manual(
+    values = c("JFK" = "tomato", "LGA" = "turquoise", "EWR" = "skyblue")) +
+  labs(
+    x = "Origin",
+    y = "Air Time",
+    title = "Distribution and Quantiles of Flights by Origin"
+  ) +
+  scale_x_discrete(limits = c("JFK", "LGA", "EWR")) +  # Order of boxplots
+  theme_classic()
+```
+
+
+# Trying some of the other themes!
+
+```{r}
+ggplot(flights_dat, aes(x = origin, y = air_time, fill = origin)) +
+  geom_boxplot(outlier.color = "purple", na.rm = TRUE) +
+  scale_fill_manual(
+    values = c("JFK" = "tomato", "LGA" = "turquoise", "EWR" = "skyblue")) +
+  labs(
+    x = "Origin",
+    y = "Air Time",
+    title = "Distribution and Quantiles of Flights by Origin"
+  ) +
+  scale_x_discrete(limits = c("JFK", "LGA", "EWR")) +  # Order of boxplots
+  theme_economist()
+
+```
+
+
+
+
+
