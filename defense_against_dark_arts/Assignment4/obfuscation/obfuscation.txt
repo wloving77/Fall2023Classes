@@ -1,0 +1,36 @@
+Question 1: 
+
+The variable 2_ackermann_next is essentially being used to similate the if statement logic of the original ackermann.c. Using a switch with case statements 2_ackermann_next is adjusted 
+at each conditional based on the result. We see that it is initialized to 6 so that case 6 always runs, then depending on !m of case 6 we either return n+1 or continue to the if !n check.
+This continues until we reach case 3 where the recursive call is made to continue th ackermann chain. Here two temporary variables are used, the first calculates the ackermann(m-1, n) 
+that we see in ackermann.c, and the second receives the first as its second argument with ackermann(m, tmp__0); The trick was to obfuscate the conditional logic using a strange switch 
+statement design adding a dramatic amount of complexity to a relatively simple program when de-obfuscated. 
+
+The control flow logic was "flattened" to a switch with cases, essentially all of the if conditional logic was removed.
+
+Question 2:
+
+The function Subroutine1 has been split into multiple functions to obfuscate what it actually does. All it does is set I, J, and K to c, b, and a respectively, then sum them all together
+10 times. Subroutine1 essentially becomes a coordinator of the functions it's functionality was split into.
+
+Question 3: 
+
+int barfoo(int x, int y){
+    int a[100];
+    x=20;
+
+    while(x>=10){
+        x--;
+        a[x]=10;
+
+        if(x==4){
+            x-=2;
+        }
+    } 
+
+    if(x<10){
+        x+=5;
+    }
+
+    return x;
+}
