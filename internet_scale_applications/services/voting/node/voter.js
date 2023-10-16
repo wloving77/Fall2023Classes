@@ -33,11 +33,17 @@ server.on("request", async (request, response) => {
                 response.end(JSON.stringify(data));
                 break;
             }
+        case "/":
+            console.log(`Nothing to Return for Case ${parsedUrl.pathname}`);
+            response.statusCode = 404;
+            response.end();
+            break;
     }
 });
 
-
-const mongoUrl = "mongodb://localhost:27017";
+const mongoPort = 27017;
+const mongoHost = "localhost";
+const mongoUrl = `mongodb://${mongoHost}:${mongoPort}`;
 const db = "voter";
 
 async function getCandidates() {

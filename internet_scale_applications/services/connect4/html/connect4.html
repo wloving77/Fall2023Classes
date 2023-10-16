@@ -157,11 +157,11 @@
                 img.className = 'listItem';
                 const gameBoardNumber = gameBoardData[colIndex][rowIndex];
                 if (gameBoardNumber == -1) {
-                    img.src = "img/empty-circle-connect4.png";
+                    img.src = "/img/empty-circle-connect4.png";
                 } else if (gameBoardNumber == 0) {
-                    img.src = "img/red-circle-connect4.png";
+                    img.src = "/img/red-circle-connect4.png";
                 } else {
-                    img.src = "img/blue-circle-connect4.png";
+                    img.src = "/img/blue-circle-connect4.png";
                 }
                 img.innerHTML = gameBoardNumber;
                 ul.appendChild(img);
