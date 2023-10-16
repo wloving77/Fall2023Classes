@@ -1290,3 +1290,621 @@ Apache server interrupted...
 Apache server interrupted...
 [Tue Oct 03 19:19:01.332348 2023] [mpm_winnt:notice] [pid 14472:tid 336] AH00364: Child: All worker threads have exited.
 [Tue Oct 03 19:19:01.364083 2023] [mpm_winnt:notice] [pid 11996:tid 336] AH00430: Parent: Child process 14472 exited successfully.
+[Fri Oct 13 13:15:12.124348 2023] [mpm_winnt:notice] [pid 13992:tid 344] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Fri Oct 13 13:15:12.125347 2023] [mpm_winnt:notice] [pid 13992:tid 344] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Fri Oct 13 13:15:12.125347 2023] [core:notice] [pid 13992:tid 344] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Fri Oct 13 13:15:12.130347 2023] [mpm_winnt:notice] [pid 13992:tid 344] AH00418: Parent: Created child process 9700
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 9700:tid 336] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 13 13:17:49.627451 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:17:49.627451 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3187] AH01114: HTTP: failed to make connection to backend: localhost
+[Fri Oct 13 13:19:21.961052 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:21.961052 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3198] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:26.019233 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:26.019233 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3200] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:30.096458 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:30.096458 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3216] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:34.140172 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:34.140172 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3227] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:38.188723 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:38.188723 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3232] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:42.250993 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:42.250993 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3238] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:46.285736 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:46.285736 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3247] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:48.962694 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:48.962694 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3262] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:49.964520 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:49.964520 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3265] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:50.355088 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:50.355829 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3267] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:51.967051 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:51.967051 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3270] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:52.943067 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:52.943773 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3274] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:53.950424 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:53.950424 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3276] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:54.403816 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:54.403816 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3279] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:55.958763 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:55.958763 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3282] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:56.946642 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:56.946642 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3286] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:57.940583 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:57.940583 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3289] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:58.458901 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:58.458901 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3292] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:19:59.937623 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:19:59.937623 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3296] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:00.932820 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:00.932820 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3301] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:01.923532 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:01.923532 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3303] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:02.490484 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:02.490484 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3307] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:03.938792 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:03.938792 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3311] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:04.940815 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:04.940815 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3314] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:05.946492 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:05.946492 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3316] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:06.566058 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:06.566058 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3319] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:07.960745 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:07.960745 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3322] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:08.967683 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:08.967683 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3326] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:09.953841 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:09.953841 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3329] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:10.609170 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:10.609170 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3332] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:11.984285 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:11.984285 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3335] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:12.969355 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:12.969355 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3339] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:13.980244 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:13.980244 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3341] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:14.686994 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:14.686994 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3344] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:15.977844 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:15.977844 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3350] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:16.969748 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:16.969748 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3358] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:17.951592 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:17.951592 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3360] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:18.733166 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:18.733166 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3365] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:20.001503 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:20.001503 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3370] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:20.977923 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:20.977923 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3375] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:21.933012 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:21.933012 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3377] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:22.782233 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:22.782233 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3380] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:23.944488 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:23.944488 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3383] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:24.944365 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:24.944365 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3387] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:25.970670 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:25.970670 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3389] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:26.861059 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:26.861059 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3392] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:27.964836 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:27.964836 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3395] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:28.961599 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:28.961599 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3399] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:29.978169 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:29.978169 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3403] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:30.912283 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:30.912283 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3406] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:31.972592 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:31.972592 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3409] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:32.954097 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:32.954097 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3414] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:33.953077 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:33.953077 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3416] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:34.952578 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:34.952578 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3419] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:20:34.970077 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:20:34.970077 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3421] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:10.582926 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:10.582926 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3429] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:14.660579 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:14.660579 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3435] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:18.724518 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:18.724518 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3438] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:22.797320 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:22.797320 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3442] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:26.853435 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:26.853435 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3445] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:30.933679 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:30.933679 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3448] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:35.017208 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:35.017208 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3451] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:37.961974 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:37.961974 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3454] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:38.931649 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:38.931649 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3456] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:39.061558 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:39.061558 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3458] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:40.997701 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:40.997701 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3461] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:41.987296 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:41.987296 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3467] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:42.979998 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:42.979998 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3469] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:43.093330 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:43.093330 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3472] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:44.996927 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:44.996927 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3475] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:45.945121 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:45.945121 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3479] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:46.954121 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:46.954121 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3481] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:47.160400 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:47.160400 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3484] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:48.946831 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:48.946831 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3487] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:49.964338 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:49.964338 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3491] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:50.965767 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:50.965767 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3493] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:51.220227 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:51.220227 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3496] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:52.956504 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:52.956504 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3499] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:53.954882 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:53.954882 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3503] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:54.938295 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:54.938295 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3505] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:55.273100 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:55.273100 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3508] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:57.007225 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:57.007225 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3512] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:57.962021 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:57.962021 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3515] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:58.947935 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:58.947935 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3517] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:21:59.328882 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:21:59.328882 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3520] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:00.977094 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:00.977094 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3523] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:01.957013 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:01.957013 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3527] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:02.970152 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:02.970152 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3529] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:03.378427 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:03.378427 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3532] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:04.966220 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:04.966220 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3535] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:05.924715 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:05.924715 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3539] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:06.934689 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:06.934689 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3541] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:07.441943 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:07.441943 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3544] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:08.954690 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:08.954690 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3547] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:09.946820 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:09.946820 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3551] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:10.948263 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:10.948263 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3553] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:11.481951 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:11.481951 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3556] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:12.937402 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:12.937402 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3559] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:13.970592 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:13.972110 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3563] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:14.942637 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:14.942637 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3565] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:15.523948 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:15.524662 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3568] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:16.981716 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:16.981716 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3571] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:17.925959 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:17.926699 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3575] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:18.951900 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:18.951900 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3577] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:19.564853 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:19.564853 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3581] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:20.945698 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:20.945698 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3584] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:21.946633 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:21.946633 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3588] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:22.940700 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:22.940700 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3590] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:23.616702 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:23.616702 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3593] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:24.960636 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:24.960636 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3596] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:25.962360 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:25.963104 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3600] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:26.933337 2023] [proxy:error] [pid 9700:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:26.933337 2023] [proxy_http:error] [pid 9700:tid 968] [client ::1:3602] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:27.697990 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:27.697990 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3605] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:28.955245 2023] [proxy:error] [pid 9700:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:28.955245 2023] [proxy_http:error] [pid 9700:tid 972] [client ::1:3608] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:29.947918 2023] [proxy:error] [pid 9700:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:29.947918 2023] [proxy_http:error] [pid 9700:tid 1012] [client ::1:3612] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:30.949953 2023] [proxy:error] [pid 9700:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:30.949953 2023] [proxy_http:error] [pid 9700:tid 964] [client ::1:3614] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:22:31.754051 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:22:31.754051 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3617] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:23:12.972184 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:23:12.972184 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3622] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:24:12.979636 2023] [proxy:error] [pid 9700:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:24:12.979636 2023] [proxy_http:error] [pid 9700:tid 976] [client ::1:3625] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:24:55.350365 2023] [mpm_winnt:notice] [pid 13992:tid 344] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+[Fri Oct 13 13:24:57.367373 2023] [mpm_winnt:notice] [pid 9700:tid 336] AH00364: Child: All worker threads have exited.
+[Fri Oct 13 13:24:57.432903 2023] [mpm_winnt:notice] [pid 13992:tid 344] AH00430: Parent: Child process 9700 exited successfully.
+[Fri Oct 13 13:24:59.187080 2023] [mpm_winnt:notice] [pid 12708:tid 356] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Fri Oct 13 13:24:59.189588 2023] [mpm_winnt:notice] [pid 12708:tid 356] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Fri Oct 13 13:24:59.189588 2023] [core:notice] [pid 12708:tid 356] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Fri Oct 13 13:24:59.206085 2023] [mpm_winnt:notice] [pid 12708:tid 356] AH00418: Parent: Created child process 18036
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 18036:tid 336] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 13 13:25:12.967731 2023] [proxy:error] [pid 18036:tid 1004] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:25:12.967731 2023] [proxy_http:error] [pid 18036:tid 1004] [client ::1:3632] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:26:12.936777 2023] [proxy:error] [pid 18036:tid 1004] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:26:12.936777 2023] [proxy_http:error] [pid 18036:tid 1004] [client ::1:3636] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:26:16.557602 2023] [mpm_winnt:notice] [pid 12708:tid 356] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Fri Oct 13 13:26:18.581767 2023] [mpm_winnt:notice] [pid 18036:tid 336] AH00364: Child: All worker threads have exited.
+[Fri Oct 13 13:26:18.640787 2023] [mpm_winnt:notice] [pid 12708:tid 356] AH00430: Parent: Child process 18036 exited successfully.
+[Fri Oct 13 13:26:21.137736 2023] [mpm_winnt:notice] [pid 6432:tid 348] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Fri Oct 13 13:26:21.139736 2023] [mpm_winnt:notice] [pid 6432:tid 348] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Fri Oct 13 13:26:21.139736 2023] [core:notice] [pid 6432:tid 348] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Fri Oct 13 13:26:21.146732 2023] [mpm_winnt:notice] [pid 6432:tid 348] AH00418: Parent: Created child process 6312
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 6312:tid 336] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 13 13:26:23.440004 2023] [authz_core:error] [pid 6312:tid 980] [client ::1:3642] AH01630: client denied by server configuration: C:/c
+[Fri Oct 13 13:27:12.966525 2023] [proxy:error] [pid 6312:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:27:12.966525 2023] [proxy_http:error] [pid 6312:tid 976] [client ::1:3643] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:27:52.746841 2023] [authz_core:error] [pid 6312:tid 976] [client ::1:3659] AH01630: client denied by server configuration: C:/c
+[Fri Oct 13 13:27:53.513916 2023] [authz_core:error] [pid 6312:tid 976] [client ::1:3659] AH01630: client denied by server configuration: C:/c
+[Fri Oct 13 13:28:12.954350 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:28:12.954350 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3660] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:29:12.951021 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:29:12.951021 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3663] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:30:12.961733 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:30:12.961733 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3667] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:31:12.927241 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:31:12.927241 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3670] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:32:12.920303 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:32:12.920303 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3675] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:33:12.928770 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:33:12.928770 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3683] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:34:12.955060 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:34:12.955060 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3695] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:35:12.955499 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:35:12.956070 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3708] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:36:12.970047 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:36:12.970047 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3716] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:37:12.952883 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:37:12.953480 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3725] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:38:12.940646 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:38:12.940646 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3734] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:39:12.962028 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:39:12.962028 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3746] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:40:12.939643 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:40:12.939643 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3766] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:41:12.938260 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:41:12.938260 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3833] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:42:12.952568 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:42:12.953291 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3837] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:43:12.953399 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:43:12.953934 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3849] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:44:12.931703 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:44:12.931703 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3865] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:45:12.938933 2023] [proxy:error] [pid 6312:tid 980] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 13:45:12.938933 2023] [proxy_http:error] [pid 6312:tid 980] [client ::1:3888] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Fri Oct 13 13:45:27.296475 2023] [mpm_winnt:notice] [pid 6432:tid 348] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Fri Oct 13 13:45:29.308302 2023] [mpm_winnt:notice] [pid 6312:tid 336] AH00364: Child: All worker threads have exited.
+[Fri Oct 13 13:45:29.340003 2023] [mpm_winnt:notice] [pid 6432:tid 348] AH00430: Parent: Child process 6312 exited successfully.
+[Fri Oct 13 21:24:35.997350 2023] [mpm_winnt:notice] [pid 13960:tid 372] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Fri Oct 13 21:24:35.997350 2023] [mpm_winnt:notice] [pid 13960:tid 372] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Fri Oct 13 21:24:35.997350 2023] [core:notice] [pid 13960:tid 372] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Fri Oct 13 21:24:35.997350 2023] [mpm_winnt:notice] [pid 13960:tid 372] AH00418: Parent: Created child process 17860
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 17860:tid 336] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 13 21:24:46.577930 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:24:46.577930 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9230] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:24:50.630245 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:24:50.630245 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9231] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:24:54.689192 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:24:54.689192 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9236] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:24:58.737322 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:24:58.737322 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9242] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:02.809296 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:02.809296 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9245] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:06.884839 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:06.884839 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9248] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:10.947156 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:10.947156 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9251] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:13.628184 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:13.628184 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9254] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:14.614056 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:14.614056 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9256] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:14.987771 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:14.987771 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9258] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:16.599627 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:16.599627 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9261] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:17.633187 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:17.633187 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9265] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:18.634208 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:18.634208 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9267] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:19.085798 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:19.085798 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9270] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:20.608187 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:20.608187 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9273] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:21.616262 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:21.616262 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9277] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:22.654164 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:22.654164 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9279] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:23.164813 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:23.164813 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9282] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:24.633643 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:24.633643 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9285] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:25.628480 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:25.628480 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9289] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:26.646976 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:26.646976 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9291] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:27.223992 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:27.223992 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9294] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:28.647128 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:28.647128 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9297] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:29.639797 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:29.639797 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9301] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:30.610209 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:30.610209 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9303] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:31.276310 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:31.276310 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9306] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:32.618935 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:32.618935 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9309] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:33.625970 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:33.625970 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9313] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:34.651447 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:34.651447 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9315] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:35.333667 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:35.333667 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9318] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:36.641831 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:36.641831 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9324] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:37.613162 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:37.613162 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9328] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:38.623109 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:38.623109 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9330] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:39.395667 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:39.395667 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9333] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:40.611514 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:40.611514 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9339] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:41.613530 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:41.613530 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9346] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:42.631569 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:42.631569 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9349] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:43.457076 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:43.457076 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9351] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:44.612687 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:44.612687 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9354] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:45.634022 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:45.634022 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9358] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:46.633225 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:46.633225 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9360] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:47.534124 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:47.534124 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9363] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:48.619678 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:48.619678 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9366] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:49.629314 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:49.629314 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9370] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:50.626698 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:50.626698 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9372] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:51.605572 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:51.605572 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9375] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:52.619857 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:52.619857 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9378] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:53.604470 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:53.604470 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9381] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:54.615772 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:54.615772 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9384] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:55.626139 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:55.626139 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9387] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:55.658248 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:55.658248 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9390] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:57.660502 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:57.660502 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9393] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:58.631626 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:58.631626 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9397] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:59.617117 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:59.617117 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9399] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:25:59.719756 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:25:59.719756 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9402] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:01.614852 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:01.614852 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9405] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:02.618859 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:02.618859 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9409] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:03.641268 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:03.641268 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9411] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:03.782253 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:03.782253 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9414] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:05.634459 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:05.634459 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9417] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:07.869435 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:07.869435 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9422] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:11.954906 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:11.954906 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9425] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:16.011998 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:16.011998 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9428] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:19.622937 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:19.622937 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9431] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:20.090465 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:20.090465 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9433] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:21.643183 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:21.643183 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9435] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:22.659452 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:22.659452 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9439] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:23.651797 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:23.651797 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9441] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:24.168719 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:24.168719 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9444] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:25.612963 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:25.612963 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9448] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:26.615864 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:26.615864 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9452] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:27.638104 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:27.638104 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9454] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:28.236500 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:28.244158 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9457] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:29.622603 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:29.622603 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9460] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:30.649274 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:30.649274 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9464] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:31.611720 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:31.611720 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9466] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:32.330752 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:32.330752 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9469] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:33.613856 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:33.613856 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9472] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:34.627724 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:34.627724 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9477] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:35.626059 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:35.626059 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9479] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:36.377363 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:36.377363 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9482] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:37.586460 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:37.586460 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9485] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:38.584475 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:38.584475 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9489] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:39.587164 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:39.587164 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9491] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:40.444872 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:40.444872 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9494] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:41.616764 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:41.616764 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9497] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:42.620122 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:42.620122 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9501] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:43.624162 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:43.624162 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9503] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:44.511601 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:44.511601 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9506] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:45.625243 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:45.625243 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9509] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:46.630267 2023] [proxy:error] [pid 17860:tid 968] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:46.630267 2023] [proxy_http:error] [pid 17860:tid 968] [client ::1:9513] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:47.616436 2023] [proxy:error] [pid 17860:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:47.616436 2023] [proxy_http:error] [pid 17860:tid 972] [client ::1:9515] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:48.586686 2023] [proxy:error] [pid 17860:tid 1012] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:48.586686 2023] [proxy_http:error] [pid 17860:tid 1012] [client ::1:9518] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:49.593392 2023] [proxy:error] [pid 17860:tid 976] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:49.593392 2023] [proxy_http:error] [pid 17860:tid 976] [client ::1:9521] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:26:50.140964 2023] [proxy:error] [pid 17860:tid 1016] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
+[Fri Oct 13 21:26:50.140964 2023] [proxy_http:error] [pid 17860:tid 1016] [client ::1:9524] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/connect4/connect4.html
+[Fri Oct 13 21:27:09.589731 2023] [mpm_winnt:notice] [pid 13960:tid 372] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Fri Oct 13 21:27:11.602174 2023] [mpm_winnt:notice] [pid 17860:tid 336] AH00364: Child: All worker threads have exited.
+[Fri Oct 13 21:27:11.649259 2023] [mpm_winnt:notice] [pid 13960:tid 372] AH00430: Parent: Child process 17860 exited successfully.
+[Fri Oct 13 21:27:13.706280 2023] [mpm_winnt:notice] [pid 9184:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Fri Oct 13 21:27:13.710824 2023] [mpm_winnt:notice] [pid 9184:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Fri Oct 13 21:27:13.710824 2023] [core:notice] [pid 9184:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Fri Oct 13 21:27:13.712041 2023] [mpm_winnt:notice] [pid 9184:tid 336] AH00418: Parent: Created child process 16644
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 16644:tid 336] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 13 21:27:15.025761 2023] [authz_core:error] [pid 16644:tid 1004] [client ::1:9531] AH01630: client denied by server configuration: C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/services/voter
+[Fri Oct 13 21:27:35.648815 2023] [mpm_winnt:notice] [pid 9184:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Fri Oct 13 21:28:05.653205 2023] [mpm_winnt:notice] [pid 9184:tid 336] AH00431: Parent: Forcing termination of child process 16644
+[Fri Oct 13 21:28:26.975788 2023] [mpm_winnt:notice] [pid 19288:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Fri Oct 13 21:28:26.975788 2023] [mpm_winnt:notice] [pid 19288:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Fri Oct 13 21:28:26.975788 2023] [core:notice] [pid 19288:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Fri Oct 13 21:28:26.979779 2023] [mpm_winnt:notice] [pid 19288:tid 336] AH00418: Parent: Created child process 20028
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 20028:tid 332] AH00354: Child: Starting 64 worker threads.
+[Fri Oct 13 21:28:31.317855 2023] [mpm_winnt:notice] [pid 19288:tid 336] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Fri Oct 13 21:29:01.333254 2023] [mpm_winnt:notice] [pid 19288:tid 336] AH00431: Parent: Forcing termination of child process 20028
+[Sun Oct 15 01:02:51.332853 2023] [mpm_winnt:notice] [pid 19568:tid 388] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Sun Oct 15 01:02:51.332853 2023] [mpm_winnt:notice] [pid 19568:tid 388] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Sun Oct 15 01:02:51.332853 2023] [core:notice] [pid 19568:tid 388] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Apache24'
+[Sun Oct 15 01:02:51.340854 2023] [mpm_winnt:notice] [pid 19568:tid 388] AH00418: Parent: Created child process 18428
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 18428:tid 332] AH00354: Child: Starting 64 worker threads.
+[Sun Oct 15 01:13:55.306512 2023] [proxy_http:error] [pid 18428:tid 992] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10345] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:13:55.306512 2023] [proxy:error] [pid 18428:tid 992] [client ::1:10345] AH00898: Error reading from remote server returned by /api/voting/candidates
+[Sun Oct 15 01:14:38.814384 2023] [proxy_http:error] [pid 18428:tid 968] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10346] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:14:38.814384 2023] [proxy:error] [pid 18428:tid 968] [client ::1:10346] AH00898: Error reading from remote server returned by /api/voting/
+[Sun Oct 15 01:14:45.091983 2023] [proxy_http:error] [pid 18428:tid 964] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:10369] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:15:47.623809 2023] [proxy_http:error] [pid 18428:tid 992] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10384] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:15:47.623809 2023] [proxy:error] [pid 18428:tid 992] [client ::1:10384] AH00898: Error reading from remote server returned by /api/voting
+[Sun Oct 15 01:15:52.881949 2023] [proxy_http:error] [pid 18428:tid 964] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10410] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:15:52.881949 2023] [proxy:error] [pid 18428:tid 964] [client ::1:10410] AH00898: Error reading from remote server returned by /api/voting
+[Sun Oct 15 01:15:56.071708 2023] [proxy_http:error] [pid 18428:tid 968] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10411] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:15:56.071708 2023] [proxy:error] [pid 18428:tid 968] [client ::1:10411] AH00898: Error reading from remote server returned by /api/voting
+[Sun Oct 15 01:19:22.111488 2023] [proxy_http:error] [pid 18428:tid 968] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10455] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:19:22.111488 2023] [proxy:error] [pid 18428:tid 968] [client ::1:10455] AH00898: Error reading from remote server returned by /api/voting
+[Sun Oct 15 01:28:07.309770 2023] [proxy_http:error] [pid 18428:tid 964] (OS 10060)A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.  : [client ::1:10560] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:28:07.309770 2023] [proxy:error] [pid 18428:tid 964] [client ::1:10560] AH00898: Error reading from remote server returned by /api/voting/voters
+[Sun Oct 15 01:28:56.846832 2023] [proxy_http:error] [pid 18428:tid 964] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:10590] AH01102: error reading status line from remote server localhost:3001
+[Sun Oct 15 01:28:56.846832 2023] [proxy:error] [pid 18428:tid 964] [client ::1:10590] AH00898: Error reading from remote server returned by /api/voting/voters
+[Sun Oct 15 01:29:04.999517 2023] [proxy:error] [pid 18428:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3001 (localhost:3001) failed
+[Sun Oct 15 01:29:04.999517 2023] [proxy_http:error] [pid 18428:tid 964] [client ::1:10590] AH01114: HTTP: failed to make connection to backend: localhost
+[Sun Oct 15 01:29:35.180506 2023] [proxy:error] [pid 18428:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3001 (localhost:3001) failed
+[Sun Oct 15 01:29:35.180506 2023] [proxy_http:error] [pid 18428:tid 964] [client ::1:10599] AH01114: HTTP: failed to make connection to backend: localhost
+[Sun Oct 15 01:30:14.657863 2023] [proxy:error] [pid 18428:tid 964] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3001 (localhost:3001) failed
+[Sun Oct 15 01:30:14.657863 2023] [proxy_http:error] [pid 18428:tid 964] [client ::1:10613] AH01114: HTTP: failed to make connection to backend: localhost
+[Sun Oct 15 01:31:38.762066 2023] [mpm_winnt:notice] [pid 19568:tid 388] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+Apache server interrupted...
+[Sun Oct 15 01:32:08.777752 2023] [mpm_winnt:notice] [pid 19568:tid 388] AH00431: Parent: Forcing termination of child process 18428

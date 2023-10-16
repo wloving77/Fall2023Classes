@@ -6,32 +6,50 @@ const http = require("http");
 const url = require("url");
 const { MongoClient } = require('mongodb');
 
-const express = require("express");
-const app = express();
-const port = 3001;
-app.use(express.json());
+const PORT = 3001;
+const server = http.createServer();
 
-app.listen(port, "localhost", () => {
-    console.log("Listening on localhost:" + port);
+server.listen(PORT, () => {
+    console.log(`Server Listening on http://localhost:${PORT}`);
 });
 
+
+server.on("request", async (request, response) => {
+    const parsedUrl = url.parse(request.url, true);
+    switch (parsedUrl.pathname) {
+        case "/candidates":
+            await getCandidates();
+            break;
+        case "/candidates/voters":
+            await getCandidatesWithBallots();
+            break;
+    }
+});
+
+
 const mongoUrl = "mongodb://localhost:27017";
-const client = new MongoClient(mongoUrl);
+const db = "voter";
+
+async function getCandidates() {
+    const collection = "candidates";
+
+    const client = new MongoClient(mongoUrl);
+    const database = client.db(db);
+    const candidates = database.collection(collection);
+
+    return candidates.find({}).toArray();
+
+}
 
 
-const dbname = "voter";
+async function getCandidatesWithBallots() {
+    const collection = "can"
 
-let db;
+}
+
+
 
 //establish mongodb connection to be used in the endpoints
-
-client.db(dbname).then((err, db) => {
-    if (err) {
-        console.log("Error establishing Database Connection");
-    } else {
-        return db;
-    }
-})
 
 db = client.db(dbname);
 
