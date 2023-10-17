@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 
+<html>
+
 <head>
     <title> YEET </title>
 </head>
 
 <body>
     <h1> This will be the voter page one day</h1>
+
+
+    <button id="getVoters" onClick="getVoters()">Get Voters?</button>
+
 </body>
+
+</html>
+
+<script>
+
+    let endpoints = {};
+    endpoints['voters'] = "/api/voting/voters"
+
+    // Here we need to add code to load all of the voters for the default page, functionality will be fleshed out later. 
+    function getVoters() {
+        fetch(endpoints['voters'])
+            .then(response => {
+                if (!response.ok) {
+                    console.log(`Unknown Error Fetching Voters: ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.log(`Error Handling Promise ${error}`);
+            })
+
+
+    }
+
+
+</script>
