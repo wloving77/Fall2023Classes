@@ -14,6 +14,8 @@ server.listen(PORT, () => {
 });
 
 
+//Just Data Dumps, no post requests
+
 server.on("request", async (request, response) => {
     const parsedUrl = url.parse(request.url, true);
     switch (parsedUrl.pathname) {

@@ -198,6 +198,12 @@ g6
 
 ### Flavanoids by Type Histogram
 
+## Explanation!
+
+- This table creates and overlays three different types of wine, these represent the three different colors. 
+- The y-axis is the count of wines of each type of soil. 
+- This graph fits information about three different bins, one for each soil type, all into one convenient super-imposed visual.
+
 ```{r}
 # Lets split up the data to illustrate the manual way of making the plots
 Type1 <- wine %>% filter(Type == 1)
@@ -230,6 +236,10 @@ g7a
 ```
 
 
+## Explanation!
+
+- This graph uses a for loop to iterate over adding each histogram, dont repeat yourself!
+
 ```{r}
 # Manual method with for-loop that temp subsets data by soil type on the fly
 my_colors <- c("#00AFBB","#E7B800","#FC4E07")
@@ -253,6 +263,12 @@ g7b
 ```
 
 
+
+## Explanation!
+
+- This graph uses built in plotly functionality to automate the entire process! 
+
+
 ```{r}
 # Automated method, ggplot style
 g7c <- wine %>% 
@@ -272,9 +288,11 @@ g7c
 ```
 
 
-
-
 ## Scatter plot
+
+## Explanation!
+
+- This visual graphs a scatter plot of flavinoids and proline and then sets the color of the point to be based on the soil type! 
 
 ```{r}
 # Manual subset method with more control for formatting
@@ -300,6 +318,11 @@ g8a
 ```
 
 
+## Explanation!
+
+- This plot once again leverages built in plotly functionality to accomplish the same task more easily.
+
+
 ```{r}
 # Automated method, ggplot style
 g8b <- wine %>% 
@@ -317,6 +340,11 @@ g8b
 
 
 ### 3D Scatterplot
+
+
+## Explanation!
+
+- This plot graphs three different axis to create a 3d manipulatable visual!
 
 ```{r}
 g9a <- plot_ly(type = 'scatter3d', mode = 'markers') 
@@ -341,6 +369,10 @@ g9a
 ```
 
 
+## Explanation!
+
+- This plot accomplishes the same task, but uses different colors and a more streamlined plotly approach to visual generation
+
 ```{r}
 g9b <- wine %>% plot_ly( opacity = 0.5, type = 'scatter3d', mode = 'markers') %>% 
   add_trace(x = ~Flavanoids, y = ~Proline, z = ~Alcalinity, color = ~Type,
@@ -357,6 +389,11 @@ g9b
 
 ## Line Plot
 (From plotly examples)
+
+## Explanation!
+
+- This plot creates a scatter plot but uses the lines mode to draw a line through the data for each type in the ~supp column of the data
+
 ```{r}
 
 # Obtain data from subset of tooth growth dataset

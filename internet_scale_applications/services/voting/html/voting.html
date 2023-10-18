@@ -7,10 +7,36 @@
 </head>
 
 <body>
-    <h1> This will be the voter page one day</h1>
 
+    <table id="voterTable">
+        <thead>
+            <tr>
+                <th>Voters</th>
+                <th>Votes to Cast</th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <button id="getVoters" onClick="getVoters()">Get Voters?</button>
+        </tbody>
+    </table>
+
+    <table id="candidateTable">
+        <thead>
+            <tr>
+                <th>Candidates</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <br>
+    <button id="getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
+    <br><br>
+    <button id="getCandidates" onClick="fetchAndDisplayCandidates()">View Candidates?</button>
+
 
 </body>
 
@@ -19,26 +45,138 @@
 <script>
 
     let endpoints = {};
-    endpoints['voters'] = "/api/voting/voters"
 
-    // Here we need to add code to load all of the voters for the default page, functionality will be fleshed out later. 
-    function getVoters() {
-        fetch(endpoints['voters'])
+    /* API HIT FUNCTIONS */
+
+    async function getVoters() {
+
+        const apiUrl = "/api/voting/voters";
+
+        return fetch(apiUrl, { method: "GET" })
             .then(response => {
                 if (!response.ok) {
                     console.log(`Unknown Error Fetching Voters: ${response.status} ${response.statusText}`);
+                    return null;
                 }
                 return response.json();
             })
-            .then(data => {
-                console.log(data);
+            .catch(error => {
+                console.log(`Error Handling Promise in getVoters: ${error}`);
+                return null;
+            })
+    }
+
+    async function getCandidates() {
+
+        const apiUrl = "/api/voting/candidates";
+
+        return fetch(apiUrl, { method: "GET" })
+            .then(response => {
+                if (!response.ok) {
+                    console.log(`Unknown Error Fetching Voters: ${response.status} ${response.statusText}`);
+                    return null;
+                }
+                return response.json();
             })
             .catch(error => {
-                console.log(`Error Handling Promise ${error}`);
+                console.log(`Error Handling Promise in getVoters: ${error}`);
+                return null;
             })
+    }
 
+    /* DOM FUNCTIONS */
+
+    function displayVoters(voters) {
+        let voterTable = document.getElementById("voterTable");
+        let candidateTable = document.getElementById("candidateTable");
+
+        if (!voters) {
+            console.error("Voters Invalid in displayVoters()");
+            return;
+        }
+
+        voterTable.querySelector("tbody").innerHTML = "";
+        candidateTable.style.display = "none";
+
+        for (let i = 0; i < voters.length; i++) {
+            let newRow = document.createElement("tr");
+            let voterName = document.createElement("td");
+            let voteCount = document.createElement("td");
+
+            voterName.innerHTML = voters[i].name;
+            voteCount.innerHTML = voters[i].votes_avail;
+
+            newRow.appendChild(voterName);
+            newRow.appendChild(voteCount);
+
+            voterTable.querySelector("tbody").appendChild(newRow);
+        }
+
+        voterTable.style.display = "block";
+    }
+
+    function displayCandidates(candidates) {
+        let candidateTable = document.getElementById("candidateTable");
+        let voterTable = document.getElementById("voterTable");
+
+        if (!candidates) {
+            console.error("Voters Invalid in displayVoters()");
+            return;
+        }
+
+        candidateTable.querySelector("tbody").innerHTML = "";
+        voterTable.style.display = "none";
+
+
+        for (let i = 0; i < candidates.length; i++) {
+            let newRow = document.createElement("tr");
+
+            let name = document.createElement("td");
+            let numVotes = document.createElement("td");
+
+            name.innerHTML = candidates[i].name;
+            numVotes.innerHTML = candidates[i].votes;
+
+            newRow.appendChild(name);
+            newRow.appendChild(numVotes)
+
+            candidateTable.querySelector("tbody").appendChild(newRow);
+
+        }
+
+        candidateTable.style.display = "block";
 
     }
 
 
+    /* Functions Called from DOM */
+
+    function fetchAndDisplayVoters() {
+        getVoters().then(data => {
+            displayVoters(data);
+        }).catch(err => {
+            console.error("Error in fetchAndDisplayVoters()" + err);
+        });
+    }
+
+
+    function fetchAndDisplayCandidates() {
+        getCandidates().then(data => {
+            displayCandidates(data);
+        }).catch(err => {
+            console.error("Error Displaying Candidates " + err);
+        })
+    }
+
 </script>
+
+
+<style>
+    #voterTable {
+        display: none;
+    }
+
+    #candidateTable {
+        display: none;
+    }
+</style>
