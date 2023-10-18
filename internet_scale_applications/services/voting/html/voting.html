@@ -8,29 +8,33 @@
 
 <body>
 
-    <table id="voterTable">
-        <thead>
-            <tr>
-                <th>Voters</th>
-                <th>Votes to Cast</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="tableContainer">
+        <table id="voterTable">
+            <thead>
+                <tr>
+                    <th>Voters</th>
+                    <th>Votes to Cast</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
-    <table id="candidateTable">
-        <thead>
-            <tr>
-                <th>Candidates</th>
-                <th>Votes</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="tableContainer">
+        <table id="candidateTable">
+            <thead>
+                <tr>
+                    <th>Candidates</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
     <br>
     <button id="getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
@@ -44,54 +48,39 @@
 
 <script>
 
-    let endpoints = {};
-
-    /* API HIT FUNCTIONS */
-
-    async function getVoters() {
-
-        const apiUrl = "/api/voting/voters";
-
-        return fetch(apiUrl, { method: "GET" })
-            .then(response => {
-                if (!response.ok) {
-                    console.log(`Unknown Error Fetching Voters: ${response.status} ${response.statusText}`);
-                    return null;
-                }
-                return response.json();
-            })
-            .catch(error => {
-                console.log(`Error Handling Promise in getVoters: ${error}`);
-                return null;
-            })
+    // all API endpoints will be in this object:
+    let endpoints = {
+        "candidates": "/api/voting/candidates",
+        "voters": "/api/voting/voters",
     }
+    /* API Request FUNCTIONS */
 
-    async function getCandidates() {
-
-        const apiUrl = "/api/voting/candidates";
+    async function apiGETRequest(apiUrl) {
 
         return fetch(apiUrl, { method: "GET" })
             .then(response => {
                 if (!response.ok) {
-                    console.log(`Unknown Error Fetching Voters: ${response.status} ${response.statusText}`);
+                    console.log(`Unknown Error Fetching from ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
                     return null;
                 }
                 return response.json();
             })
             .catch(error => {
-                console.log(`Error Handling Promise in getVoters: ${error}`);
+                console.log(`Error Handling Promise in apiGETRequest: ${error}`);
                 return null;
             })
     }
 
     /* DOM FUNCTIONS */
 
+    //separate module to enforce DRY as we perform the same actions for displaying both candidates and voters
+
     function displayVoters(voters) {
         let voterTable = document.getElementById("voterTable");
         let candidateTable = document.getElementById("candidateTable");
 
         if (!voters) {
-            console.error("Voters Invalid in displayVoters()");
+            console.error("Voters variable invalid in displayVoters()");
             return;
         }
 
@@ -109,6 +98,10 @@
             newRow.appendChild(voterName);
             newRow.appendChild(voteCount);
 
+            newRow.classList.add("tableRow");
+            newRow.id = "voterRow-" + i;
+
+
             voterTable.querySelector("tbody").appendChild(newRow);
         }
 
@@ -120,7 +113,7 @@
         let voterTable = document.getElementById("voterTable");
 
         if (!candidates) {
-            console.error("Voters Invalid in displayVoters()");
+            console.error("Candidates variable invalid in displayCandidates()");
             return;
         }
 
@@ -140,6 +133,9 @@
             newRow.appendChild(name);
             newRow.appendChild(numVotes)
 
+            newRow.classList.add("tableRow");
+            newRow.id = "candidateRow-" + i;
+
             candidateTable.querySelector("tbody").appendChild(newRow);
 
         }
@@ -152,7 +148,7 @@
     /* Functions Called from DOM */
 
     function fetchAndDisplayVoters() {
-        getVoters().then(data => {
+        apiGETRequest(endpoints['voters']).then(data => {
             displayVoters(data);
         }).catch(err => {
             console.error("Error in fetchAndDisplayVoters()" + err);
@@ -161,7 +157,7 @@
 
 
     function fetchAndDisplayCandidates() {
-        getCandidates().then(data => {
+        apiGETRequest(endpoints['candidates']).then(data => {
             displayCandidates(data);
         }).catch(err => {
             console.error("Error Displaying Candidates " + err);
@@ -178,5 +174,20 @@
 
     #candidateTable {
         display: none;
+    }
+
+    .tableRow:hover {
+        cursor: pointer;
+        background-color: aqua;
+    }
+
+    .tableContainer {
+        padding: 5px;
+        border-collapse: collapse;
+    }
+
+    table {
+        border: 2px solid black;
+        padding: 10px;
     }
 </style>
