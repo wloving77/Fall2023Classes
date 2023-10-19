@@ -2303,3 +2303,7 @@ Apache server interrupted...
 [Wed Oct 18 13:17:37.537234 2023] [proxy_http:error] [pid 21476:tid 972] [client ::1:30675] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
 [Wed Oct 18 13:17:41.588166 2023] [proxy:error] [pid 21476:tid 972] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3000 (localhost:3000) failed
 [Wed Oct 18 13:17:41.588166 2023] [proxy_http:error] [pid 21476:tid 972] [client ::1:30678] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/connect4.html
+[Wed Oct 18 22:26:02.767743 2023] [mpm_winnt:crit] [pid 21476:tid 352] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Wed Oct 18 22:26:02.767743 2023] [mpm_winnt:warn] [pid 21476:tid 1160] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Wed Oct 18 22:26:02.767743 2023] [mpm_winnt:warn] [pid 21476:tid 1308] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Wed Oct 18 22:26:04.783971 2023] [mpm_winnt:notice] [pid 21476:tid 352] AH00364: Child: All worker threads have exited.
