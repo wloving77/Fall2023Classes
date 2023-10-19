@@ -15,7 +15,7 @@ import random
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import classification_report
 from sklearn import metrics
-from plot_metric.functions import BinaryClassification #need to pip install plot_metric
+from plot_metric.functions import BinaryClassification #need to pip install plot metric
 
 #%%
 # -------- Data prep --------
@@ -70,6 +70,7 @@ sns.displot(
 # now, we normalize the numeric variables
 numeric_cols = bank_data.select_dtypes(include='int64').columns
 print(numeric_cols)
+
 
 #%%
 from sklearn import preprocessing
@@ -134,18 +135,18 @@ neigh.fit(X_train, y_train)
 #%%
 # now, we check the model's accuracy on the test data:
 
-X_test = test.drop(['signed up_1'], axis=1).values
-y_test = test['signed up_1'].values
-
-print(neigh.score(X_test, y_test))
-
-#%%
-# now, we test the accuracy on our validation data.
-
 X_val = val.drop(['signed up_1'], axis=1).values
 y_val = val['signed up_1'].values
 
 print(neigh.score(X_val, y_val))
+
+#%%
+# now, we test the accuracy on our validation data.
+
+X_test = test.drop(['signed up_1'], axis=1).values
+y_test = test['signed up_1'].values
+
+print(neigh.score(X_test, y_test))
 
 #%%
 # -------- Evaluate model --------

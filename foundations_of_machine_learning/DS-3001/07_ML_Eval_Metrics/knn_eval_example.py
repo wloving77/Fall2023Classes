@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 #If you know you will only need to use one specific function from a certain package
 #It is better to simply import it directly, as seen below, since it is more efficient and allows for greater simplicity later on
 from sklearn.model_selection import train_test_split 
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 
@@ -42,17 +42,31 @@ print(bank_data.dtypes) #looks good
 
 # %% [markdown]
 # ## kNN data prep
+bank_data.info()
 
 # %%
 #Before we form our model, we need to prep the data...
 #First let's scale the features we will be using for classification
-#Remember this essentially just converts the raw values to z-scores, standardizing them
-bank_data[["age","duration","balance"]]= StandardScaler().fit_transform(bank_data[["age","duration","balance"]])
+
+#create a list of all the numeric values in the bank_data dataframe
+numeric = bank_data.select_dtypes(include=['int64','float64']).columns.tolist()
+
+#use the sklearn minmax scaler to scale the numeric values
+bank_data[numeric] = MinMaxScaler().fit_transform(bank_data[numeric])
+
+#drop job, contact, and poutcome since they are not numeric
+bank_data = bank_data.drop(['job','contact','poutcome'], axis=1)
+
+#create a list of non-numeric features
+non_numeric = bank_data.select_dtypes(include=['object']).columns.tolist()
+#use this list to create dummy variables for each non-numeric feature
+bank_data = pd.get_dummies(bank_data, columns=non_numeric, drop_first=True)
 
 # %%
 #Next we are going to partition the data, but first we need to isolate the independent and dependent variables
-X = bank_data[["age","duration","balance"]]  #independent variables
-y = bank_data['signed up']                  #dependent variable
+#create variable X with all columns except the target
+X = bank_data.drop(['signed up'], axis=1) #Feature set
+y = bank_data['signed up'] #target variable
 #Sometimes you will see only the values be taken using the function .values however this is simply personal preference 
 #Since there are several independent variables, I decided to keep the labels in order to distinguish a specific independent variable if needed.
 
@@ -77,7 +91,7 @@ X_tune, X_test, y_tune, y_test = train_test_split(X_test,y_test,  train_size = 0
 #Finally, it's time to build our model!
 #Here is a function we imported at the beginning of the script,
 #In this case it allows us to create a knn model and specify number of neighbors to 10
-bank_3NN = KNeighborsClassifier(n_neighbors=10)
+bank_3NN = KNeighborsClassifier(n_neighbors=5)
 #Now let's fit our knn model to the training data
 bank_3NN.fit(X_train, y_train)
 #note this is simply a model, let's apply it to something and get results!
@@ -121,15 +135,25 @@ print(metrics.ConfusionMatrixDisplay.from_predictions(final_model.target,final_m
 # %%
 #What if we want to adjust the threshold to produce a new set of evaluation metrics
 #Let's build a function so we can make the threshold whatever we want, not just the default 50%
-def adjust_thres(x,y,z):
-  #x=pred_probablities, y=threshold, z=test_outcome
-  thres = (np.where(x > y, 1,0))
-  #np.where is essentially a condensed if else statement. The first argument is the condition, then the true output, then the false output
-  return metrics.ConfusionMatrixDisplay.from_predictions(z,thres, display_labels = [False, True], colorbar=False)
+def adjust_thres(x, y, z):
+    """
+    x=pred_probabilities
+    y=threshold
+    z=tune_outcome
+    """
+    thres = pd.DataFrame({'new_preds': [1 if i > y else 0 for i in x]})
+    thres.new_preds = thres.new_preds.astype('category')
+    con_mat = metrics.confusion_matrix(z, thres)  
+    print(con_mat)
 
 # %%
 # Give it a try with a threshold of .35
-print(adjust_thres(final_model.pos_prob,.35,final_model.target))
+#count 1 and 0 values in the target
+print(final_model.target.value_counts())
+
+print(adjust_thres(final_model.pos_prob,.40,final_model.target))
+
+
 #What's the difference? Try different percents now, what happens?
 
 # %%
@@ -156,4 +180,11 @@ print(metrics.f1_score(final_model.target, final_model.pred))
 #Extra metrics
 print(metrics.classification_report(final_model.target, final_model.pred)) #Nice Work!
 
+#%%
+#Compute the Brier Score Loss and Example what it is measuring 
 
+https://scikit-learn.org/stable/modules/model_evaluation.html
+
+
+
+# %%
