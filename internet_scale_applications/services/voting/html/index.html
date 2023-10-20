@@ -37,8 +37,20 @@
         </table>
     </div>
 
+    <div id="modalVoter" class="modal">
+        <div id="voterModalContent" class="modal-content">
+            <form onsubmit="addNewVoter(event)">
+                <span class="modalClose" id="closeVoter">&times;</span>
+                <label for="voterName"> Voter Name:</label>
+                <input type="text" id="voterName" name="voterName">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+
+
     <br>
-    <button id="getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
+    <button id=" getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
     <br><br>
     <button id="getCandidates" onClick="fetchAndDisplayCandidates()">View Candidates?</button>
 

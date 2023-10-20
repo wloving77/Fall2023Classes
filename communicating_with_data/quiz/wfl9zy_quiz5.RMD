@@ -1,0 +1,177 @@
+---
+title: "Quiz5"
+author: "wlf9zy, gwu8ek"
+date: "2023-10-20"
+output: html_document
+---
+
+# Quiz 5:
+
+## Load Data: 
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(plotly)
+
+data <- as.data.frame(iris)
+head(data)
+```
+
+
+# Question 1: 
+
+```{r}
+
+#A
+
+colors1 = c("blue", "red", "green")
+
+plot <- ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species)) +
+  geom_point() + 
+  scale_color_manual(values = colors1)
+
+
+# B
+
+ggplotly(plot)
+
+```
+
+
+# Question 2: 
+
+```{r}
+#a
+type1 <- iris %>% filter(Species=="setosa")
+#b
+type2 <- iris %>% filter(Species=="versicolor")
+#c
+type3 <- iris %>% filter(Species=="virginica")
+
+
+plot_ly(type="scatter", mode="markers") %>%
+add_trace(x = type1$Petal.Length, y=type1$Petal.Width, marker=list(color="blue"), name="setosa") %>%
+add_trace(x = type2$Petal.Length, y=type2$Petal.Width, marker=list(color="red"), name="versicolor") %>%
+add_trace(x = type3$Petal.Length, y=type3$Petal.Width, marker=list(color="green"), name="virginica")
+```
+
+# Question 3:
+
+```{r}
+
+#a
+type1 <- iris %>% filter(Species=="setosa")
+#b
+type2 <- iris %>% filter(Species=="versicolor")
+#c
+type3 <- iris %>% filter(Species=="virginica")
+
+
+plot_ly(type="scatter", mode="markers") %>%
+add_trace(x = type1$Petal.Length, y=type1$Petal.Width, marker=list(color="blue"), name="setosa"
+          ,text = ~paste("Species: setosa", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type2$Petal.Length, y=type2$Petal.Width, marker=list(color="red"), name="versicolor"
+          ,text = ~paste("Species: versicolor", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type3$Petal.Length, y=type3$Petal.Width, marker=list(color="green"), name="virginica"
+          ,text = ~paste("Species: virginica", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+)
+
+```
+
+
+# Question 4: 
+
+
+```{r}
+#a
+type1 <- iris %>% filter(Species=="setosa")
+#b
+type2 <- iris %>% filter(Species=="versicolor")
+#c
+type3 <- iris %>% filter(Species=="virginica")
+
+
+plot_ly(type="scatter", mode="markers") %>%
+add_trace(x = type1$Petal.Length, y=type1$Petal.Width, marker=list(color="blue"), name="setosa"
+          ,text = ~paste("Species: setosa", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type2$Petal.Length, y=type2$Petal.Width, marker=list(color="red"), name="versicolor"
+          ,text = ~paste("Species: versicolor", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type3$Petal.Length, y=type3$Petal.Width, marker=list(color="green"), name="virginica"
+          ,text = ~paste("Species: virginica", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+layout(title = "Scatter Plot with Custom Colors by Species"
+       , xaxis = list(showgrid = FALSE)
+       , yaxis = list(showgrid = FALSE)  ) # Remove y-axis gridlines)
+
+
+```
+
+# Question 5: 
+
+
+```{r}
+#a
+type1 <- iris %>% filter(Species=="setosa")
+#b
+type2 <- iris %>% filter(Species=="versicolor")
+#c
+type3 <- iris %>% filter(Species=="virginica")
+
+
+plot_ly(type="scatter", mode="markers") %>%
+add_trace(x = type1$Petal.Length, y=type1$Petal.Width, marker=list(color="blue", line=list(color="black", width=2)),opacity=.5, name="setosa"
+          ,text = ~paste("Species: setosa", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type2$Petal.Length, y=type2$Petal.Width, marker=list(color="red", line=list(color="black", width=2)),opacity=.5, name="versicolor"
+          ,text = ~paste("Species: versicolor", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type3$Petal.Length, y=type3$Petal.Width, marker=list(color="green", line=list(color="black", width=2)),opacity=.5, name="virginica"
+          ,text = ~paste("Species: virginica", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+layout(title = "Scatter Plot with Custom Colors by Species"
+       , xaxis = list(showgrid = FALSE)
+       , yaxis = list(showgrid = FALSE)  ) # Remove y-axis gridlines)
+
+
+```
+
+
+
+# Bonus Question 
+
+
+```{r}
+
+#a
+type1 <- iris %>% filter(Species=="setosa")
+#b
+type2 <- iris %>% filter(Species=="versicolor")
+#c
+type3 <- iris %>% filter(Species=="virginica")
+
+
+plot_ly(type="scatter3d", mode="markers") %>%
+add_trace(x = type1$Petal.Length, y=type1$Petal.Width, z=type1$Sepal.Width, marker=list(color="blue", line=list(color="black", width=2)),opacity=.5, name="setosa"
+          ,text = ~paste("Species: setosa", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type2$Petal.Length, y=type2$Petal.Width, z=type2$Sepal.Width, marker=list(color="red", line=list(color="black", width=2)),opacity=.5, name="versicolor"
+          ,text = ~paste("Species: versicolor", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+add_trace(x = type3$Petal.Length, y=type3$Petal.Width, z=type3$Sepal.Width, marker=list(color="green", line=list(color="black", width=2)),opacity=.5, name="virginica"
+          ,text = ~paste("Species: virginica", "Petal Length: ", type1$Petal.Length, "Petal Width: ", type1$Petal.Width)
+) %>%
+layout(title = "Scatter Plot with Custom Colors by Species"
+       , xaxis = list(showgrid = FALSE)
+       , yaxis = list(showgrid = FALSE)  ) # Remove y-axis gridlines)
+
+
+
+head(type1)
+
+```
+

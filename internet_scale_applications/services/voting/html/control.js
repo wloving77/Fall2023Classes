@@ -1,7 +1,15 @@
+//simple button functionality: 
+
+document.getElementById("closeVoter").onclick = function () {
+    document.getElementById("modalVoter").style.display = "none";
+}
+
+
 // all API endpoints will be in this object:
 let endpoints = {
     "candidates": "/api/voting/candidates",
     "voters": "/api/voting/voters",
+    "addVoter": "/api/voting/addVoter"
 }
 /* API Request FUNCTIONS */
 
@@ -10,7 +18,7 @@ async function apiGETRequest(apiUrl) {
     return fetch(apiUrl, { method: "GET" })
         .then(response => {
             if (!response.ok) {
-                console.log(`Unknown Error Fetching from ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
+                console.log(`Unknown Error, GET from ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
                 return null;
             }
             return response.json();
@@ -23,7 +31,26 @@ async function apiGETRequest(apiUrl) {
 
 //stub for now
 async function apiPOSTRequest(apiUrl, dataToSend) {
-    return 0;
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dataToSend),
+        })
+
+        if (!response.ok) {
+            console.log(`Unknown Error, POST to ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
+            return null;
+        }
+
+        const responseData = await response.json();
+        return responseData;
+
+    } catch (error) {
+        console.log(`Error Handling Promise in apiPOSTRequest: ${error}`);
+        return null;
+    }
 }
 
 /* DOM FUNCTIONS */
@@ -50,7 +77,7 @@ function displayVoters(voters) {
     let addButton = document.createElement("button");
     addButton.id = "addVoter";
     addButton.innerHTML = "(+)";
-    addButton.onclick(displayVoterModal());
+    addButton.onclick = displayVoterModal;
     voterTable.querySelector("tbody").appendChild(addButton);
 
     voterTable.style.display = "block";
@@ -122,7 +149,32 @@ function fetchAndDisplayCandidates() {
 }
 
 
+function addNewVoter(event) {
+
+    const urlSearchParams = new URLSearchParams(window.location.search);
+
+    const voterName = urlSearchParams.get("voterName");
+
+    if (voterName == null) {
+        console.log("No Voter Name Provided, Exiting");
+        return 0;
+    }
+
+    //prepare api request. 
+    let data = {}
+    data['name'] = voterName;
+    data['votes_avail'] = 1;
+
+    const apiUrl = endpoints['addVoter'];
+
+    apiPOSTRequest(apiUrl, data);
+
+}
+
+
+
 //stub for now
 function displayVoterModal() {
-    return 0;
+    document.getElementById("modalVoter").style.display = "block";
 }
+
