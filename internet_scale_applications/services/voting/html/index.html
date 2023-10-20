@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title> YEET </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="tableContainer">
+        <table id="voterTable">
+            <thead>
+                <tr>
+                    <th>Voters</th>
+                    <th>Votes to Cast</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tableContainer">
+        <table id="candidateTable">
+            <thead>
+                <tr>
+                    <th>Candidates</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <button id="getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
+    <br><br>
+    <button id="getCandidates" onClick="fetchAndDisplayCandidates()">View Candidates?</button>
+
+    <script src="./control.js"></script>
+</body>
+
+</html>

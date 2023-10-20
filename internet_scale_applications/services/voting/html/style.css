@@ -1,0 +1,22 @@
+#voterTable {
+    display: none;
+}
+
+#candidateTable {
+    display: none;
+}
+
+.tableRow:hover {
+    cursor: pointer;
+    background-color: aqua;
+}
+
+.tableContainer {
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+table {
+    border: 2px solid black;
+    padding: 10px;
+}

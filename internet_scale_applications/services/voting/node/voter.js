@@ -14,34 +14,65 @@ server.listen(PORT, () => {
 });
 
 
-//Just Data Dumps, no post requests
-
+/* GET Requests Below: */
 server.on("request", async (request, response) => {
     const parsedUrl = url.parse(request.url, true);
-    switch (parsedUrl.pathname) {
-        case "/candidates":
-            if (request.method == "GET") {
-                const data = await getCandidates();
+
+    let data;
+    if (request.method == "GET") {
+        switch (parsedUrl.pathname) {
+            case "/candidates":
+                data = await getCandidates();
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'application/json');
                 response.end(JSON.stringify(data));
                 break;
-            }
-        case "/voters":
-            if (request.method == "GET") {
-                const data = await getVoters();
+            case "/voters":
+                data = await getVoters();
                 response.statusCode = 200;
                 response.setHeader('Content-Type', 'application/json');
                 response.end(JSON.stringify(data));
                 break;
-            }
-        case "/":
-            console.log(`Nothing to Return for Case ${parsedUrl.pathname}`);
-            response.statusCode = 404;
-            response.end();
-            break;
+            case "/":
+                console.log(`Nothing to Return for Case ${parsedUrl.pathname}`);
+                response.statusCode = 404;
+                response.end();
+                break;
+        }
     }
 });
+
+/* POST Requests Below: */
+server.on("request", async (request, response) => {
+    const parsedUrl = url.parse(request.url, true);
+
+    let data;
+    if (request.method == "POST") {
+        switch (parsedUrl.pathname) {
+            case "/candidates":
+                data = await getCandidates();
+                response.statusCode = 200;
+                response.setHeader('Content-Type', 'application/json');
+                response.end(JSON.stringify(data));
+                break;
+            case "/voters":
+                data = await getVoters();
+                response.statusCode = 200;
+                response.setHeader('Content-Type', 'application/json');
+                response.end(JSON.stringify(data));
+                break;
+            case "/":
+                console.log(`Nothing to Return for Case ${parsedUrl.pathname}`);
+                response.statusCode = 404;
+                response.end();
+                break;
+        }
+    }
+});
+
+
+
+// Functions that talk to Database:
 
 const mongoPort = 27017;
 const mongoHost = "localhost";
