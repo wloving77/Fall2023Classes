@@ -1,9 +1,5 @@
-//simple button functionality: 
-
-document.getElementById("closeVoter").onclick = function () {
-    document.getElementById("modalVoter").style.display = "none";
-}
-
+//initialize voterModal display to none
+document.getElementById("modalVoter").style.display = "none";
 
 // all API endpoints will be in this object:
 let endpoints = {
@@ -18,12 +14,14 @@ async function apiGETRequest(apiUrl) {
     return fetch(apiUrl, { method: "GET" })
         .then(response => {
             if (!response.ok) {
+                document.getElementById("errorElement").innerHTML = "Failed to Load Data";
                 console.log(`Unknown Error, GET from ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
                 return null;
             }
             return response.json();
         })
         .catch(error => {
+            document.getElementById("errorElement").innerHTML = "An Error Occured";
             console.log(`Error Handling Promise in apiGETRequest: ${error}`);
             return null;
         })
@@ -41,15 +39,14 @@ async function apiPOSTRequest(apiUrl, dataToSend) {
 
         if (!response.ok) {
             console.log(`Unknown Error, POST to ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
-            return null;
+            return false;
         }
 
-        const responseData = await response.json();
-        return responseData;
+        return true;
 
     } catch (error) {
         console.log(`Error Handling Promise in apiPOSTRequest: ${error}`);
-        return null;
+        return false;
     }
 }
 
@@ -61,8 +58,8 @@ function displayVoters(voters) {
     let voterTable = document.getElementById("voterTable");
     let candidateTable = document.getElementById("candidateTable");
 
-    if (!voters) {
-        console.error("Voters variable invalid in displayVoters()");
+    if (!voters || !voterTable || !candidateTable) {
+        console.error("Voters, VoterTable, or candidateTable invalid in displayVoters()");
         return;
     }
 
@@ -71,15 +68,6 @@ function displayVoters(voters) {
 
     displayData(voters, voterTable, "voter");
 
-
-    // create a button for adding new voters
-
-    let addButton = document.createElement("button");
-    addButton.id = "addVoter";
-    addButton.innerHTML = "(+)";
-    addButton.onclick = displayVoterModal;
-    voterTable.querySelector("tbody").appendChild(addButton);
-
     voterTable.style.display = "block";
 }
 
@@ -87,8 +75,8 @@ function displayCandidates(candidates) {
     let candidateTable = document.getElementById("candidateTable");
     let voterTable = document.getElementById("voterTable");
 
-    if (!candidates) {
-        console.error("Candidates variable invalid in displayCandidates()");
+    if (!candidates || !candidateTable || !voterTable) {
+        console.error("Candidates, VoterTable, or candidateTable invalid in displayCandidates()");
         return;
     }
 
@@ -149,32 +137,44 @@ function fetchAndDisplayCandidates() {
 }
 
 
-function addNewVoter(event) {
+async function addNewVoter() {
 
-    const urlSearchParams = new URLSearchParams(window.location.search);
+    const voterNameInput = document.getElementById("voterName");
 
-    const voterName = urlSearchParams.get("voterName");
+    const voterName = voterNameInput.value;
 
-    if (voterName == null) {
+    if (voterName == null || !voterName.trim()) {
         console.log("No Voter Name Provided, Exiting");
         return 0;
     }
 
-    //prepare api request. 
-    let data = {}
-    data['name'] = voterName;
-    data['votes_avail'] = 1;
+    //prepare data for request. 
+    let data = {
+        name: voterName,
+        votes_avail: 1,
+    }
 
     const apiUrl = endpoints['addVoter'];
+    const success = await apiPOSTRequest(apiUrl, data);
 
-    apiPOSTRequest(apiUrl, data);
 
+
+    //wipeout votername and reload index.html:
+    if (success) {
+        fetchAndDisplayVoters();
+    } else {
+        console.error(`Failed to Add New Voter`);
+    }
+
+    voterNameInput.value = "";
+    toggleVoterModalDisplay();
 }
 
 
 
 //stub for now
-function displayVoterModal() {
-    document.getElementById("modalVoter").style.display = "block";
+function toggleVoterModalDisplay() {
+    const modal = document.getElementById("modalVoter");
+    modal.style.display = modal.style.display == "none" ? "block" : "none";
 }
 

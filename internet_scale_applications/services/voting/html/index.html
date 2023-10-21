@@ -20,6 +20,13 @@
             <tbody>
 
             </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <button id="addVoter" onClick="toggleVoterModalDisplay()">Add Voter</button>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 
@@ -39,20 +46,20 @@
 
     <div id="modalVoter" class="modal">
         <div id="voterModalContent" class="modal-content">
-            <form onsubmit="addNewVoter(event)">
-                <span class="modalClose" id="closeVoter">&times;</span>
-                <label for="voterName"> Voter Name:</label>
-                <input type="text" id="voterName" name="voterName">
-                <input type="submit" value="submit">
-            </form>
+            <span class="modalClose" id="closeVoter" onClick="toggleVoterModalDisplay()">&times;</span>
+            <label for="voterName"> Voter Name:</label>
+            <input type="text" id="voterName" name="voterName">
+            <button onClick="addNewVoter()">Submit</button>
         </div>
     </div>
 
 
     <br>
-    <button id=" getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
+    <button id="getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
     <br><br>
     <button id="getCandidates" onClick="fetchAndDisplayCandidates()">View Candidates?</button>
+
+    <h1 id="errorElement"></h1>
 
     <script src="./control.js"></script>
 </body>
