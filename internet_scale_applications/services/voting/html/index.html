@@ -42,6 +42,13 @@
             <tbody>
 
             </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <br>
+                        <button id="addCandidate" onClick="toggleModalDisplay('modalCandidate')">Add Candidate</button>
+                    </td>
+                </tr>
         </table>
     </div>
 
@@ -49,8 +56,19 @@
         <div id="voterModalContent" class="modal-content">
             <span class="modalClose" id="closeVoter" onClick="toggleModalDisplay('modalVoter')">&times;</span>
             <label> Voter Name:</label>
-            <input type="text" id="voterName" name="voterName">
+            <input type="text" id="voterName">
+            <label> Vote Count: </label>
+            <input type="text" id="numVotes">
             <button onClick="addNewVoter()">Submit</button>
+        </div>
+    </div>
+
+    <div id="modalCandidate" class="modal">
+        <div id="voterModalContent" class="modal-content">
+            <span class="modalClose" id="closeVoter" onClick="toggleModalDisplay('modalVoter')">&times;</span>
+            <label> Candidate Name:</label>
+            <input type="text" id="candidateName">
+            <button onClick="addNewCandidate()">Submit</button>
         </div>
     </div>
 
@@ -67,8 +85,7 @@
             <span id="voterIdField" style="display:none;"></span>
             <button onClick="deleteVoter()">Delete Voter</button>
             <br><br>
-            <button onClick="fetchAndDisplayCandidates('candidateModalTable')">Cast Vote</button>
-            <br><br>
+            <h1> Cast Vote: </h1>
             <div class="tableContainer">
                 <table id="candidateModalTable">
                     <thead>
@@ -83,6 +100,23 @@
                 </table>
             </div>
 
+        </div>
+    </div>
+
+
+    <div id="modalDeleteCandidate" class="modal">
+        <div id="deleteVoterContent" class="modal-content">
+            <span class="modalClose" id="closeDeleteVoter"
+                onClick="toggleModalDisplay('modalDeleteCandidate')">&times;</span>
+            <label>Candidate Name:</label>
+            <span id="candidateNameField"></span>
+            <br><br>
+            <label>Candidate Votes:</label>
+            <span id="candidateVotesField"></span>
+            <br><br>
+            <span id="candidateIdField" style="display:none;"></span>
+            <button onClick="deleteCandidate()">Delete Candidate</button>
+            <br><br>
         </div>
     </div>
 

@@ -1,5 +1,6 @@
 
 /* Global State management here */
+
 let modals = document.getElementsByClassName("modal");
 
 for (let i = 0; i < modals.length; i++) {
@@ -20,8 +21,16 @@ let endpoints = {
     "voters": "/api/voting/voters",
     "addVoter": "/api/voting/addVoter",
     "deleteVoter": "/api/voting/deleteVoter",
+    "addCandidate": "/api/voting/addCandidate",
+    "deleteCandidate": "/api/voting/deleteCandidate",
     "castVote": "/api/voting/castVote",
 }
+
+
+const intervalId1 = setInterval(function () { fetchAndDisplayVoters('voterTable'); }, 1000);
+const intervalId2 = setInterval(function () { fetchAndDisplayCandidates('candidateTable'); }, 1000);
+
+
 /* API Request FUNCTIONS */
 
 async function apiGETRequest(apiUrl) {
@@ -71,8 +80,8 @@ async function apiPOSTRequest(apiUrl, dataToSend) {
 function displayVoters(voters, location) {
     let voterTable = document.getElementById(location);
 
-    if (!voters || !voterTable || !candidateTable) {
-        console.error("Voters, VoterTable, or candidateTable invalid in displayVoters()");
+    if (!voters || !voterTable) {
+        console.error("Voters, or VoterTable invalid in displayVoters()");
         return;
     }
 
@@ -86,7 +95,7 @@ function displayVoters(voters, location) {
 function displayCandidates(candidates, location) {
     let candidateTable = document.getElementById(location);
 
-    if (!candidates || !candidateTable || !voterTable) {
+    if (!candidates || !candidateTable) {
         console.error("Candidates, VoterTable, or candidateTable invalid in displayCandidates()");
         return;
     }
@@ -94,7 +103,7 @@ function displayCandidates(candidates, location) {
     candidateTable.querySelector("tbody").innerHTML = "";
 
     if (location == "candidateModalTable") {
-        displayData(candidates, candidateTable, "candidateDelete");
+        displayData(candidates, candidateTable, "candidateCastVote");
     } else {
         displayData(candidates, candidateTable, "candidate");
     }
@@ -121,8 +130,9 @@ function displayData(data, table, type) {
         switch (type) {
             case "candidate":
                 numVotes.innerHTML = data[i].votes;
+                newRow.addEventListener("click", function () { handleCandidateClick(name.innerHTML, numVotes.innerHTML, id.innerHTML) })
                 break;
-            case "candidateDelete":
+            case "candidateCastVote":
                 numVotes.innerHTML = data[i].votes;
                 newRow.addEventListener("click", function () { castVote(name.innerHTML, id.innerHTML) })
                 break;
@@ -194,24 +204,31 @@ function fetchAndDisplayCandidates(location) {
 async function addNewVoter() {
 
     const voterNameInput = document.getElementById("voterName");
-    const voterName = voterNameInput.value;
+    const voterCountInput = document.getElementById("numVotes");
 
-    if (voterName == null || !voterName.trim()) {
-        console.log("No Voter Name Provided, Exiting");
+    const voterName = voterNameInput.value;
+    let voteCount = Number(voterCountInput.value);
+
+    if (!voterName || !voterName.trim() || !voteCount) {
+        console.log("No Voter Name Provided or invalid voteCount, Exiting");
         return 0;
+    }
+
+    if (voteCount <= 0) {
+        voteCount = 1;
     }
 
     //prepare data for request. 
     let data = {
         name: voterName,
-        votes_avail: 1,
+        votes_avail: voteCount,
     }
 
     const apiUrl = endpoints['addVoter'];
     const success = await apiPOSTRequest(apiUrl, data);
 
     if (success) {
-        fetchAndDisplayVoters();
+        fetchAndDisplayVoters("voterTable");
     } else {
         console.error(`Failed to Add New Voter`);
     }
@@ -242,12 +259,75 @@ async function deleteVoter() {
     const success = await apiPOSTRequest(apiUrl, data);
 
     if (success) {
-        fetchAndDisplayVoters();
+        fetchAndDisplayVoters("voterTable");
     } else {
         console.error(`Failed to Add New Voter`);
     }
 
     toggleModalDisplay("modalDeleteVoter");
+
+}
+
+//not very DRY I know, but the refactor would have been obnoxious
+async function addNewCandidate() {
+
+    const candidateNameInput = document.getElementById("candidateName");
+
+    const candidateName = candidateNameInput.value;
+
+    if (!candidateName || !candidateName.trim()) {
+        console.log("No Voter Name Provided or invalid voteCount, Exiting");
+        return 0;
+    }
+
+    //prepare data for request. 
+    let data = {
+        name: candidateName,
+        votes: 0
+    }
+
+    const apiUrl = endpoints['addCandidate'];
+    const success = await apiPOSTRequest(apiUrl, data);
+
+    if (success) {
+        fetchAndDisplayVoters("candidateTable");
+    } else {
+        console.error(`Failed to Add New Candidate`);
+    }
+
+    //wipeout votername field and toggle the modal
+    candidateNameInput.value = "";
+    toggleModalDisplay("modalCandidate");
+}
+
+
+async function deleteCandidate() {
+
+    const candidateName = document.getElementById("candidateNameField").innerHTML;
+    const candidateVotes = document.getElementById("candidateVotesField").innerHTML;
+    const candidateId = document.getElementById("candidateIdField").innerHTML;
+
+    if (!candidateName || !candidateVotes || !candidateId) {
+        console.error("Something went wrong parsing Span's from delete voter modal, exiting.");
+        return 0;
+    }
+
+    let data = {
+        name: candidateName,
+        votes: candidateVotes,
+        _id: candidateId,
+    }
+
+    const apiUrl = endpoints['deleteCandidate'];
+    const success = await apiPOSTRequest(apiUrl, data);
+
+    if (success) {
+        fetchAndDisplayCandidates("candidateTable");
+    } else {
+        console.error(`Failed to Add New Voter`);
+    }
+
+    toggleModalDisplay("modalDeleteCandidate");
 
 }
 
@@ -265,5 +345,14 @@ function handleVoterClick(name, votes_avail, voterId) {
     document.getElementById("voterNameField").innerHTML = name;
     document.getElementById("votesAvailableField").innerHTML = votes_avail;
     document.getElementById("voterIdField").innerHTML = voterId;
+    fetchAndDisplayCandidates('candidateModalTable')
     toggleModalDisplay("modalDeleteVoter");
+}
+
+function handleCandidateClick(name, votes, candidateId) {
+    document.getElementById("candidateNameField").innerHTML = name;
+    document.getElementById("candidateVotesField").innerHTML = votes;
+    document.getElementById("candidateIdField").innerHTML = candidateId;
+    toggleModalDisplay('modalDeleteCandidate');
+    return 0;
 }
