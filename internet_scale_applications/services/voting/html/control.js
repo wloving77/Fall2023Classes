@@ -290,7 +290,7 @@ async function addNewCandidate() {
     const success = await apiPOSTRequest(apiUrl, data);
 
     if (success) {
-        fetchAndDisplayVoters("candidateTable");
+        fetchAndDisplayCandidates("candidateTable");
     } else {
         console.error(`Failed to Add New Candidate`);
     }
