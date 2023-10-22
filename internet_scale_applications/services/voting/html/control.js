@@ -20,6 +20,7 @@ let endpoints = {
     "voters": "/api/voting/voters",
     "addVoter": "/api/voting/addVoter",
     "deleteVoter": "/api/voting/deleteVoter",
+    "castVote": "/api/voting/castVote",
 }
 /* API Request FUNCTIONS */
 
@@ -67,9 +68,8 @@ async function apiPOSTRequest(apiUrl, dataToSend) {
 
 //separate module to enforce DRY as we perform the same actions for displaying both candidates and voters
 
-function displayVoters(voters) {
-    let voterTable = document.getElementById("voterTable");
-    let candidateTable = document.getElementById("candidateTable");
+function displayVoters(voters, location) {
+    let voterTable = document.getElementById(location);
 
     if (!voters || !voterTable || !candidateTable) {
         console.error("Voters, VoterTable, or candidateTable invalid in displayVoters()");
@@ -77,16 +77,14 @@ function displayVoters(voters) {
     }
 
     voterTable.querySelector("tbody").innerHTML = "";
-    candidateTable.style.display = "none";
 
     displayData(voters, voterTable, "voter");
 
     voterTable.style.display = "block";
 }
 
-function displayCandidates(candidates) {
-    let candidateTable = document.getElementById("candidateTable");
-    let voterTable = document.getElementById("voterTable");
+function displayCandidates(candidates, location) {
+    let candidateTable = document.getElementById(location);
 
     if (!candidates || !candidateTable || !voterTable) {
         console.error("Candidates, VoterTable, or candidateTable invalid in displayCandidates()");
@@ -94,9 +92,12 @@ function displayCandidates(candidates) {
     }
 
     candidateTable.querySelector("tbody").innerHTML = "";
-    voterTable.style.display = "none";
 
-    displayData(candidates, candidateTable, "candidate");
+    if (location == "candidateModalTable") {
+        displayData(candidates, candidateTable, "candidateDelete");
+    } else {
+        displayData(candidates, candidateTable, "candidate");
+    }
 
     candidateTable.style.display = "block";
 
@@ -109,26 +110,32 @@ function displayData(data, table, type) {
         let newRow = document.createElement("tr");
         let name = document.createElement("td");
         let numVotes = document.createElement("td");
+        let id = document.createElement("td");
 
-        newRow.classList.add("tableRow");
-        newRow.id = `${type}-${i}`;
-
+        //populate shared fields, id is invisible just because I need to be able to query it:
         name.innerHTML = data[i].name;
+        id.innerHTML = data[i]._id;
+        id.style.display = "none";
 
         //add the modal logic for displaying the voter modal once a voter is selected:
         switch (type) {
             case "candidate":
                 numVotes.innerHTML = data[i].votes;
-                newRow.addEventListener("click", function () { handleCandidateClick(name.innerHTML, numVotes.innerHTML, data[i]._id) });
+                break;
+            case "candidateDelete":
+                numVotes.innerHTML = data[i].votes;
+                newRow.addEventListener("click", function () { castVote(name.innerHTML, id.innerHTML) })
                 break;
             case "voter":
                 numVotes.innerHTML = data[i].votes_avail;
-                newRow.addEventListener("click", function () { handleVoterClick(name.innerHTML, numVotes.innerHTML, data[i]._id) })
+                newRow.addEventListener("click", function () { handleVoterClick(name.innerHTML, numVotes.innerHTML, id.innerHTML) });
                 break;
         }
 
+        newRow.classList.add("tableRow");
         newRow.appendChild(name);
         newRow.appendChild(numVotes);
+        newRow.appendChild(id);
 
 
         table.querySelector("tbody").appendChild(newRow);
@@ -136,21 +143,48 @@ function displayData(data, table, type) {
     }
 }
 
+//cast a vote for a candidate
+async function castVote(candidateName, candidateId) {
+
+    //data for the voter casting the vote
+    const voterName = document.getElementById("voterNameField").innerHTML;
+    const voterId = document.getElementById("voterIdField").innerHTML;
+
+    let data = {
+        voterId: voterId,
+        candidateId: candidateId,
+    }
+
+    const apiUrl = endpoints['castVote'];
+
+    const success = await apiPOSTRequest(apiUrl, data);
+
+    toggleModalDisplay('modalDeleteVoter');
+
+    if (success) {
+        console.log(`Voter: ${voterName} successfully voted for ${candidateName}`);
+        return true;
+    } else {
+        console.error(`Unknown backend error processing vote for candidate: ${candidateName} from voter ${voterName}`);
+        return false;
+    }
+
+}
 
 /* Functions Called from DOM */
 
-function fetchAndDisplayVoters() {
+function fetchAndDisplayVoters(location) {
     apiGETRequest(endpoints['voters']).then(data => {
-        displayVoters(data);
+        displayVoters(data, location);
     }).catch(err => {
         console.error("Error in fetchAndDisplayVoters()" + err);
     });
 }
 
 
-function fetchAndDisplayCandidates() {
+function fetchAndDisplayCandidates(location) {
     apiGETRequest(endpoints['candidates']).then(data => {
-        displayCandidates(data);
+        displayCandidates(data, location);
     }).catch(err => {
         console.error("Error Displaying Candidates " + err);
     })
@@ -224,11 +258,6 @@ async function deleteVoter() {
 function toggleModalDisplay(modalId) {
     const modal = document.getElementById(modalId);
     modal.style.display = modal.style.display == "none" ? "block" : "none";
-}
-
-//stub for now
-function handleCandidateClick(name, i) {
-    return 0;
 }
 
 //show voter-specific modal on a voter click

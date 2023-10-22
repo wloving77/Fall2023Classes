@@ -88,6 +88,10 @@ server.on("request", async (request, response) => {
                     sendJSONResponse(response, 400, { error: "Bad Request" });
                 }
                 break;
+            // TODO: Implement vote casting!!!
+            case "/castVote":
+                sendResponse(response, 200);
+                break;
             case "/":
                 console.log("Nothing to POST/Return for a / Endpoint");
                 break;
@@ -145,7 +149,8 @@ async function addVoter(voter) {
     }
 }
 
-
+// return true, success
+// return false, failure
 async function deleteVoter(voter) {
     const collection = "voters";
 

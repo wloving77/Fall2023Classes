@@ -23,6 +23,7 @@
             <tfoot>
                 <tr>
                     <td>
+                        <br>
                         <button id="addVoter" onClick="toggleModalDisplay('modalVoter')">Add Voter</button>
                     </td>
                 </tr>
@@ -65,14 +66,31 @@
             <br><br>
             <span id="voterIdField" style="display:none;"></span>
             <button onClick="deleteVoter()">Delete Voter</button>
+            <br><br>
+            <button onClick="fetchAndDisplayCandidates('candidateModalTable')">Cast Vote</button>
+            <br><br>
+            <div class="tableContainer">
+                <table id="candidateModalTable">
+                    <thead>
+                        <tr>
+                            <th>Candidates</th>
+                            <th>Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 
 
     <br>
-    <button id=" getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
+    <button id="getVoters" onClick="fetchAndDisplayVoters('voterTable')">View Voters?</button>
     <br><br>
-    <button id="getCandidates" onClick="fetchAndDisplayCandidates()">View Candidates?</button>
+    <button id="getCandidates" onClick="fetchAndDisplayCandidates('candidateTable')">View Candidates?</button>
 
     <h1 id="errorElement"></h1>
 
