@@ -23,7 +23,7 @@
             <tfoot>
                 <tr>
                     <td>
-                        <button id="addVoter" onClick="toggleVoterModalDisplay()">Add Voter</button>
+                        <button id="addVoter" onClick="toggleModalDisplay('modalVoter')">Add Voter</button>
                     </td>
                 </tr>
             </tfoot>
@@ -46,16 +46,31 @@
 
     <div id="modalVoter" class="modal">
         <div id="voterModalContent" class="modal-content">
-            <span class="modalClose" id="closeVoter" onClick="toggleVoterModalDisplay()">&times;</span>
-            <label for="voterName"> Voter Name:</label>
+            <span class="modalClose" id="closeVoter" onClick="toggleModalDisplay('modalVoter')">&times;</span>
+            <label> Voter Name:</label>
             <input type="text" id="voterName" name="voterName">
             <button onClick="addNewVoter()">Submit</button>
         </div>
     </div>
 
+    <div id="modalDeleteVoter" class="modal">
+        <div id="deleteVoterContent" class="modal-content">
+            <span class="modalClose" id="closeDeleteVoter"
+                onClick="toggleModalDisplay('modalDeleteVoter')">&times;</span>
+            <label>Name:</label>
+            <span id="voterNameField"></span>
+            <br><br>
+            <label>Available Votes:</label>
+            <span id="votesAvailableField"></span>
+            <br><br>
+            <span id="voterIdField" style="display:none;"></span>
+            <button onClick="deleteVoter()">Delete Voter</button>
+        </div>
+    </div>
+
 
     <br>
-    <button id="getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
+    <button id=" getVoters" onClick="fetchAndDisplayVoters()">View Voters?</button>
     <br><br>
     <button id="getCandidates" onClick="fetchAndDisplayCandidates()">View Candidates?</button>
 

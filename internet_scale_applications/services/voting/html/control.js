@@ -1,11 +1,25 @@
-//initialize voterModal display to none
-document.getElementById("modalVoter").style.display = "none";
+
+/* Global State management here */
+let modals = document.getElementsByClassName("modal");
+
+for (let i = 0; i < modals.length; i++) {
+    modals[i].style.display = "none";
+}
+
+window.onclick = function (event) {
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target == modals[i]) {
+            modals[i].style.display = "none";
+        }
+    }
+}
 
 // all API endpoints will be in this object:
 let endpoints = {
     "candidates": "/api/voting/candidates",
     "voters": "/api/voting/voters",
-    "addVoter": "/api/voting/addVoter"
+    "addVoter": "/api/voting/addVoter",
+    "deleteVoter": "/api/voting/deleteVoter",
 }
 /* API Request FUNCTIONS */
 
@@ -27,7 +41,6 @@ async function apiGETRequest(apiUrl) {
         })
 }
 
-//stub for now
 async function apiPOSTRequest(apiUrl, dataToSend) {
 
     try {
@@ -97,19 +110,26 @@ function displayData(data, table, type) {
         let name = document.createElement("td");
         let numVotes = document.createElement("td");
 
+        newRow.classList.add("tableRow");
+        newRow.id = `${type}-${i}`;
+
         name.innerHTML = data[i].name;
 
-        if (type == "candidate") {
-            numVotes.innerHTML = data[i].votes;
-        } else {
-            numVotes.innerHTML = data[i].votes_avail
+        //add the modal logic for displaying the voter modal once a voter is selected:
+        switch (type) {
+            case "candidate":
+                numVotes.innerHTML = data[i].votes;
+                newRow.addEventListener("click", function () { handleCandidateClick(name.innerHTML, numVotes.innerHTML, data[i]._id) });
+                break;
+            case "voter":
+                numVotes.innerHTML = data[i].votes_avail;
+                newRow.addEventListener("click", function () { handleVoterClick(name.innerHTML, numVotes.innerHTML, data[i]._id) })
+                break;
         }
 
         newRow.appendChild(name);
-        newRow.appendChild(numVotes)
+        newRow.appendChild(numVotes);
 
-        newRow.classList.add("tableRow");
-        newRow.id = `${type}-${i}`;
 
         table.querySelector("tbody").appendChild(newRow);
 
@@ -140,7 +160,6 @@ function fetchAndDisplayCandidates() {
 async function addNewVoter() {
 
     const voterNameInput = document.getElementById("voterName");
-
     const voterName = voterNameInput.value;
 
     if (voterName == null || !voterName.trim()) {
@@ -157,24 +176,65 @@ async function addNewVoter() {
     const apiUrl = endpoints['addVoter'];
     const success = await apiPOSTRequest(apiUrl, data);
 
-
-
-    //wipeout votername and reload index.html:
     if (success) {
         fetchAndDisplayVoters();
     } else {
         console.error(`Failed to Add New Voter`);
     }
 
+    //wipeout votername field and toggle the modal
     voterNameInput.value = "";
-    toggleVoterModalDisplay();
+    toggleModalDisplay("modalVoter");
 }
 
 
+async function deleteVoter() {
+    const voterName = document.getElementById("voterNameField").innerHTML;
+    const votesAvail = document.getElementById("votesAvailableField").innerHTML;
+    const voterId = document.getElementById("voterIdField").innerHTML;
+
+    if (!voterName || !votesAvail || !voterId) {
+        console.error("Something went wrong parsing Span's from delete voter modal, exiting.");
+        return 0;
+    }
+
+    let data = {
+        name: voterName,
+        votes_avail: votesAvail,
+        _id: voterId,
+    }
+
+    const apiUrl = endpoints['deleteVoter'];
+    const success = await apiPOSTRequest(apiUrl, data);
+
+    if (success) {
+        fetchAndDisplayVoters();
+    } else {
+        console.error(`Failed to Add New Voter`);
+    }
+
+    toggleModalDisplay("modalDeleteVoter");
+
+}
+
+
+/* Utility Style Functions (click events, etc):*/
 
 //stub for now
-function toggleVoterModalDisplay() {
-    const modal = document.getElementById("modalVoter");
+function toggleModalDisplay(modalId) {
+    const modal = document.getElementById(modalId);
     modal.style.display = modal.style.display == "none" ? "block" : "none";
 }
 
+//stub for now
+function handleCandidateClick(name, i) {
+    return 0;
+}
+
+//show voter-specific modal on a voter click
+function handleVoterClick(name, votes_avail, voterId) {
+    document.getElementById("voterNameField").innerHTML = name;
+    document.getElementById("votesAvailableField").innerHTML = votes_avail;
+    document.getElementById("voterIdField").innerHTML = voterId;
+    toggleModalDisplay("modalDeleteVoter");
+}

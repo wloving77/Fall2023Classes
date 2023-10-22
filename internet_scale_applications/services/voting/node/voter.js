@@ -4,7 +4,8 @@ Server Logic:
 
 const http = require("http");
 const url = require("url");
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
+
 
 const PORT = 3001;
 const server = http.createServer();
@@ -47,7 +48,11 @@ initialize();
 server.on("request", async (request, response) => {
     const parsedUrl = url.parse(request.url, true);
 
+    let success;
+
     let data;
+    let voter;
+    let candidate;
     if (request.method == "GET") {
         switch (parsedUrl.pathname) {
             case "/candidates":
@@ -66,8 +71,17 @@ server.on("request", async (request, response) => {
     } else if (request.method == "POST") {
         switch (parsedUrl.pathname) {
             case "/addVoter":
-                const voter = await parseRequestBodyJSON(request);
-                const success = await addVoter(voter);
+                voter = await parseRequestBodyJSON(request);
+                success = await addVoter(voter);
+                if (success) {
+                    sendResponse(response, 200);
+                } else {
+                    sendJSONResponse(response, 400, { error: "Bad Request" });
+                }
+                break;
+            case "/deleteVoter":
+                voter = await parseRequestBodyJSON(request);
+                success = await deleteVoter(voter);
                 if (success) {
                     sendResponse(response, 200);
                 } else {
@@ -130,6 +144,33 @@ async function addVoter(voter) {
         return false;
     }
 }
+
+
+async function deleteVoter(voter) {
+    const collection = "voters";
+
+    const database = Mongod.db(db);
+    const voters = database.collection(collection);
+
+    try {
+        const query = { "_id": new ObjectId(voter['_id']) }; // Convert string to ObjectId
+        const result = await voters.deleteOne(query);
+        if (result) {
+            console.log(`Successfully deleted voter with Name: ${voter['name']} and id: ${voter['_id']}`);
+            return true;
+        } else {
+            console.log('No voter found with that id');
+            return false;
+        }
+    } catch (err) {
+        console.error(`An error occurred: ${err}`);
+        return false;
+    }
+
+}
+
+
+/* Useful functions for parsing requests and sending responses*/
 
 function sendJSONResponse(response, statusCode, data) {
     response.statusCode = statusCode;
