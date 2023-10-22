@@ -6,13 +6,12 @@ const http = require("http");
 const url = require("url");
 const { MongoClient, ObjectId } = require('mongodb');
 
-
+const HOST = "localhost";
 const PORT = 3001;
 const server = http.createServer();
 
 const mongoPort = 27017;
-const Host = "localhost";
-const mongoUrl = `mongodb://${Host}:${mongoPort}`;
+const mongoUrl = `mongodb://${HOST}:${mongoPort}`;
 const db = "voter";
 
 const Mongod = new MongoClient(mongoUrl);
@@ -26,7 +25,7 @@ async function initialize() {
             console.log("Connected to MongoDB");
 
             server.listen(PORT, () => {
-                console.log(`Server Listening on http://${Host}:${PORT}`);
+                console.log(`Server Listening on http://${HOST}:${PORT}`);
             });
             return;
         } catch (err) {
@@ -40,6 +39,7 @@ async function initialize() {
     }
 }
 
+//initialize server listening on host:port
 initialize();
 
 
