@@ -77,18 +77,39 @@ server.on("request", async (request, response) => {
                     sendJSONResponse(response, 400, { error: "Bad Request" });
                 }
                 break;
-            case "/deleteVoter":
+            case "/addCandidate":
                 data = await parseRequestBodyJSON(request);
-                success = await deleteVoter(data);
+                success = await addCandidate(data);
                 if (success) {
                     sendResponse(response, 200);
                 } else {
                     sendJSONResponse(response, 400, { error: "Bad Request" });
                 }
                 break;
-            case "/addCandidate":
+            case "/":
+                console.log("Nothing to POST/Return for a / Endpoint");
+                break;
+        }
+    } else if (request.method == "PUT") {
+        switch (parsedUrl.pathname) {
+            case "/castVote":
                 data = await parseRequestBodyJSON(request);
-                success = await addCandidate(data);
+                success = await castVote(data['voterId'], data['candidateId']);
+                if (success) {
+                    sendResponse(response, 200);
+                } else {
+                    sendJSONResponse(response, 400, { error: "Bad Request" });
+                }
+                break;
+            case "/":
+                console.log("Nothing to PUT/Return for a / Endpoint");
+                break;
+        }
+    } else if (request.method == "DELETE") {
+        switch (parsedUrl.pathname) {
+            case "/deleteVoter":
+                data = await parseRequestBodyJSON(request);
+                success = await deleteVoter(data);
                 if (success) {
                     sendResponse(response, 200);
                 } else {
@@ -104,19 +125,11 @@ server.on("request", async (request, response) => {
                     sendJSONResponse(response, 400, { error: "Bad Request" });
                 }
                 break;
-            case "/castVote":
-                data = await parseRequestBodyJSON(request);
-                success = await castVote(data['voterId'], data['candidateId']);
-                if (success) {
-                    sendResponse(response, 200);
-                } else {
-                    sendJSONResponse(response, 400, { error: "Bad Request" });
-                }
-                break;
             case "/":
-                console.log("Nothing to POST/Return for a / Endpoint");
+                console.log("Nothing to DELETE/Return for a / Endpoint");
                 break;
         }
+
     }
 });
 

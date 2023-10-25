@@ -73,6 +73,51 @@ async function apiPOSTRequest(apiUrl, dataToSend) {
     }
 }
 
+async function apiPUTRequest(apiUrl, dataToSend) {
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dataToSend),
+        })
+
+        if (!response.ok) {
+            console.log(`Unknown Error, POST to ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
+            return false;
+        }
+
+        return true;
+
+    } catch (error) {
+        console.log(`Error Handling Promise in apiPOSTRequest: ${error}`);
+        return false;
+    }
+}
+
+async function apiDELETERequest(apiUrl, dataToSend) {
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(dataToSend),
+        })
+
+        if (!response.ok) {
+            console.log(`Unknown Error, POST to ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
+            return false;
+        }
+
+        return true;
+
+    } catch (error) {
+        console.log(`Error Handling Promise in apiPOSTRequest: ${error}`);
+        return false;
+    }
+}
+
+
 /* DOM FUNCTIONS */
 
 //separate module to enforce DRY as we perform the same actions for displaying both candidates and voters
@@ -167,7 +212,8 @@ async function castVote(candidateName, candidateId) {
 
     const apiUrl = endpoints['castVote'];
 
-    const success = await apiPOSTRequest(apiUrl, data);
+    //put for updating a record
+    const success = await apiPUTRequest(apiUrl, data);
 
     toggleModalDisplay('modalDeleteVoter');
 
@@ -235,6 +281,7 @@ async function addNewVoter() {
 
     //wipeout votername field and toggle the modal
     voterNameInput.value = "";
+    voterCountInput.value = "";
     toggleModalDisplay("modalVoter");
 }
 
@@ -256,7 +303,7 @@ async function deleteVoter() {
     }
 
     const apiUrl = endpoints['deleteVoter'];
-    const success = await apiPOSTRequest(apiUrl, data);
+    const success = await apiDELETERequest(apiUrl, data);
 
     if (success) {
         fetchAndDisplayVoters("voterTable");
@@ -319,7 +366,7 @@ async function deleteCandidate() {
     }
 
     const apiUrl = endpoints['deleteCandidate'];
-    const success = await apiPOSTRequest(apiUrl, data);
+    const success = await apiDELETERequest(apiUrl, data);
 
     if (success) {
         fetchAndDisplayCandidates("candidateTable");
