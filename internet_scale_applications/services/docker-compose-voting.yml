@@ -1,0 +1,33 @@
+version: '1'
+services:
+  mongodb:
+    build:
+      context: ./database
+      dockerfile: Dockerfile-mongodb
+    image: mongo:latest
+    container_name: voter-mongo-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database/data/db:/data/db
+    networks:
+      - voter-network
+
+  nodejs-app:
+    build:
+      context: ./voting
+      dockerfile: Dockerfile-voting
+    container_name: voter-node-container
+    ports:
+      - "3001:3001"
+    depends_on:
+      - mongodb
+    networks:
+      - voter-network
+
+volumes:
+  mongodb-data:
+
+
+networks:
+  voter-network:

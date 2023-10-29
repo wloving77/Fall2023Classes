@@ -6,12 +6,13 @@ const http = require("http");
 const url = require("url");
 const { MongoClient, ObjectId } = require('mongodb');
 
-const HOST = "localhost";
-const PORT = 3001;
+const nodeHost = "0.0.0.0";
+const nodePort = 3001;
 const server = http.createServer();
 
+const mongoHost = "voter-mongo-container";
 const mongoPort = 27017;
-const mongoUrl = `mongodb://${HOST}:${mongoPort}`;
+const mongoUrl = `mongodb://${mongoHost}:${mongoPort}`;
 const db = "voter";
 
 const Mongod = new MongoClient(mongoUrl);
@@ -24,8 +25,8 @@ async function initialize() {
             await Mongod.connect();
             console.log("Connected to MongoDB");
 
-            server.listen(PORT, () => {
-                console.log(`Server Listening on http://${HOST}:${PORT}`);
+            server.listen(nodePort, () => {
+                console.log(`Server Listening on http://${nodeHost}:${nodePort}`);
             });
             return;
         } catch (err) {
