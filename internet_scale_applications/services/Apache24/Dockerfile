@@ -10,8 +10,8 @@ COPY ./conf/httpd.conf ${APACHE_CONFDIR}/httpd.conf
 COPY ./conf/docker-config.conf ${APACHE_CONFDIR}/docker-config.conf
 COPY ./conf/extra/proxy-html.conf ${APACHE_CONFDIR}/extra/proxy-html.conf
 
-COPY ./htdocs/.  /usr/local/apache2/htdocs
+COPY ./htdocs/. /usr/local/apache2/htdocs
 
 EXPOSE 80
 
-CMD ["sh", "-c", "httpd -D FOREGROUND -f ${APACHE_CONFDIR}/docker-config.conf"]
+CMD ["httpd", "-D", "FOREGROUND", "-f", "conf/docker-config.conf"]
