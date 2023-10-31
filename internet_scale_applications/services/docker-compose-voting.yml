@@ -1,10 +1,20 @@
 version: '1'
 services:
+
+  apache:
+    build:
+      context: ./Apache24
+      dockerfile: Dockerfile
+    container_name: voter-apache-container
+    ports:
+      - "80:80"
+    networks:
+      - voter-network
+
   mongodb:
     build:
       context: ./database
-      dockerfile: Dockerfile-mongodb
-    image: mongo:latest
+      dockerfile: Dockerfile
     container_name: voter-mongo-container
     ports:
       - "27017:27017"
@@ -16,7 +26,7 @@ services:
   nodejs-app:
     build:
       context: ./voting
-      dockerfile: Dockerfile-voting
+      dockerfile: Dockerfile
     container_name: voter-node-container
     ports:
       - "3001:3001"
