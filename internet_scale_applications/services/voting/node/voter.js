@@ -25,7 +25,7 @@ async function initialize() {
             await Mongod.connect();
             console.log("Connected to MongoDB");
 
-            server.listen(nodePort, () => {
+            server.listen(nodePort, nodeHost, () => {
                 console.log(`Server Listening on http://${nodeHost}:${nodePort}`);
             });
             return;

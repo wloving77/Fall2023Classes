@@ -45,6 +45,16 @@ services:
     networks:
       - service-network
 
+  daily-bugle:
+    build:
+      context: ./dailyBugle
+      dockerfile: Dockerfile
+    container_name: dailBugle-container
+    ports:
+      - 3002:3002
+    networks:
+      - service-network
+
 volumes:
   mongodb-data:
 
