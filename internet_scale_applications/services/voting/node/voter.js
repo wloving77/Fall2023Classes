@@ -10,7 +10,7 @@ const nodeHost = "0.0.0.0";
 const nodePort = 3001;
 const server = http.createServer();
 
-const mongoHost = "voter-mongo-container";
+const mongoHost = "mongo-container";
 const mongoPort = 27017;
 const mongoUrl = `mongodb://${mongoHost}:${mongoPort}`;
 const db = "voter";

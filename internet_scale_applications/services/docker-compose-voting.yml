@@ -5,39 +5,49 @@ services:
     build:
       context: ./Apache24
       dockerfile: Dockerfile
-    container_name: voter-apache-container
+    container_name: apache-container
     ports:
       - "80:80"
     networks:
-      - voter-network
+      - service-network
 
-  mongodb:
+  connect4:
     build:
-      context: ./database
+      context: ./connect4
       dockerfile: Dockerfile
-    container_name: voter-mongo-container
+    container_name: connect4-container
     ports:
-      - "27017:27017"
-    volumes:
-      - ./database/data/db:/data/db
+      - 3000:3000
     networks:
-      - voter-network
+      - service-network
 
-  nodejs-app:
+  voting:
     build:
       context: ./voting
       dockerfile: Dockerfile
-    container_name: voter-node-container
+    container_name: voting-container
     ports:
       - "3001:3001"
     depends_on:
       - mongodb
     networks:
-      - voter-network
+      - service-network
+
+  mongodb:
+    build:
+      context: ./database
+      dockerfile: Dockerfile
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./database/data/db:/data/db
+    networks:
+      - service-network
 
 volumes:
   mongodb-data:
 
 
 networks:
-  voter-network:
+  service-network:
