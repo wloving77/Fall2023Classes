@@ -74,3 +74,35 @@ async function parseRequestBodyJSON(request) {
         });
     })
 };
+
+// listen for requests:
+
+server.on("request", async (request, response) => {
+    const parsedUrl = url.parse(request.url, true);
+
+    let success;
+    let data;
+
+    if (request.method == "GET") {
+        switch (parsedUrl.pathname) {
+
+        }
+    }
+    else if (request.method == "POST") {
+        switch (parsedUrl.pathname) {
+
+        }
+    }
+    else if (request.method == "PUT") {
+        switch (parsedUrl.pathname) {
+
+        }
+    }
+    else if (request.method == "DELETE") {
+        switch (parsedUrl.pathname) {
+
+        }
+    }
+
+
+});
