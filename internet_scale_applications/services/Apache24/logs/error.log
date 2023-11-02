@@ -3829,3 +3829,9 @@ Apache server interrupted...
 [Mon Oct 30 20:30:36.058208 2023] [mpm_winnt:warn] [pid 3764:tid 1020] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
 [Mon Oct 30 20:30:36.058208 2023] [mpm_winnt:warn] [pid 3764:tid 1124] (OS 995)The I/O operation has been aborted because of either a thread exit or an application request.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
 [Mon Oct 30 20:30:38.088670 2023] [mpm_winnt:notice] [pid 3764:tid 344] AH00364: Child: All worker threads have exited.
+[Wed Nov 01 21:01:47.588919 2023] [core:warn] [pid 19956:tid 336] AH00098: pid file C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Services/Apache24/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Nov 01 21:01:47.591380 2023] [mpm_winnt:notice] [pid 19956:tid 336] AH00455: Apache/2.4.57 (Win64) configured -- resuming normal operations
+[Wed Nov 01 21:01:47.591380 2023] [mpm_winnt:notice] [pid 19956:tid 336] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
+[Wed Nov 01 21:01:47.591380 2023] [core:notice] [pid 19956:tid 336] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Services\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Services/Apache24 -f .\\conf\\developer-config.conf'
+[Wed Nov 01 21:01:47.591380 2023] [mpm_winnt:notice] [pid 19956:tid 336] AH00418: Parent: Created child process 10256
+[Wed Nov 01 21:01:48.191357 2023] [mpm_winnt:notice] [pid 10256:tid 336] AH00354: Child: Starting 64 worker threads.

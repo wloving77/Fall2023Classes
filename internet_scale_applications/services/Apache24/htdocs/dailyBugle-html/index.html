@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 
+<!-- This will be the login/signup page -->
+
 <html>
 
 <head>
+    <link rel="stylesheet" href="./css/style.css">
+
     <title> Daily Bugle </title>
-    <link rel="stylesheet" href="./style.css">
+    <h1>Please Login/Signup:</h1>
 </head>
 
-
 <body>
+    <div id="loginContainer" style="display:none;">
+        <h2>Login</h2>
+        <br>
+        <form onsubmit="validateLogin()">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="usernameLogin" name="username" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="passwordLogin" name="password" required>
+            </div>
+            <br>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
 
 
+    <div id="signupContainer" style="display:block;">
+        <h2>Login</h2>
+        <br>
+        <form onsubmit="validateSignup()">
+            <div class="form-group">
+                <label for="username">New Username:</label>
+                <input type="text" id="usernameSignup" name="username" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">Set Password:</label>
+                <input type="password" id="passwordSignup" name="password" required>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="password">Confirm Password:</label>
+                <input type="password" id="confirmPasswordSignup" name="password" required>
+            </div>
+            <br>
+            <button type="submit" class="login-button">Signup</button>
+        </form>
+    </div>
+    <br>
 
-    <script src="./control.js"></script>
+    <div id="swapButton">
+        <h3> Already Have an Account? </h3>
+        <button onclick="toggleLogin()"> Login </button>
+    </div>
+
+    <script src="./js/control.js"></script>
+
+    <!-- Script necessary for hashing passwords -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.js"></script>
 </body>
 
 </html>

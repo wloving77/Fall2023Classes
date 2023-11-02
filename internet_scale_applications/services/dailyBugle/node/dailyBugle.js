@@ -83,26 +83,4 @@ server.on("request", async (request, response) => {
     let success;
     let data;
 
-    if (request.method == "GET") {
-        switch (parsedUrl.pathname) {
-
-        }
-    }
-    else if (request.method == "POST") {
-        switch (parsedUrl.pathname) {
-
-        }
-    }
-    else if (request.method == "PUT") {
-        switch (parsedUrl.pathname) {
-
-        }
-    }
-    else if (request.method == "DELETE") {
-        switch (parsedUrl.pathname) {
-
-        }
-    }
-
-
 });
