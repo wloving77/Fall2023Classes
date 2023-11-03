@@ -1,0 +1,44 @@
+[
+    {
+        "Type": "Shirt",
+        "Brand": "YoungLA",
+        "Color": "Black",
+        "Price": 25.00,
+        "img": "shirt1.jpg"
+    },
+    {
+        "Type": "Shirt",
+        "Brand": "Dicks",
+        "Color": "Blue",
+        "Price": 27.00,
+        "img": "shirt2.jpg"
+    },
+    {
+        "Type": "Pants",
+        "Brand": "YoungLA",
+        "Color": "Black",
+        "Price": 43.00,
+        "img": "pants1.jpg"
+    },
+    {
+        "Type": "Pants",
+        "Brand": "Levis",
+        "Color": "Denim",
+        "Price": 65.00,
+        "img": "pants2.jpg"
+    },
+    {
+        "Type": "Shoes",
+        "Brand": "OnCloud",
+        "Color": "Silver",
+        "Price": 125.00,
+        "img": "shoes1.jpg"
+    },
+    {
+        "Type": "Shoes",
+        "Brand": "Birkenstocks",
+        "Color": "Brown",
+        "Price": 80.00,
+        "img": "shoes2.jpg"
+    }
+]

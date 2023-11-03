@@ -105,8 +105,11 @@ app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
 
-app.listen(port, "localhost", () => {
-    console.log("Listening on localhost:" + port);
+const localhost = "localhost"
+const dockerHost = "0.0.0.0"
+
+app.listen(port, dockerHost, () => {
+    console.log(`Listening on ${dockerHost}: ${port}`);
 });
 
 

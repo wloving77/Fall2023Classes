@@ -3,6 +3,7 @@ title: "Quiz5"
 author: "wlf9zy, gwu8ek"
 date: "2023-10-20"
 output: html_document
+runtime: shiny
 ---
 
 # Quiz 5:
@@ -25,16 +26,26 @@ head(data)
 
 #A
 
-colors1 = c("blue", "red", "green")
+library(shiny)
+library(ggplot2)
+library(plotly)
 
-plot <- ggplot(iris, aes(x=Petal.Length, y=Petal.Width, color=Species)) +
-  geom_point() + 
-  scale_color_manual(values = colors1)
+colors1 <- c("blue", "red", "green")
 
+ui <- fluidPage(
+  plotOutput("myPlot")
+)
 
-# B
+server <- function(input, output) {
+  output$myPlot <- renderPlotly({
+    # Create your ggplot2 plot
+    my_plot <- ggplot(iris, aes(x = Petal.Length, y = Petal.Width, color = Species)) +
+      geom_point() +
+      scale_color_manual(values = colors1)
+  })
+}
 
-ggplotly(plot)
+shinyApp(ui, server)
 
 ```
 
