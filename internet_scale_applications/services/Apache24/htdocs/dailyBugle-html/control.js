@@ -1,9 +1,15 @@
 
+/* Functions to run on page load: */
+
+window.onload = checkForSessionToken;
+
 /* Endpoints */
 
 const endpoints = {
     "login": "/api/dailyBugle/signIn",
     "signUp": "/api/dailyBugle/signUp",
+    "signOut": "/api/dailyBugle/signOut",
+    "sessionAuth": "/api/dailyBugle/sessionAuth"
 }
 
 /* API Request Utility Functions */
@@ -35,16 +41,11 @@ async function apiPOSTRequest(apiUrl, dataToSend) {
             body: JSON.stringify(dataToSend),
         })
 
-        if (!response.ok) {
-            console.log(`Unknown Error, POST to ${apiUrl} -> Error Code: ${response.status}, Status: ${response.statusText}`);
-            return false;
-        }
-
-        return true;
+        return response;
 
     } catch (error) {
-        console.log(`Error Handling Promise in apiPOSTRequest: ${error}`);
-        return false;
+        console.error(`Error Handling Promise in apiPOSTRequest: ${error}`);
+        throw error;
     }
 }
 
@@ -52,16 +53,20 @@ async function apiPOSTRequest(apiUrl, dataToSend) {
 async function validateLogin() {
 
     let data = {
-        "username": document.getElementById("usernameSignup").value,
+        "username": document.getElementById("usernameLogin").value,
         "password": document.getElementById("passwordLogin").value
     }
 
-    const success = await apiPOSTRequest(endpoints['login'], data);
+    const response = await apiPOSTRequest(endpoints['login'], data);
 
-    if (success) {
+    if (response.status == 200) {
         window.location.href = "./dailyBugle/";
+    } else if (response.status == 201) {
+        console.log("User Doesn't Exist");
+    } else if (response.status == 202) {
+        console.log("Error Authenticating, Wrong Password");
     } else {
-        console.log("Error Logging User In, gonna flesh this out more later");
+        console.log("Server side error");
     }
 
 }
@@ -70,8 +75,7 @@ async function validateSignup() {
 
     let username = document.getElementById("usernameSignup").value;
     let password = document.getElementById("passwordSignup").value;
-    let checkPassword = document.getElementById("checkPasswordSignup").value;
-
+    let checkPassword = document.getElementById("confirmPasswordSignup").value;
 
     let data;
 
@@ -82,27 +86,40 @@ async function validateSignup() {
         }
     } else {
         console.log("Passwords are not the same");
-        return 0;
+        return;
     }
 
-    const success = await apiPOSTRequest(endpoints['signUp'], data)
+    const response = await apiPOSTRequest(endpoints['signUp'], data)
 
-    if (success) {
+    if (response.status == 200) {
         console.log(`User ${username} successfully signed up!`);
-        window.location.href = "./dailyBugle/"
+        window.location.href = "./dailyBugle/";
+    } else if (response.status == 201) {
+        console.log(`User: ${username} already exists.`);
     } else {
-        console.log(`Error signing up user ${username}`);
+        console.log("Server-side error processing signup");
     }
 
 }
 
+async function checkForSessionToken() {
 
+    let data = {}
+
+    const response = await apiPOSTRequest(endpoints['sessionAuth'], data);
+
+    if (response.status == 200) {
+        window.location.href = "./dailyBugle/";
+    } else if (response.status == 201) {
+        console.log("No Valid Session Token, Login Normally");
+    } else {
+        console.log("Server-side error processing session token");
+    }
+}
 
 /* Functions called from DOM :*/
 
 function toggleLogin() {
-
-    console.log("Function works!");
 
     let loginDiv = document.getElementById("loginContainer");
     let signupDiv = document.getElementById("signupContainer");

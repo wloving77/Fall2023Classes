@@ -15,43 +15,39 @@
     <div id="loginContainer" style="display:none;">
         <h2>Login</h2>
         <br>
-        <form onsubmit="validateLogin()">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="usernameLogin" name="username" required>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="passwordLogin" name="password" required>
-            </div>
-            <br>
-            <button type="submit" class="login-button">Login</button>
-        </form>
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="usernameLogin" name="username" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="passwordLogin" name="password" required>
+        </div>
+        <br>
+        <button type="submit" onclick="validateLogin()" class="login-button">Login</button>
     </div>
 
 
     <div id="signupContainer" style="display:block;">
         <h2>Login</h2>
         <br>
-        <form onsubmit="validateSignup()">
-            <div class="form-group">
-                <label for="username">New Username:</label>
-                <input type="text" id="usernameSignup" name="username" required>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="password">Set Password:</label>
-                <input type="password" id="passwordSignup" name="password" required>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="password">Confirm Password:</label>
-                <input type="password" id="confirmPasswordSignup" name="password" required>
-            </div>
-            <br>
-            <button type="submit" class="login-button">Signup</button>
-        </form>
+        <div class="form-group">
+            <label for="username">New Username:</label>
+            <input type="text" id="usernameSignup" name="username" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Set Password:</label>
+            <input type="password" id="passwordSignup" name="password" required>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="password">Confirm Password:</label>
+            <input type="password" id="confirmPasswordSignup" name="password" required>
+        </div>
+        <br>
+        <button type="submit" onclick="validateSignup()" class="login-button">Signup</button>
     </div>
     <br>
 
