@@ -88,12 +88,12 @@ async function validateSignup() {
     const response = await apiPOSTRequest(endpoints['signUp'], data)
 
     if (response.status == 200) {
-        console.log(response.message);
+        console.log(response.body.message);
         window.location.href = "./dailyBugle/";
     } else if (response.status == 401) {
-        console.log(response.message);
+        console.log(response.body.message);
     } else {
-        console.log(response.message);
+        console.log(response.body.message);
     }
 
 }
@@ -105,12 +105,12 @@ async function checkForSessionToken() {
     const response = await apiPOSTRequest(endpoints['sessionToken'], data);
 
     if (response.status == 200) {
-        console.log(response.message);
+        console.log(response.body.message);
         window.location.href = "./dailyBugle/";
     } else if (response.status == 401) {
-        console.log(response.message);
+        console.log(response.body.message);
     } else {
-        console.log(response.message);
+        console.log(response.body.message);
     }
 }
 
@@ -143,12 +143,12 @@ async function signOut() {
     const response = await apiPOSTRequest(signOutUrl, data);
 
     if (response.status == 200) {
-        console.log(response.message);
-        window.location.href = "./dailyBugle/";
+        console.log(response.body.message);
+        window.location.href = "../";
     } else if (response.status == 401) {
-        console.log(response.message);
+        console.log(response.body.message);
     } else {
-        console.log(response.message);
+        console.log(response.body.message);
     }
 
 

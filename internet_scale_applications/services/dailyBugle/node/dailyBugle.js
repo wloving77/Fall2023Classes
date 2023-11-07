@@ -139,7 +139,7 @@ async function handleSignUp(request, response) {
             "Set-Cookie": `dailyBugle_token=${token}; Path=/;`
         };
 
-        return sendJSONResponse(response, 200, { message: "Signup Succeede, Welcome to the Daily Bugle!" }, cookieHeader);
+        return sendJSONResponse(response, 200, { message: "Signup Succeeded, Welcome to the Daily Bugle!" }, cookieHeader);
 
     } catch (error) {
         console.error("Server Error: " + error);
