@@ -179,18 +179,25 @@ renderPlot({
     - Below, we focus on `renderPlot` in the `server` and `plotOutput` in the `ui`.
     
 ```{r}
+library(shiny)
+library(ggplot2)
+
 shinyApp(
   ui = fluidPage(
-  sliderInput("span4", label = "Span adjustment:",
-              min = 0.2, max = 0.9, value = 0.5, step = 0.1),
-  plotOutput("irisplot")
+    sliderInput("span4", label = "Span adjustment:",
+                min = 0.2, max = 0.9, value = 0.5, step = 0.1),
+    plotOutput("irisplot")
   ),
-  
-  server = function(input, output){
+  server = function(input, output) {
     output$irisplot <- renderPlot({
-    ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) + geom_point() +         geom_smooth(method="loess", formula=y~x, se=FALSE, span=input$span4) + theme_bw()
-      })}
-)   
+      ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+        geom_point() +
+        geom_smooth(method = "loess", formula = y ~ x, se = FALSE, span = input$span4) +
+        theme_bw()
+    })
+  }
+)
+
 ```
 
 ## Using multiple `render*` and `*Output` functions

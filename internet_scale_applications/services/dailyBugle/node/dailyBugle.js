@@ -62,16 +62,6 @@ function sendJSONResponse(response, statusCode, data, headers) {
     response.end(JSON.stringify(data));
 }
 
-function sendResponse(response, statusCode, headers = {}) {
-    response.statusCode = statusCode;
-
-    for (const headerName in headers) {
-        response.setHeader(headerName, headers[headerName]);
-    }
-
-    response.end();
-}
-
 async function parseRequestBodyJSON(request) {
     return new Promise((resolve, reject) => {
         let data = '';
@@ -90,13 +80,10 @@ async function parseRequestBodyJSON(request) {
     })
 };
 
-// listen for requests:
-
+// listen for auth requests:
 server.on("request", async (request, response) => {
-    const parsedUrl = url.parse(request.url, true);
 
-    let success;
-    let data;
+    const parsedUrl = url.parse(request.url, true);
 
     if (request.method == "POST") {
         switch (parsedUrl.pathname) {
@@ -109,8 +96,8 @@ server.on("request", async (request, response) => {
             case "/signOut":
                 await handleSignOut(request, response);
                 break;
-            case "/sessionAuth":
-                await checkSessionToken(request, response);
+            case "/sessionToken":
+                await handleSessionToken(request, response);
                 break;
         }
     }
@@ -120,7 +107,7 @@ server.on("request", async (request, response) => {
 
 const SecretKey = "ThisIsAStrongSecretKeyForTesting123";
 
-// Function to generate a JWT token
+// Function to generate a JWT session token
 function generateToken(user) {
     return jwt.sign({ userId: user.id }, SecretKey, { expiresIn: "1h" });
 }
@@ -136,9 +123,9 @@ async function handleSignUp(request, response) {
 
         const userExists = await collection.findOne({ username });
 
+        // if there already exists a user, redirect to login
         if (userExists != null) {
-            sendResponse(response, 201);
-            return;
+            return sendJSONResponse(response, 401, { message: "Signup Failed, User Already Exists" }, {});
         }
 
         const hashedPassword = await bcrypt.hash(password, 10);
@@ -149,14 +136,14 @@ async function handleSignUp(request, response) {
         //send session token back
         const token = generateToken(newUser);
         const cookieHeader = {
-            "Set-Cookie": `session_token=${token}; Path=/;`
+            "Set-Cookie": `dailyBugle_token=${token}; Path=/;`
         };
 
-        sendResponse(response, 200, cookieHeader);
+        return sendJSONResponse(response, 200, { message: "Signup Succeede, Welcome to the Daily Bugle!" }, cookieHeader);
 
     } catch (error) {
-        console.error("Unknown Error Parsing Request" + error);
-        sendResponse(response, 500);
+        console.error("Server Error: " + error);
+        return sendJSONResponse(response, 500, { message: "An unexpected error occured, please try again later" }, {});
     }
 }
 
@@ -173,8 +160,7 @@ async function handleSignIn(request, response) {
         const User = await collection.findOne({ username: username });
 
         if (User == null) {
-            sendResponse(response, 201);
-            return;
+            return sendJSONResponse(response, 401, { message: "Login Failed, Please Check Your Credentials" }, {});
         }
 
         let authenticated = await bcrypt.compare(password, User.password);
@@ -183,17 +169,17 @@ async function handleSignIn(request, response) {
             //send session token back
             const token = generateToken(User);
             const cookieHeader = {
-                "Set-Cookie": `session_token=${token}; Path=/;`
+                "Set-Cookie": `dailyBugle_token=${token}; Path=/;`
             };
 
-            sendResponse(response, 200, cookieHeader);
+            return sendJSONResponse(response, 200, { message: "Login Successful, Welcome to the Daily Bugle!" }, cookieHeader);
         } else {
-            sendResponse(response, 202);
+            return sendJSONResponse(response, 401, { message: "Login Failed, Please Check Your Credentials" }, {});
         }
 
     } catch (error) {
-        console.error("Unknown Error Parsing Request: " + error);
-        sendResponse(response, 500);
+        console.error("Server Error: " + error);
+        return sendJSONResponse(response, 500, { message: "An unexpected error occured, please try again later" }, {});
     }
 
 }
@@ -201,30 +187,37 @@ async function handleSignIn(request, response) {
 async function handleSignOut(request, response) {
 
     //this does nothing atm
-    sendResponse(response, 200);
+    sendJSONResponse(response, 200, { message: "Success: User Signed Out" });
 
 }
 
 
 /* Cookie Parsing Logic for authenticated routes: */
 
-async function checkSessionToken(request, response) {
-    const cookies = await parseCookies(request);
+async function handleSessionToken(request, response) {
 
-    // Check if the session_token cookie is present
-    if (!cookies.session_token) {
-        sendResponse(response, 201);
+    let cookies;
+
+    try {
+        cookies = await parseCookies(request);
+    } catch (error) {
+        console.error("Error parsing cookies: " + error);
+        return sendJSONResponse(response, 400, { message: 'Bad Request: Error parsing cookies' }, {});
+    }
+    // Check if the dailtBugle_token cookie is present
+    if (!cookies.dailyBugle_token) {
+        return sendJSONResponse(response, 401, { message: "Unauthorized: Token Not Provided" }, {});
     }
 
-    const token = cookies.session_token;
+    const token = cookies.dailyBugle_token;
 
     try {
         // Verify the token using the same secret key used for signing
         jwt.verify(token, SecretKey);
-        sendResponse(response, 200);
+        return sendJSONResponse(response, 200, { message: "Authorized: Session Token Valid" }, {});
     } catch (error) {
-        console.log("Session Token Invalid: " + error);
-        sendResponse(response, 201);
+        console.error("Session Token Invalid: " + error);
+        return sendJSONResponse(response, 403, { message: "Forbidden: Invalid Session Token" }, {});
     }
 }
 

@@ -13,67 +13,7 @@
 </body>
 
 
-<script>
-
-    async function apiPOSTRequest(apiUrl, dataToSend) {
-
-        try {
-            const response = await fetch(apiUrl, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(dataToSend),
-            })
-
-            return response;
-
-        } catch (error) {
-            console.error(`Error Handling Promise in apiPOSTRequest: ${error}`);
-            throw error;
-        }
-    }
-
-    async function signOut() {
-
-        //invalidate cookie
-
-        clearSessionTokenCookie();
-
-        data = {};
-
-        const signOutUrl = "/api/dailyBugle/signOut";
-
-        const response = await apiPOSTRequest(signOutUrl, data);
-
-        if (response.status == 200) {
-            window.location.href = "../";
-        } else {
-            console.log("Server-side error signing out");
-        }
-
-
-    }
-
-    function clearSessionTokenCookie() {
-        // Split the document.cookie string into individual cookies
-        const cookies = document.cookie.split(";");
-
-        // Iterate through the cookies to find and remove the "session_token" cookie
-        for (let i = 0; i < cookies.length; i++) {
-            const cookie = cookies[i].trim(); // Remove leading/trailing spaces
-
-            // Check if the cookie starts with "session_token="
-            if (cookie.startsWith("session_token=")) {
-                // Extract the name of the cookie ("session_token") and clear it
-                const cookieName = cookie.split("=")[0].trim();
-                document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-
-                // Optionally, break out of the loop if you only want to clear the first matching cookie
-                break;
-            }
-        }
-    }
-
-
-</script>
+<!-- Here is where we get signOut() from:-->
+<script src="../auth.js"></script>
 
 </html>

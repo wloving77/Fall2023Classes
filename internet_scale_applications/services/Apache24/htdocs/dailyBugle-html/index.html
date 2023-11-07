@@ -53,10 +53,15 @@
 
     <div id="swapButton">
         <h3> Already Have an Account? </h3>
-        <button onclick="toggleLogin()"> Login </button>
+        <button onclick="toggleLoginView()"> Login </button>
     </div>
 
-    <script src="./control.js"></script>
+    <script src="./auth.js"></script>
+
+    <script>
+        // check for existing session token on page load:
+        window.onload = checkForSessionToken
+    </script>
 
 </body>
 

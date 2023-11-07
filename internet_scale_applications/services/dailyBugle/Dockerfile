@@ -4,9 +4,9 @@ WORKDIR /usr/src/app
 
 COPY ./node/dailyBugle.js ./
 
-RUN npm install mongodb
+COPY ./node/package.json ./
 
-RUN npm install bcryptjs
+RUN npm install
 
 EXPOSE 3002
 
