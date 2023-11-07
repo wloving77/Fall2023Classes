@@ -3886,7 +3886,15 @@ Apache server interrupted...
 [Mon Nov 06 13:14:25.899277 2023] [mpm_winnt:notice] [pid 8856:tid 360] AH00456: Apache Lounge VS17 Server built: Aug  2 2023 17:28:16
 [Mon Nov 06 13:14:25.899277 2023] [core:notice] [pid 8856:tid 360] AH00094: Command line: 'C:\\Users\\wlovi\\OneDrive\\Desktop\\Githubs\\Fall2023Classes\\internet_scale_applications\\Services\\Apache24\\bin\\httpd.exe -d C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/internet_scale_applications/Services/Apache24 -f .\\conf\\developer-config.conf'
 [Mon Nov 06 13:14:25.914836 2023] [mpm_winnt:notice] [pid 8856:tid 360] AH00418: Parent: Created child process 9076
-[Mon Nov 06 13:14:26.543751 2023] [mpm_winnt:notice] [pid 9076:tid 336] AH00354: Child: Starting 64 worker threads.
+Apache server interrupted...
+023] [mpm_winnt:notice] [pid 9076:tid 336] AH00354: Child: Starting 64 worker threads.
 [Mon Nov 06 13:49:21.594407 2023] [proxy_http:error] [pid 9076:tid 964] (OS 10054)An existing connection was forcibly closed by the remote host.  : [client ::1:14900] AH01102: error reading status line from remote server localhost:3002, referer: http://localhost/services/dailyBugle/
 [Mon Nov 06 13:49:25.644752 2023] [proxy:error] [pid 9076:tid 956] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3002 (localhost:3002) failed
 [Mon Nov 06 13:49:25.644752 2023] [proxy_http:error] [pid 9076:tid 956] [client ::1:14901] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/dailyBugle/
+[Tue Nov 07 11:44:58.550678 2023] [proxy:error] [pid 9076:tid 956] (OS 10061)No connection could be made because the target machine actively refused it.  : AH00957: http: attempt to connect to 127.0.0.1:3002 (localhost:3002) failed
+[Tue Nov 07 11:44:58.550678 2023] [proxy_http:error] [pid 9076:tid 956] [client ::1:23595] AH01114: HTTP: failed to make connection to backend: localhost, referer: http://localhost/services/dailyBugle/
+[Tue Nov 07 12:13:55.004591 2023] [mpm_winnt:notice] [pid 8856:tid 360] AH00422: Parent: Received shutdown signal -- Shutting down the server.
+Apache server interrupted...
+Apache server interrupted...
+[Tue Nov 07 12:13:57.021090 2023] [mpm_winnt:notice] [pid 9076:tid 336] AH00364: Child: All worker threads have exited.
+[Tue Nov 07 12:13:57.040629 2023] [mpm_winnt:notice] [pid 8856:tid 360] AH00430: Parent: Child process 9076 exited successfully.
