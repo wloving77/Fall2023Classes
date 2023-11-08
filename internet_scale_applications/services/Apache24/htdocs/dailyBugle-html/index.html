@@ -16,4 +16,15 @@
 <!-- Here is where we get auth commands like signOut() from:-->
 <script src="/services/auth/auth.js"></script>
 
+<!-- We need to redirect if you do not have the session token:-->
+<script>
+
+    checkForSessionToken().then(result => {
+        if (!result) {
+            window.location = "/services/auth";
+        }
+    })
+
+</script>
+
 </html>

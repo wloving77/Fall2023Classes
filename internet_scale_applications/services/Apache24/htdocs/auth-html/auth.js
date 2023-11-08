@@ -1,11 +1,10 @@
-
 /* Endpoints */
 
 const endpoints = {
-    "login": "/api/dailyBugle/signIn",
-    "signUp": "/api/dailyBugle/signUp",
-    "signOut": "/api/dailyBugle/signOut",
-    "sessionToken": "/api/dailyBugle/sessionToken"
+    "login": "/api/auth/signIn",
+    "signUp": "/api/auth/signUp",
+    "signOut": "/api/auth/signOut",
+    "sessionToken": "/api/auth/sessionToken"
 }
 
 /* API Request Utility Functions */
@@ -22,27 +21,32 @@ async function apiGETRequest(apiUrl) {
             return response.json();
         })
         .catch(error => {
-            document.getElementById("errorElement").innerHTML = "An Error Occured";
             console.log(`Error Handling Promise in apiGETRequest: ${error}`);
             return null;
         })
 }
 
-async function apiPOSTRequest(apiUrl, dataToSend) {
+function apiPOSTRequest(apiUrl, dataToSend) {
 
-    try {
-        const response = await fetch(apiUrl, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(dataToSend),
+    return fetch(apiUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dataToSend),
+    })
+        .then(response => {
+            // Parse the JSON response and return the data along with the status
+            return response.json().then(message => {
+                return {
+                    status: response.status,
+                    message: message
+                };
+            });
         })
-
-        return response;
-
-    } catch (error) {
-        console.error(`Error Handling Promise in apiPOSTRequest: ${error}`);
-        throw error;
-    }
+        .catch(error => {
+            // Log the error and pass it on for the calling function to handle
+            console.error(`Error Handling Promise in apiPOSTRequest: ${error}`);
+            throw error;
+        });
 }
 
 
@@ -57,12 +61,12 @@ async function validateLogin() {
 
     if (response.status == 200) {
         window.location = "/services/dailyBugle";
-    } else if (response.status == 201) {
-        console.log("User Doesn't Exist");
-    } else if (response.status == 202) {
-        console.log("Error Authenticating, Wrong Password");
+    } else if (response.status == 401) {
+        console.log(response.message);
+    } else if (response.status == 402) {
+        console.log(response.message);
     } else {
-        console.log("Server side error");
+        console.log(response.message);
     }
 
 }
@@ -88,12 +92,11 @@ async function validateSignup() {
     const response = await apiPOSTRequest(endpoints['signUp'], data)
 
     if (response.status == 200) {
-        console.log(response.body.message);
         window.location = "/services/dailyBugle";
     } else if (response.status == 401) {
-        console.log(response.body.message);
+        console.log(response.message);
     } else {
-        console.log(response.body.message);
+        console.log(response.message);
     }
 
 }
@@ -105,14 +108,13 @@ async function checkForSessionToken() {
     const response = await apiPOSTRequest(endpoints['sessionToken'], data);
 
     if (response.status == 200) {
-        console.log(response.body.message);
-        window.location = "/services/dailyBugle";
-    } else if (response.status == 401) {
-        console.log(response.body.message);
-    } else {
-        console.log(response.body.message);
+        return true;
     }
+
+    return false;
+
 }
+
 
 function clearSessionTokenCookie() {
 
@@ -122,7 +124,7 @@ function clearSessionTokenCookie() {
     for (let i = 0; i < cookies.length; i++) {
         const cookie = cookies[i].trim();
 
-        if (cookie.startsWith("dailyBugle_token=")) {
+        if (cookie.startsWith("williamToken_token=")) {
             const cookieName = cookie.split("=")[0].trim();
             document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
             break;
@@ -138,17 +140,16 @@ async function signOut() {
 
     data = {};
 
-    const signOutUrl = "/api/dailyBugle/signOut";
+    const signOutUrl = endpoints['signOut'];
 
     const response = await apiPOSTRequest(signOutUrl, data);
 
     if (response.status == 200) {
-        console.log(response.body.message);
         window.location = "/services/auth";
     } else if (response.status == 401) {
-        console.log(response.body.message);
+        console.log(response.message);
     } else {
-        console.log(response.body.message);
+        console.log(response.message);
     }
 
 

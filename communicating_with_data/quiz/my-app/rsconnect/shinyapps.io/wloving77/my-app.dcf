@@ -1,0 +1,10 @@
+name: my-app
+title:
+username: wloving77
+account: wloving77
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10461605
+bundleId: 7904185
+url: https://wloving77.shinyapps.io/my-app/
+version: 1

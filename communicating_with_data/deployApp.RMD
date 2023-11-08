@@ -1,0 +1,21 @@
+---
+title: "settinguprsconnect"
+author: "wlf9zy"
+date: "2023-11-08"
+output: html_document
+---
+
+
+```{r}
+
+library(rsconnect)
+
+```
+
+
+```{r}
+
+rsconnect::deployApp("C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/communicating_with_data/quiz/app")
+
+
+```

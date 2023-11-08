@@ -6,12 +6,11 @@ const http = require("http");
 const url = require("url");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const cookieParser = require("cookie-parser");
 const { MongoClient, ObjectId } = require('mongodb');
 
 // node server logic, note the ports and host being listened on, this is for docker compatibility
 const nodeHost = "0.0.0.0";
-const nodePort = 3002;
+const nodePort = 3003;
 const server = http.createServer();
 
 // mongo server logic, note the ports being run on, these are specific to docker
@@ -58,6 +57,8 @@ function sendJSONResponse(response, statusCode, data, headers) {
     for (const headerName in headers) {
         response.setHeader(headerName, headers[headerName]);
     }
+
+    console.log(data);
 
     response.end(JSON.stringify(data));
 }
@@ -136,10 +137,10 @@ async function handleSignUp(request, response) {
         //send session token back
         const token = generateToken(newUser);
         const cookieHeader = {
-            "Set-Cookie": `dailyBugle_token=${token}; Path=/;`
+            "Set-Cookie": `williamToken_token=${token}; Path=/;`
         };
 
-        return sendJSONResponse(response, 200, { message: "Signup Succeeded, Welcome to the Daily Bugle!" }, cookieHeader);
+        return sendJSONResponse(response, 200, { message: "Signup Succeeded, Welcome to my App!" }, cookieHeader);
 
     } catch (error) {
         console.error("Server Error: " + error);
@@ -160,7 +161,7 @@ async function handleSignIn(request, response) {
         const User = await collection.findOne({ username: username });
 
         if (User == null) {
-            return sendJSONResponse(response, 401, { message: "Login Failed, Please Check Your Credentials" }, {});
+            return sendJSONResponse(response, 402, { message: "User does not exist, please signup" }, {});
         }
 
         let authenticated = await bcrypt.compare(password, User.password);
@@ -169,10 +170,10 @@ async function handleSignIn(request, response) {
             //send session token back
             const token = generateToken(User);
             const cookieHeader = {
-                "Set-Cookie": `dailyBugle_token=${token}; Path=/;`
+                "Set-Cookie": `williamToken_token=${token}; Path=/;`
             };
 
-            return sendJSONResponse(response, 200, { message: "Login Successful, Welcome to the Daily Bugle!" }, cookieHeader);
+            return sendJSONResponse(response, 200, { message: "Login Successful, Welcome to my App!" }, cookieHeader);
         } else {
             return sendJSONResponse(response, 401, { message: "Login Failed, Please Check Your Credentials" }, {});
         }
@@ -187,7 +188,7 @@ async function handleSignIn(request, response) {
 async function handleSignOut(request, response) {
 
     //this does nothing atm
-    sendJSONResponse(response, 200, { message: "Success: User Signed Out" });
+    sendJSONResponse(response, 200, { message: "Success: User Signed Out" }, {});
 
 }
 
@@ -205,11 +206,11 @@ async function handleSessionToken(request, response) {
         return sendJSONResponse(response, 400, { message: 'Bad Request: Error parsing cookies' }, {});
     }
     // Check if the dailtBugle_token cookie is present
-    if (!cookies.dailyBugle_token) {
+    if (!cookies.williamToken_token) {
         return sendJSONResponse(response, 401, { message: "Unauthorized: Token Not Provided" }, {});
     }
 
-    const token = cookies.dailyBugle_token;
+    const token = cookies.williamToken_token;
 
     try {
         // Verify the token using the same secret key used for signing
