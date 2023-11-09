@@ -16,4 +16,24 @@
 <br><br>
 <button onclick="location.href='/modal.html'">Modal Example</button>
 <br><br>
-<button onclick="location.href='/connect4.html'">Connect4 App!</button>
+<button onclick="location.href='/services/connect4'">Connect4 App!</button>
+<br><br>
+<button onclick="location.href='/services/voting'">Voting App!</button>
+<br><br>
+<button onclick="location.href='services/dailyBugle'">Daily-Bugle App!</button>
+<br><br>
+<button onclick="signOut()" id="signOut">Sign Out</button>
+
+
+
+<!-- Auth logic: -->
+<script src="services/auth/auth.js"></script>
+<script>
+
+    checkForSessionToken().then(result => {
+        if (!result) {
+            window.location = "/services/auth";
+        }
+    })
+
+</script>

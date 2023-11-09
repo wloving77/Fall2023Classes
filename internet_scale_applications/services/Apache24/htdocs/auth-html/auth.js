@@ -60,7 +60,7 @@ async function validateLogin() {
     const response = await apiPOSTRequest(endpoints['login'], data);
 
     if (response.status == 200) {
-        window.location = "/services/dailyBugle";
+        window.location = "/";
     } else if (response.status == 401) {
         console.log(response.message);
     } else if (response.status == 402) {
@@ -92,7 +92,7 @@ async function validateSignup() {
     const response = await apiPOSTRequest(endpoints['signUp'], data)
 
     if (response.status == 200) {
-        window.location = "/services/dailyBugle";
+        window.location = "/";
     } else if (response.status == 401) {
         console.log(response.message);
     } else {
@@ -107,11 +107,13 @@ async function checkForSessionToken() {
 
     const response = await apiPOSTRequest(endpoints['sessionToken'], data);
 
+    console.log(response.message);
+
     if (response.status == 200) {
         return true;
+    } else {
+        return false;
     }
-
-    return false;
 
 }
 

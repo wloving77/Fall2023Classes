@@ -20,8 +20,8 @@ const mongoPort = 27017;
 const mongoUrl = `mongodb://${mongoLocalHost}:${mongoPort}`;
 
 const Mongod = new MongoClient(mongoUrl);
-const db = "dailyBugle";
-const authCollection = "auth";
+const db = "authentication";
+const authCollection = "user";
 
 //initialize server, begin listening, retry 3 times if failing.
 async function initialize() {
@@ -217,7 +217,6 @@ async function handleSessionToken(request, response) {
         jwt.verify(token, SecretKey);
         return sendJSONResponse(response, 200, { message: "Authorized: Session Token Valid" }, {});
     } catch (error) {
-        console.error("Session Token Invalid: " + error);
         return sendJSONResponse(response, 403, { message: "Forbidden: Invalid Session Token" }, {});
     }
 }

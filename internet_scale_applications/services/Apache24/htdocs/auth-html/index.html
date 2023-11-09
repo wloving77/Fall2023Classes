@@ -58,6 +58,19 @@
 
     <script src="./auth.js"></script>
 
+
+    <script>
+
+        // redirect to the home page:
+        checkForSessionToken().then(authenticated => {
+            if (authenticated) {
+                window.location = "/";
+            }
+        })
+
+
+    </script>
+
 </body>
 
 </html>
