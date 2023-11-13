@@ -1,0 +1,168 @@
+---
+title: "Assignment - Shiny"
+output:
+  html_document:
+    number_sections: no
+    toc: yes
+    toc_float: yes
+    code_folding: show
+#runtime: shiny    
+---
+
+- You may work up to 3 classmates on this assignment. For Part 2, please use a different dataset from those you are working with on the term project. 
+- Upload your Shiny app on [ShinyApps.io](https://www.shinyapps.io).
+
+- Submit your `.Rmd` AND your URL(s) (https://XXXXX.shinyapps.io/XXXXX) on Canvas.
+
+- I recommend building your apps locally and deploying them to Shiny after the build to conserve your free hours on shinyapps.io
+
+```{r}
+# List classmates you worked with on this homework:
+
+# 1. wfl9zy
+
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE)
+library(knitr)
+library(tidyverse)
+library(plotly)
+library(foreign)
+
+```
+
+# Part 1 (10 points)
+
+- First, get the latest reported counts of COVID-19 cases and deaths from WHO:[Data](https://covid19.who.int/data).
+      
+- The file should be named `WHO-COVID-19-global-table-data.csv`
+  
+- Create a subset including 3 countries per `WHO region` (Africa, Americas, Eastern Mediterranean, Europe, South-East Asia, Western Pacific). You can choose any three countries within each `WHO region` to compare the mortality rate (`mutate(rate = "Deaths - cumulative total"/"Cases - cumulative total")`). 
+
+- Create a shiny app to produce bar plots, along with the control type of `selectInput()`.
+
+>You need to use `selectInput()` in the `ui` to select one level from the `WHO region` variable (with 6 levels: Africa, Americas, Eastern Mediterranean, Europe, South-East Asia, Western Pacific). 
+     
+- Your output should be a barplot of mortality rates from three countries in the selected region (Error bars not required)
+
+
+### PAGE NOT FOUND FOR DATA, 404, USED "WHO_COVID-19-GLOBAL-DATA.csv" instead
+
+
+
+```{r}
+# add your codes 
+
+library(readr)
+
+data <- read_csv("./data/data.csv")
+
+  
+library(shiny)
+library(dplyr)
+
+
+ui <- fluidPage(
+  selectInput("Region", "Select a WHO Region", choices=unique(data$WHO_region)),
+  plotOutput("barplot")
+)
+
+server <- function(input, output) {
+  output$barplot <- renderPlot({
+    selectedRegion <- input$Region
+    selectedData <- data %>%
+      filter(WHO_region == selectedRegion) %>%
+      group_by(Country) %>%
+      summarize(rate = mean((New_deaths - Cumulative_deaths) / (New_cases - Cumulative_cases), na.rm = TRUE))
+    
+    
+    preparedData <- selectedData %>%
+      top_n(3, rate)
+    
+    ggplot(preparedData, aes(x=Country, y=rate, fill=Country)) + 
+      geom_bar(stat="identity") + 
+      labs(
+        x= paste("Top 3 Covid Death Rate Countries in ",selectedRegion),
+        y="Covid Death Rate",
+        title=paste("Top 3 Covid Death Rates in ",selectedRegion)
+      )
+    
+    
+  })
+}
+
+
+shinyApp(ui, server)
+
+```
+
+# Part 2 (10 points)
+
+- Use a dataset that is available in data repositories (e.g., [kaggle](https://www.kaggle.com/datasets)). 
+- e.g: "Top 50 US Tech Companies 2022 - 2023.csv"
+
+- Select *two* continuous variables (denoted as "A" and "B") 
+
+- Create an interactive scatterplot between "A" and "B" with a loess line using Shiny app. 
+
+- You need to create two input variables for loess regression. 
+
+    - One input variable is the degree with values of 0, 1, and 2.
+    - The other input variable is the span value ranging from 0.2 to 0.9.
+   
+   
+- You can choose appropriate control types from [Widget gallery](https://shiny.rstudio.com/gallery/widget-gallery.html).
+     
+```{r}
+
+data_mcdonalds <- read.csv("./data/mcdonalds_dataset.csv")
+
+data_mcdonalds_clean <- data_mcdonalds %>%
+  mutate(product_calories = as.numeric(sub(".*: ", "", product_calories)))
+
+data_mcdonalds_clean <- data_mcdonalds_clean %>%
+  mutate(product_price = as.numeric(sub("£ ?", "", product_price)))
+
+
+data_mcdonalds_final <- na.omit(data_mcdonalds_clean)
+
+
+ui <- fluidPage(
+  titlePanel("Interactive Scatterplot with Loess Line"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("span", "Span Value:", min = 0.2, max = 0.9, value = 0.5),
+      selectInput("degree", "Degree:", choices = c(0, 1, 2), selected = 1)
+    ),
+    mainPanel(
+      plotOutput("scatterplot")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$scatterplot <- renderPlot({
+    degree <- input$degree
+    span <- input$span
+
+    # Create the scatterplot with a loess line
+    ggplot(data_mcdonalds_final, aes(x = product_price, y = product_calories)) +
+      geom_point() +
+      geom_smooth(method = "loess", formula = y ~ x, degree = degree, span = span) +
+      labs(
+        title = "Scatterplot with Loess Line Of Product Price by Product Calories at Mcdonalds",
+        x = "Product Price",
+        y = "Product Calories"
+      )
+  })
+}
+
+shinyApp(ui, server)
+
+```
+
+- Describe a relationship between A and B. 
+
+## We can clearly see a positive correlation between price and calories. As you pay more, you get more food!

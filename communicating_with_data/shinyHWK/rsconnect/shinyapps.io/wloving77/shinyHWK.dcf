@@ -1,0 +1,12 @@
+name: shinyHWK
+title: shinyHWK
+username: wloving77
+account: wloving77
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10497605
+bundleId: 7917772
+url: https://wloving77.shinyapps.io/shinyHWK/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

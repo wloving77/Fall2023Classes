@@ -15,7 +15,7 @@ library(rsconnect)
 
 ```{r}
 
-rsconnect::deployApp("C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/communicating_with_data/quiz/app")
+rsconnect::deployApp("C:/Users/wlovi/OneDrive/Desktop/Githubs/Fall2023Classes/communicating_with_data/quiz/my-app")
 
 
 ```
