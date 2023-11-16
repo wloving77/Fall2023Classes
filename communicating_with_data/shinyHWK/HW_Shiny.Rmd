@@ -48,16 +48,12 @@ library(foreign)
 - Your output should be a barplot of mortality rates from three countries in the selected region (Error bars not required)
 
 
-### PAGE NOT FOUND FOR DATA, 404, USED "WHO_COVID-19-GLOBAL-DATA.csv" instead
-
-
-
 ```{r}
 # add your codes 
 
 library(readr)
 
-data <- read_csv("./data/data.csv")
+data <- read_csv("./data/WHO-COVID-19-global-data.csv")
 
   
 library(shiny)
