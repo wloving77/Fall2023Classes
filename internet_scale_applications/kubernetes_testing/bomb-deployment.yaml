@@ -1,10 +1,29 @@
-apiVersion: v1
-kind: Pod
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: bomb-pod
+#   labels: 
+#     app: bomb-pod
+# spec:
+#   containers:
+#   - name: bomb-container
+#     image: bomb:1  # Use the same image name and tag you loaded into Kind
+
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: bomb-pod
-  labels: 
-    app: bomb-pod
+  name: bomb-deployment
 spec:
-  containers:
-  - name: bomb-container
-    image: bomb:1  # Use the same image name and tag you loaded into Kind
+  replicas: 3  # Number of replicas
+  selector:
+    matchLabels:
+      app: bomb-app
+  template:
+    metadata:
+      labels:
+        app: bomb-app
+    spec:
+      containers:
+      - name: bomb-container
+        image: bomb:1  # Replace with your container image
+        ports:

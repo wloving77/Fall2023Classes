@@ -4,9 +4,10 @@ metadata:
   name: bomb-service
 spec:
   selector:
-    app: bomb-pod  # Match the labels of your Pod
+    app: bomb-app  # Match the labels of your Pod
   ports:
     - protocol: TCP
       port: 3009  # The port your Node.js app is listening on
       targetPort: 3009
+      nodePort: 31000
   type: NodePort
