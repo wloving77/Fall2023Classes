@@ -1,3 +1,18 @@
+#adminDiv {
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.adminUser {
+    display: none;
+}
+
+
+#mainPage {
+    border: 2px solid black;
+    padding: 20px;
+}
+
 .storyDiv {
     border: 2px solid black;
 }

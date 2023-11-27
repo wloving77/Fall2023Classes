@@ -14,3 +14,18 @@ function rotateImage() {
 
 
 }
+
+
+var intervalAdmin = setInterval(checkAdmin, 2000);
+
+function checkAdmin() {
+    if (userInfo.username != undefined && userInfo.adminUser != undefined) {
+        if (userInfo.adminUser) {
+            let adminElements = document.getElementsByClassName("adminUser");
+
+            for (let i = 0; i < adminElements.length; i++) {
+                adminElements[i].style.display = "block";
+            }
+        }
+    }
+}

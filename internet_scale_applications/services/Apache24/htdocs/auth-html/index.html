@@ -66,11 +66,34 @@
     <script>
 
         // redirect to the home page:
-        checkForSessionToken().then(authenticated => {
-            if (authenticated) {
+        checkForSessionToken().then(returnData => {
+            if (returnData.success) {
                 window.location = "/";
             }
         })
+
+        function toggleLoginView() {
+
+            let loginDiv = document.getElementById("loginContainer");
+            let signupDiv = document.getElementById("signupContainer");
+
+            let swapBtn = document.getElementById("swapButton");
+
+            //login mode: state=true
+            //signup mode: state=false
+            let state = signupDiv.style.display == "none";
+
+            // swap to whatever the opposite state is, if login mode, go to signup mode and vice versa 
+
+            loginDiv.style.display = state == true ? "none" : "block";
+            signupDiv.style.display = state == true ? "block" : "none";
+
+            //modify button: 
+
+            swapBtn.querySelector("h3").innerHTML = state == true ? "Already Have an Account?" : "Make an Account?";
+            swapBtn.querySelector("button").innerHTML = state == true ? "Login" : "Signup";
+
+        }
 
 
     </script>

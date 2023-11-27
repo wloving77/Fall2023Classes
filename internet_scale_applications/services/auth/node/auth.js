@@ -219,7 +219,7 @@ async function handleSessionToken(request, response) {
                 "username": decoded.username,
                 "adminUser": decoded.adminUser
             }
-            return sendJSONResponse(response, 200, { message: "Valid Session Token, User Information Sent", data }, {});
+            return sendJSONResponse(response, 200, { message: "Valid Session Token, User Information Sent", userInformation: data }, {});
         }
     });
 }

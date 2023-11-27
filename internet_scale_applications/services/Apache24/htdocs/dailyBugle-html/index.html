@@ -6,72 +6,89 @@
     <h1> Welcome to the Daily Bugle!</h1>
 </head>
 
-<body style="border: 2px solid black; padding: 20px;">
+<body>
 
-    <div class="storyDiv">
+    <div class="adminUser" id="adminDiv">
+        <h1 class="adminUser"> Hello Admin User! </h1>
+        <button class="adminUser" id="createStory"> Create Story </button>
+        <br>
+        <br>
+    </div>
+    <br>
 
-        <h1 id="storyTitle"> Title of Story! </h1>
+    <div id="mainPage">
 
 
-        <h2 id="storyContent"> Content of Story! </h2>
+        <div class="storyDiv">
+
+            <h1 id="storyTitle"> Title of Story! </h1>
+
+
+            <h2 id="storyContent"> Content of Story! </h2>
+
+            <br>
+            <br>
+
+        </div>
+
+        <br>
+
+        <div class="advertisementDiv">
+
+            <h4 style="text-align: center;"> Promotion </h4>
+
+            <img id="advertisementImage" src="./advertisements/bose.jpeg">
+
+            <br>
+
+
+        </div>
+
+        <br>
+
+        <h1> Comments: </h1>
+        <div class="commentDiv">
+
+            <br>
+            <br>
+
+        </div>
+
+
+        <br>
+
+        <button class="arrowButton" id="previousStory"> Previous Story</button>
+        <button class="arrowButton" id="nextStory"> Next Story </button>
 
         <br>
         <br>
+
+        <button onclick=" signOut()" id="signOut">Sign Out</button>
 
     </div>
-
-    <br>
-
-    <div class="advertisementDiv">
-
-        <h4 style="text-align: center;"> Promotion </h4>
-
-        <img id="advertisementImage" src="./advertisements/bose.jpeg">
-
-        <br>
-
-
-    </div>
-
-    <br>
-
-    <h1> Comments: </h1>
-    <div class="commentDiv">
-
-        <br>
-        <br>
-
-    </div>
-
-
-    <br>
-
-    <button class="arrowButton" id="previousStory"> Previous Story</button>
-    <button class="arrowButton" id="nextStory"> Next Story </button>
-
-    <br>
-    <br>
-
-    <button onclick=" signOut()" id="signOut">Sign Out</button>
-
 </body>
 
 <link rel="stylesheet" href="./style.css">
 
-<script src="./control.js"></script>
-
 <script src="/services/auth/auth.js"></script>
 
-<!-- We need to redirect if you do not have a session token:-->
 <script>
 
-    checkForSessionToken().then(result => {
-        if (!result) {
-            window.location = "/services/auth";
-        }
-    })
+    var userInfo = {};
 
+    window.onload = function () {
+        checkForSessionToken()
+            .then(returnData => {
+                if (!returnData.success) {
+                    window.location = "/services/auth";
+                }
+                userInfo.username = returnData.username;
+                userInfo.adminUser = returnData.adminUser;
+            })
+    }
 
 </script>
+
+<script src="./control.js"></script>
 
 </html>

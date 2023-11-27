@@ -117,17 +117,21 @@ async function validateSignup() {
 
 async function checkForSessionToken() {
 
-    let data = {}
-
-    const response = await apiPOSTRequest(endpoints['sessionToken'], data);
+    const response = await apiPOSTRequest(endpoints['sessionToken'], {});
 
     console.log(response.message);
 
+    let returnData = {};
+
     if (response.status == 200) {
-        return true;
+        returnData.username = response.message.userInformation.username;
+        returnData.adminUser = response.message.userInformation.adminUser;
+        returnData.success = true;
     } else {
-        return false;
+        returnData.success = false;
     }
+
+    return returnData;
 
 }
 
@@ -168,30 +172,5 @@ async function signOut() {
         console.log(response.message);
     }
 
-
-}
-
-/* Functions called from DOM :*/
-
-function toggleLoginView() {
-
-    let loginDiv = document.getElementById("loginContainer");
-    let signupDiv = document.getElementById("signupContainer");
-
-    let swapBtn = document.getElementById("swapButton");
-
-    //login mode: state=true
-    //signup mode: state=false
-    let state = signupDiv.style.display == "none";
-
-    // swap to whatever the opposite state is, if login mode, go to signup mode and vice versa 
-
-    loginDiv.style.display = state == true ? "none" : "block";
-    signupDiv.style.display = state == true ? "block" : "none";
-
-    //modify button: 
-
-    swapBtn.querySelector("h3").innerHTML = state == true ? "Already Have an Account?" : "Make an Account?";
-    swapBtn.querySelector("button").innerHTML = state == true ? "Login" : "Signup";
 
 }
