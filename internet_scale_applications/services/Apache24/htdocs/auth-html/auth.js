@@ -57,6 +57,11 @@ async function validateLogin() {
         "password": document.getElementById("passwordLogin").value
     }
 
+    if (data['username'] == "" || data['password'] == "") {
+        console.log(`Invalid Username or Password`);
+        return;
+    }
+
     const response = await apiPOSTRequest(endpoints['login'], data);
 
     if (response.status == 200) {
@@ -76,16 +81,25 @@ async function validateSignup() {
     let username = document.getElementById("usernameSignup").value;
     let password = document.getElementById("passwordSignup").value;
     let checkPassword = document.getElementById("confirmPasswordSignup").value;
+    let adminCheckbox = document.getElementById("adminCheckbox");
 
     let data;
 
     if (password === checkPassword) {
         data = {
             "username": username,
-            "password": password
+            "password": password,
+            "adminCheck": adminCheckbox.checked
         }
     } else {
         console.log("Passwords are not the same");
+        return;
+    }
+
+    console.log(data['adminCheck'])
+
+    if (data['username'] == "" || data['password'] == "") {
+        console.log(`Invalid Username or Password`);
         return;
     }
 

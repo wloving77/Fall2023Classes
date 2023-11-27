@@ -7,7 +7,7 @@
 <head>
     <link rel="stylesheet" href="./style.css">
 
-    <title> Daily Bugle </title>
+    <title> Auth </title>
     <h1>Please Login/Signup:</h1>
 </head>
 
@@ -30,7 +30,7 @@
 
 
     <div id="signupContainer" style="display:block;">
-        <h2>Login</h2>
+        <h2>Signup</h2>
         <br>
         <div class="form-group">
             <label for="username">New Username:</label>
@@ -45,6 +45,10 @@
         <div class="form-group">
             <label for="password">Confirm Password:</label>
             <input type="password" id="confirmPasswordSignup" name="password" required>
+        </div>
+        <br>
+        <div class="form-group">
+            Create Admin Account? <input type="checkbox" id="adminCheckbox">
         </div>
         <br>
         <button type="submit" onclick="validateSignup()" class="login-button">Signup</button>

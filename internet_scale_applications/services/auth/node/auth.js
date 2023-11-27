@@ -28,8 +28,9 @@ async function initialize() {
     let retries = 3;
     while (retries != 0) {
         try {
+            console.log("Connecting to MongoDB...");
             await Mongod.connect();
-            console.log("Connected to MongoDB");
+            console.log("Connected to MongoDB.");
 
             server.listen(nodePort, nodeHost, () => {
                 console.log(`Server Listening on http://${nodeHost}:${nodePort}`);
@@ -57,8 +58,6 @@ function sendJSONResponse(response, statusCode, data, headers) {
     for (const headerName in headers) {
         response.setHeader(headerName, headers[headerName]);
     }
-
-    console.log(data);
 
     response.end(JSON.stringify(data));
 }
@@ -102,7 +101,6 @@ server.on("request", async (request, response) => {
                 break;
         }
     }
-
 });
 
 
@@ -110,14 +108,14 @@ const SecretKey = "ThisIsAStrongSecretKeyForTesting123";
 
 // Function to generate a JWT session token
 function generateToken(user) {
-    return jwt.sign({ userId: user.id }, SecretKey, { expiresIn: "1h" });
+    return jwt.sign(user, SecretKey, { expiresIn: "1h" });
 }
 
 async function handleSignUp(request, response) {
 
     try {
 
-        const { username, password } = await parseRequestBodyJSON(request);
+        const { username, password, adminCheck } = await parseRequestBodyJSON(request);
 
         const database = Mongod.db(db);
         const collection = database.collection(authCollection);
@@ -131,7 +129,7 @@ async function handleSignUp(request, response) {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const newUser = { username, password: hashedPassword };
+        const newUser = { username, password: hashedPassword, adminUser: adminCheck };
         await collection.insertOne(newUser);
 
         //send session token back
@@ -212,13 +210,18 @@ async function handleSessionToken(request, response) {
 
     const token = cookies.williamToken_token;
 
-    try {
-        // Verify the token using the same secret key used for signing
-        jwt.verify(token, SecretKey);
-        return sendJSONResponse(response, 200, { message: "Authorized: Session Token Valid" }, {});
-    } catch (error) {
-        return sendJSONResponse(response, 403, { message: "Forbidden: Invalid Session Token" }, {});
-    }
+    jwt.verify(token, SecretKey, (err, decoded) => {
+        if (err) {
+            console.error("Error parsing token");
+            return sendJSONResponse(response, 403, { message: "Bad Request, Invalid Session Token/User" }, {});
+        } else {
+            let data = {
+                "username": decoded.username,
+                "adminUser": decoded.adminUser
+            }
+            return sendJSONResponse(response, 200, { message: "Valid Session Token, User Information Sent", data }, {});
+        }
+    });
 }
 
 // Function to parse cookies from the request headers

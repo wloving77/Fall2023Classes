@@ -1,0 +1,37 @@
+.storyDiv {
+    border: 2px solid black;
+}
+
+#storyTitle {
+    text-align: center;
+}
+
+#storyContent {
+    margin-left: 20px;
+}
+
+#nextStory {
+    margin-left: 20px;
+}
+
+
+.commentDiv {
+    border: 2px solid black;
+}
+
+.advertisementDiv {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 20px;
+    margin-left: auto;
+}
+
+#advertisementImage {
+    width: 350px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+}
