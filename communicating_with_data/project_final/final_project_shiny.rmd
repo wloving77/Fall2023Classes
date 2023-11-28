@@ -1,0 +1,204 @@
+---
+title: "Communicating with Data Final Project"
+author: "William Loving (wfl9zy) and James Sweat (jes9hd)"
+output: 
+  html_document:
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
+
+library(dplyr)
+library(ggplot2)
+library(shiny)
+library(readr)
+library(plotly)
+
+```
+
+
+```{r, echo=FALSE}
+data <- read.csv("./data.csv")
+
+
+data <- na.omit(data)
+
+```
+
+
+# **Why Data on Billionaires?** 
+
+> Upon setting out on this final project, we wanted to find an interesting dataset with a variety of creative and explorable features. We settled on this billionaire dataset both because it is feature rich, and because we are curious how where you were born and what you do contributes to your eventual net worth. Answering questions like these is what we hope to accomplish with our presentation.
+
+# **About the Data**: 
+
+> **Number of Columns:** 35
+
+> - Character Columns: 18
+> - Numerical Columns: 16
+> - Boolean Columns: 1
+
+> **Number of Rows:** 2,640
+
+# **Columns of Interest:**
+
+> **Net Worth (finalWorth)**
+
+> - Data Type: Integer
+> - Modifier: Multiply by 1,000,000
+> - Range: 1000 => 211000
+> - Net worth of the individual in 1,000's
+
+> **Age (age)**
+
+> - Data Type: Integer
+> - Range: 18 => 101
+> - Age of the individual
+
+> **Industry (industries)**
+
+> - Data Type: String/Character
+> - Examples: (Technology, Automotive, Sports)
+> - Num-Unique: 18
+> - The industry the individual made there wealth in
+
+> **Self Made (selfMade)**
+
+> - Data Type: Boolean (True/False)
+> - Whether the person was self made or came from money
+
+> **Country (country)**
+
+> - Data Type: String/Character
+> - Num-Unique: 64
+> - The individuals home country
+
+> **Maximum Tax Rate (total_tax_rate_country)**
+
+> - Data Type: Float(Decimal)
+> - The countries maximum tax-bracket / general tax rate
+  
+  
+# **Question 1**
+
+> What industries tend to have the wealthiest billionaires? Does it vary by Age or whether or not they are Self Made?
+
+
+```{r}
+
+ui <- fluidPage(
+  titlePanel("Billionaire Wealth Analysis by Industry"), 
+  sidebarLayout(
+    sidebarPanel(
+      checkboxInput("self_made", "Self-Made Billionaires", value = TRUE),
+      sliderInput("age_range", "Age Range:", min = 18, max = 101, value = c(30, 70))
+    ),
+    mainPanel(
+      fluidRow(
+      column(12,  # Full-width column
+        plotOutput("wealth_by_industry", height="325px", width="500px")
+      )
+    )
+    )
+  )
+)
+
+server <- function(input, output) {
+  
+  output$wealth_by_industry <- renderPlot({
+    
+   filtered_data <- data %>%
+    filter(data$selfMade==input$self_made, data$age>=input$age_range[1], data$age<=input$age_range[2])
+  
+    ggplot(filtered_data, aes(x=industries, y=finalWorth, fill=industries)) + 
+      geom_bar(stat="identity") + 
+      theme(axis.text.x = element_text(angle = 45, hjust = 1), text = element_text(size = 12)) +
+      labs(title = "Wealth of Billionaires by Industry",
+           x = "Industry", y = "Net Worth")
+
+  })
+  
+}
+
+
+shinyApp(ui=ui, server=server)
+
+
+
+```
+
+
+#### **Analysis:**
+
+> - As we can see us to make some interesting conclusions. Those self-made billionaires in later age brackets (70-100) tend to find themselves in `finance` roles while the younger self-made billionaires tend to be very `technology` focused. 
+> - A different trend can be seen with the `non self-made` billionaires where entertainment and restaurants take hold as one of the more lucrative industries. Also things like `fashion and retail` and `food and beverage` are significantly higher. 
+
+#### **Conclusions:**
+
+> - Self made billionaires tend to find themselves in more technical breakout style industries like `technology` and `finance` where a small team can have a large impact and upfront capital isnt always necessary for success.
+> - Non self made billionaires tend to be found in difficult to pierce industries like `food and beverage` and `fashion and retail`.
+> - Age definitely plays a key roll, but besides `technology`, where many of the younger billionaires are, age tends to not have a massive noticeable effect.
+  
+  
+# **Question 2:**
+
+> Where are the worlds richest billionaires? Where are the self-made vs aided billionaires? Do things like tax-rate and minimum net-worth dramatically affect what we find?
+
+
+```{r}
+ui <- fluidPage(
+  titlePanel("Billionaires World Map"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("min_net_worth", "Minimum Net Worth", min=0, max=max(data$finalWorth), value=0),
+      sliderInput("tax_rate", "Minimum Tax Rate", min=0, max=max(data$total_tax_rate_country), value=0),
+      checkboxInput("self_made", "Self-Made Billionaires", value = TRUE),
+
+    ), 
+    mainPanel(
+      plotlyOutput("world_map",height = "325px", width = "100%")
+    )
+  )
+)
+
+
+server <- function(input, output) {
+
+  output$world_map <- renderPlotly({
+    
+
+    filtered_data <- data%>%
+      filter(finalWorth>=input$min_net_worth, total_tax_rate_country>=input$tax_rate, selfMade==input$self_made)
+    
+    filtered_data <- filtered_data%>%
+      group_by(country)%>%
+      mutate(num_billionaires=n())
+
+    plot_ly(data=filtered_data, type="choropleth", locationmode = "country names",
+            locations= ~country, z = ~num_billionaires,
+            colorscale="viridis", colorbar = list(title="Number of Billionaires")) %>%
+            layout(title = "Number of Billionaires by Country",
+             geo = list(showframe = FALSE, projection = list(type = 'mercator')))
+    
+  })
+}
+
+
+shinyApp(ui=ui, server=server)
+```
+
+
+#### **Analysis:**
+
+> - We can see clear and staggering differences in the number of billionaires based on these three inputs. With no modification, the United States clearly runs away with the raw number of wealthy individuals, but if we raise the maximum tax on income, the US quickly drops out, perhaps showing why the US has so many billionaires in the first place.
+> - The US also has the richest billionaires followed closely by Chine and then Russia. 
+> - Upon toggling self-made we can see that China and Russia almost completely fall of the map perhaps as a result of the Government structure of those countries, (Oligarchs etc..)
+
+
+#### **Conclusions:**
+
+> - The worlds richest billionaires are in the worlds richest countries (US, China, Russia). 
+> - the United States has the greatest portion of `self made` billionaires but they are also spread across the world in smaller, less afluent nations.
+> `Tax Rate` and `minimum net worth` play a massive role, because tax-rates in the US are comparably low, a rising tax-rate sees the US completely fall of the map and be completely unrepresented.
+> - What we can gleam is that the worlds billionaires are likely all products of where they garnered their wealth. It comes as a surprise to nobody that becoming this wealthy is incredibly difficult and requires a healthy dose of luck, intelligence, and inginuity.

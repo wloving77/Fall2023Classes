@@ -1,0 +1,82 @@
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+
+library(dplyr)
+library(shiny)
+library(ggplot2)
+library(plotly)
+library(readr)
+
+
+data <- read.csv("./data.csv")
+
+data <- na.omit(data)
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ui <- fluidPage(
+    titlePanel("Billionaire Analysis Dashboard"),
+    tabsetPanel(
+        tabPanel("Billionaires World Map",
+            sidebarLayout(
+                sidebarPanel(
+                    sliderInput("min_net_worth", "Minimum Net Worth", min = 0, max = max(data$finalWorth), value = 0),
+                    sliderInput("tax_rate", "Minimum Tax Rate", min = 0, max = max(data$total_tax_rate_country), value = 0),
+                    checkboxInput("self_made", "Self-Made Billionaires", value = TRUE)
+                ),
+                mainPanel(
+                    plotlyOutput("world_map", height = "1000px", width = "100%")
+                )
+            )
+        ),
+        tabPanel("Billionaire Wealth Analysis by Industry",
+            sidebarLayout(
+                sidebarPanel(
+                    checkboxInput("self_made_industry", "Self-Made Billionaires", value = TRUE),
+                    sliderInput("age_range", "Age Range:", min = 18, max = 101, value = c(30, 70))
+                ),
+                mainPanel(
+                    plotOutput("wealth_by_industry", height = "1000px", width = "100%")
+                )
+            )
+        )
+    )
+)
+
+
+server <- function(input, output) {
+  
+    output$world_map <- renderPlotly({
+        # Filter and plot the data for the world map
+        filtered_data <- data %>%
+            filter(finalWorth >= input$min_net_worth, total_tax_rate_country>=input$tax_rate, selfMade==input$self_made)
+        
+        filtered_data <- filtered_data %>%
+            group_by(country) %>%
+            mutate(num_billionaires = n())
+        
+        plot_ly(data = filtered_data, type = "choropleth", locationmode = "country names",
+                locations = ~country, z = ~num_billionaires,
+                colorscale = "viridis", colorbar = list(title = "Number of Billionaires")) %>%
+            layout(title = "Number of Billionaires by Country",
+                   geo = list(showframe = FALSE, projection = list(type = 'mercator')))
+    })
+    
+    output$wealth_by_industry <- renderPlot({
+        # Filter and plot the data for wealth by industry
+        filtered_data <- data %>%
+            filter(selfMade == input$self_made_industry, age >= input$age_range[1], age <= input$age_range[2])
+        
+        ggplot(filtered_data, aes(x = industries, y = finalWorth, fill = industries)) + 
+            geom_bar(stat = "identity") + 
+            theme(axis.text.x = element_text(angle = 45, hjust = 1), text = element_text(size = 20)) +
+            labs(title = "Wealth of Billionaires by Industry",
+                 x = "Industry", y = "Net Worth")
+    })
+  
+}
+
+shinyApp(ui = ui, server = server)
+```

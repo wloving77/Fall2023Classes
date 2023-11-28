@@ -1,0 +1,61 @@
+---
+title: "Quiz 7"
+author: "wlf9zy, jes9hd"
+date: "2023-11-13"
+output: html_document
+---
+
+## Load Data (Even Though We Don't Need To): 
+
+```{r}
+library(readr)
+library(dplyr)
+
+
+data <- read.csv("./Guns.csv")
+```
+
+# Question 1:
+
+- The first tab of the app provides a litany of information. It tells us how concentrated one of three different crime types is by gun-law by state. So we can filter by `open-carry laws` in `1989` by `murder` to find out how many murders were committed in 1989 by states with open-carry laws. We can go on to use this information to arrive at interesting conclusions. 
+- As we move the dial right towards 1999, we can cleary see an increase in the number of states showing gun-related crimes, this seems to follow the opposite of the desired theme in that `More Guns = More Crime`. 
+- Another interesting note is that the `Carry Law` field seems to be relatively meaningless in the later years. If you navigate to 1999 and view any of the crime types, then toggle the open-carry laws, any state that was previously missing will now be shown. This leads me to believe that whether or not there exist open carry laws in a state does not necessarily promote or stop gun related violence.
+
+# Question 2: 
+
+- Similar to my last point in the above question, this visual shows us once again how whether or not a carry law exists has become less and less meaningful when it comes to the existence of violent gun-related crimes. 
+- What extra information we get though, is who perpetrated the crimes. If we select the drop down menu and choose caucasian, we can see that caucasian crimes are very high, this is likely because of general proportions of population, but it is definitely still meaningful.
+- Globally, this visual shows us `who` was perpetrating crimes throughout the years of `1977-1999` and whether the existence of a `Carry-Law` had any impact on the existence of those crimes, which in most cases show it did not. 
+
+
+# Question 3: 
+
+- I really like the app overall, though I do have a few visual and user-experience critiques. 
+  1. On the first tab `Map of Crimes`, I think the `Carry Law?` drop down menu should just be a `radio button / checkbox` as that is the function it is really performing. The year display below the slider bar is also bugged and appears to have strange overlapping numbers, probably a simple fix but an issue nonetheless. I would also have preferred that this visual included more possible filters similar to the next one, why not also allow me to filtered by `caucasian` or `african american` for the map visual considering it is done on the second tab `Carry Law vs Crimes`.
+  2. On the second tab `Carry Law vs Crimes`, I like the idea of the visual but I think it looks a little strange and is hard to parse upon first viewing. If I was showing this to `stakeholders` or a `board` it would likely confuse them until it was explained. I think this lends to the previous point as well though, it would likely be possible to fit the information of both of these visuals into a single powerful map visual that lets you choose `Crimes and Demographics` and lets you toggle whether there was a `Carry Law` and fills by the magnitude. This would be easily understandable and greatly customizable by the end user, not to mention generally more cohesive
+  
+  - Scores
+    1. User-Friendliness: (9/10) Very usable, sliders are easy to understand as are drop down menus!
+    2. Informativeness: (8/10) Both visuals communicate a lot of information, but the overlap between them is very high.
+    3. Communicability: (6.5/10) The map visual is great, but I would prefer the entire map shown all of the time, the scaling gets weird when there are few states as well. The second visual just has a strange heat-map style layout that is hard to initially understand.
+    4. Ambition: (8/10) Very cool use of states and a map! The second visual was less inspired though. 
+    5. Format-and-Feel (7/10): Considering the overlap of information and general saminess with regard to the interactivity of both plots, I think the format and feel is good but nothing exceptional.
+  
+# Question 4:
+
+```{r}
+
+filtered_data <- data%>%
+  filter(state=="Virginia",law=="yes")
+
+head(filtered_data)
+
+```
+
+- Virginia adopted the `Carry Law` in `1996` based on the above data and the app on shiny.
+
+
+# Question 5:
+
+- If I had to build this app myself, though I do not know the exact implementation details of the map for instance, I would certainly lean into the map design. I would have the `Carry Law?` be a check box, but I would display every state all of the time while greying out states that were the opposite of whatever the current state of the check box was. I would also have `Crimes and Demographics` be selectable from the drop down menu of the crimes drop down in the first app `Map of Crimes`.
+- This effectively condenses all of the information into a single visual while maintaining its usability, I might then go onto create a second tab that contains a single visual that is just showing the magnitude of individual crimes (as this is the only information we would lose as the magnitudes would be spread across states). This design would allow for one complicated visual that you can play with and another less sophisticated visual whos goal is more centered on just delivering information related to crime count by area.
