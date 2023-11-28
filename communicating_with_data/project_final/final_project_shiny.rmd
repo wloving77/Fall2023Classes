@@ -143,7 +143,7 @@ shinyApp(ui=ui, server=server)
   
 # **Question 2:**
 
-> Where are the worlds richest billionaires? Where are the self-made vs aided billionaires? Do things like tax-rate and minimum net-worth dramatically affect what we find?
+> Do billionaires tend to favor countries with lower tax rates? Are there hyper-rich billionaires in high tax-rate countries? what potentially causes billionaires to live where they do?
 
 
 ```{r}
@@ -201,4 +201,5 @@ shinyApp(ui=ui, server=server)
 > - The worlds richest billionaires are in the worlds richest countries (US, China, Russia). 
 > - the United States has the greatest portion of `self made` billionaires but they are also spread across the world in smaller, less afluent nations.
 > `Tax Rate` and `minimum net worth` play a massive role, because tax-rates in the US are comparably low, a rising tax-rate sees the US completely fall of the map and be completely unrepresented.
-> - What we can gleam is that the worlds billionaires are likely all products of where they garnered their wealth. It comes as a surprise to nobody that becoming this wealthy is incredibly difficult and requires a healthy dose of luck, intelligence, and inginuity.
+> - What we can gleam is that the worlds billionaires are likely all products of where they garnered their wealth. It comes as a surprise to nobody that becoming this wealthy is incredibly difficult and requires a healthy dose of luck, intelligence, and inginuity. 
+> - Some billionaires live where they do to maximize wealth (United States) while others potentially feed their wealth back into the country they made it in (Argentina).

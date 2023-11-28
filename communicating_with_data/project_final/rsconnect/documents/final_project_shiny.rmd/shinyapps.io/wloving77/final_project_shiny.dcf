@@ -1,0 +1,12 @@
+name: final_project_shiny
+title: final_project_shiny
+username: wloving77
+account: wloving77
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10654115
+bundleId: 7980586
+url: https://wloving77.shinyapps.io/final_project_shiny/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
