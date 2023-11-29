@@ -42,6 +42,7 @@ const endpointsBugle = {
     "createStory": "/api/dailyBugle/createStory",
     "deleteStory": "/api/dailyBugle/deleteStory",
     "createComment": "/api/dailyBugle/createComment",
+    "adEvent": "/api/dailyBugle/trackAd"
 }
 
 
@@ -127,7 +128,7 @@ async function deleteStory() {
 
     const payload = {
         "story_id": globalStories[globalStoryIndex]._id,
-        "adminUser": userInfo.adminUser,
+        "adminUser": credentials.adminUser,
     }
 
     console.log(payload);
@@ -185,7 +186,7 @@ async function deployComment() {
     }
 
     const payload = {
-        "username": userInfo.username,
+        "username": credentials.username,
         "story_id": globalStories[globalStoryIndex]._id,
         "comment": comment
     }
@@ -210,8 +211,8 @@ async function deployComment() {
 var intervalAdmin = setInterval(checkAdmin, 2000);
 
 function checkAdmin() {
-    if (userInfo.username != undefined && userInfo.adminUser != undefined) {
-        if (userInfo.adminUser) {
+    if (credentials.username != undefined && credentials.adminUser != undefined) {
+        if (credentials.adminUser) {
             let adminElements = document.getElementsByClassName("adminUser");
 
             for (let i = 0; i < adminElements.length; i++) {
@@ -225,18 +226,34 @@ function checkAdmin() {
 /* Logic for rotating advertisements: */
 
 var intervalImage = setInterval(rotateImage, 2000);
-var imgIndex = 1;
+var globalImgIndex = 1;
+var globalAdImages = ['./advertisements/bose.jpeg', './advertisements/cool-car.jpeg', './advertisements/dog-food.jpeg',
+    './advertisements/hydroflask.jpeg', './advertisements/kubernetes.webp'];
+
 function rotateImage() {
 
-    let images = ['./advertisements/bose.jpeg', './advertisements/cool-car.jpeg', './advertisements/dog-food.jpeg',
-        './advertisements/hydroflask.jpeg', './advertisements/kubernetes.webp']
-
-    if (imgIndex >= images.length) {
-        imgIndex = 0
+    if (globalImgIndex > globalAdImages.length) {
+        globalImgIndex = 0
     }
-    document.getElementById("advertisementImage").setAttribute("src", images[imgIndex]);
-    imgIndex++;
+    document.getElementById("advertisementImage").setAttribute("src", globalAdImages[globalImgIndex]);
 
+    globalImgIndex++;
+
+
+}
+
+async function trackAdEvent() {
+
+    const payload = {
+        "username": credentials.username,
+        "advertisement": globalAdImages[globalImgIndex],
+    }
+
+    const apiUrl = endpointsBugle['adEvent'];
+
+    const response = await apiPOSTRequestBugle(apiUrl, payload);
+
+    console.log(response);
 
 }
 

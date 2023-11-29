@@ -61,7 +61,7 @@
 
             <h4 style="text-align: center;"> Promotion </h4>
 
-            <img id="advertisementImage" src="./advertisements/bose.jpeg">
+            <img onclick="trackAdEvent()" id="advertisementImage" src="./advertisements/bose.jpeg">
 
             <br>
 
@@ -125,7 +125,7 @@
 
 <script>
 
-    var userInfo = {};
+    var credentials = {};
 
     window.onload = function () {
         checkForSessionToken()
@@ -133,8 +133,8 @@
                 if (!returnData.success) {
                     window.location = "/services/auth";
                 }
-                userInfo.username = returnData.username;
-                userInfo.adminUser = returnData.adminUser;
+                credentials.username = returnData.username;
+                credentials.adminUser = returnData.adminUser;
             })
     }
 

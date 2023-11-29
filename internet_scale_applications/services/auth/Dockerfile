@@ -10,4 +10,4 @@ RUN npm install
 
 EXPOSE 3003
 
-CMD ["node", "dailyBugle.js"]
+CMD ["node", "auth.js"]

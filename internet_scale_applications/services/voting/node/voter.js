@@ -10,6 +10,7 @@ const nodeHost = "0.0.0.0";
 const nodePort = 3001;
 const server = http.createServer();
 
+const mongoDevHost = "127.0.0.1";
 const mongoHost = "mongo-container";
 const mongoPort = 27017;
 const mongoUrl = `mongodb://${mongoHost}:${mongoPort}`;

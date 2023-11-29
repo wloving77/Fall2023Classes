@@ -17,7 +17,7 @@ const server = http.createServer();
 const mongoProdHost = "mongo-container";
 const mongoLocalHost = "127.0.0.1";
 const mongoPort = 27017;
-const mongoUrl = `mongodb://${mongoLocalHost}:${mongoPort}`;
+const mongoUrl = `mongodb://${mongoProdHost}:${mongoPort}`;
 
 const Mongod = new MongoClient(mongoUrl);
 const db = "authentication";

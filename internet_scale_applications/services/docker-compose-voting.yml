@@ -1,6 +1,5 @@
 version: '1'
 services:
-
   apache:
     build:
       context: ./Apache24
@@ -33,6 +32,30 @@ services:
     networks:
       - service-network
 
+  auth:
+    build:
+      context: ./auth
+      dockerfile: Dockerfile
+    container_name: auth-container
+    ports:
+      - "3003:3003"
+    depends_on:
+      - mongodb
+    networks:
+      - service-network
+
+  daily-bugle:
+    build:
+      context: ./dailyBugle
+      dockerfile: Dockerfile
+    container_name: dailBugle-container
+    depends_on:
+      - mongodb
+    ports:
+      - 3002:3002
+    networks:
+      - service-network
+
   mongodb:
     build:
       context: ./database
@@ -42,16 +65,6 @@ services:
       - "27017:27017"
     volumes:
       - ./database/data/db:/data/db
-    networks:
-      - service-network
-
-  daily-bugle:
-    build:
-      context: ./dailyBugle
-      dockerfile: Dockerfile
-    container_name: dailBugle-container
-    ports:
-      - 3002:3002
     networks:
       - service-network
 

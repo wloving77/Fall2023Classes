@@ -15,13 +15,14 @@ const server = http.createServer();
 const mongoProdHost = "mongo-container";
 const mongoDevHost = "127.0.0.1";
 const mongoPort = 27017;
-const mongoUrl = `mongodb://${mongoDevHost}:${mongoPort}`;
+const mongoUrl = `mongodb://${mongoProdHost}:${mongoPort}`;
 
 const Mongod = new MongoClient(mongoUrl);
 const db = "dailyBugle";
 const collections = {
     "stories": "stories",
     "comments": "comments",
+    "adEvents": "adEvents",
 };
 
 //initialize server, begin listening, retry 3 times if failing.
@@ -106,10 +107,30 @@ server.on("request", async (request, response) => {
             case "/createComment":
                 await createComment(request, response);
                 break;
+            case "/trackAd":
+                await trackAdEvent(request, response);
+                break;
         }
     }
 
 });
+
+async function trackAdEvent(request, response) {
+
+    const json = await parseRequestBodyJSON(request);
+
+    const adEvent = {
+        "username": json.username,
+        "advertisement": json.advertisement,
+    }
+
+    const advertisementCollection = Mongod.db(db).collection(collections['adEvents']);
+
+    await advertisementCollection.insertOne(adEvent);
+
+    return sendJSONResponse(response, 200, { message: "Advertisement event tracked" });
+
+}
 
 
 async function getStories(response) {
