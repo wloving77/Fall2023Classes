@@ -30,8 +30,8 @@
 <script src="services/auth/auth.js"></script>
 <script>
 
-    checkForSessionToken().then(result => {
-        if (!result) {
+    checkForSessionToken().then(authData => {
+        if (!authData.success) {
             window.location = "/services/auth";
         }
     })

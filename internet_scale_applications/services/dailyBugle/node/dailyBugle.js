@@ -8,7 +8,7 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 // node server logic, note the ports and host being listened on, this is for docker compatibility
 const nodeHost = "0.0.0.0";
-const nodePort = 3003;
+const nodePort = 3002;
 const server = http.createServer();
 
 // mongo server logic, note the host, these are specific to docker/dev
@@ -19,7 +19,7 @@ const mongoUrl = `mongodb://${mongoDevHost}:${mongoPort}`;
 
 const Mongod = new MongoClient(mongoUrl);
 const db = "dailyBugle";
-const authCollection = {
+const collections = {
     "stories": "stories",
     "comments": "comments",
 };
@@ -84,13 +84,27 @@ server.on("request", async (request, response) => {
 
     const parsedUrl = url.parse(request.url, true);
 
-    if (request.method == "POST") {
+    if (request.method == "GET") {
         switch (parsedUrl.pathname) {
-            case "/getNextStory":
+            case "/getStories":
+                await getStories(response);
                 break;
-            case "/getPreviousStory":
+            case "/getComments":
+                await getComments(response);
                 break;
-            case "/setComment":
+
+        }
+    }
+    else if (request.method == "POST") {
+        switch (parsedUrl.pathname) {
+            case "/createStory":
+                await createStory(request, response);
+                break;
+            case "/deleteStory":
+                await deleteStory(request, response);
+                break;
+            case "/createComment":
+                await createComment(request, response);
                 break;
         }
     }
@@ -98,3 +112,76 @@ server.on("request", async (request, response) => {
 });
 
 
+async function getStories(response) {
+
+    const storiesCollection = Mongod.db(db).collection(collections['stories']);
+
+    const stories = await storiesCollection.find({}).sort({ title: 1 }).toArray();
+
+    sendJSONResponse(response, 200, stories);
+
+}
+
+async function getComments(response) {
+
+    const commentsCollection = Mongod.db(db).collection(collections['comments']);
+
+    const comments = await commentsCollection.find({}).sort({ comment: 1 }).toArray();
+
+    return sendJSONResponse(response, 200, comments);
+
+}
+
+
+async function createStory(request, response) {
+
+    const json = await parseRequestBodyJSON(request);
+
+    const story = {
+        "title": json['storyTitle'],
+        "content": json['storyContent']
+    }
+
+    const storiesCollection = Mongod.db(db).collection(collections['stories']);
+
+    await storiesCollection.insertOne(story);
+
+    return sendJSONResponse(response, 200, { message: `Story: ${story['title']}, Created!` });
+
+}
+
+async function deleteStory(request, response) {
+
+    const json = await parseRequestBodyJSON(request);
+
+    if (!json.adminUser) {
+        return sendJSONResponse(response, 401, { message: "Unauthorized to Perform This Action" });
+    }
+
+    const storyCollection = Mongod.db(db).collection(collections['stories']);
+    const commentsCollection = Mongod.db(db).collection(collections['comments']);
+
+    await commentsCollection.deleteMany({ story_id: new ObjectId(json.story_id) });
+    await storyCollection.deleteOne({ _id: new ObjectId(json.story_id) });
+
+    return sendJSONResponse(response, 200, { message: `Story with id: ${json.story_id} successfully deleted` });
+
+}
+
+async function createComment(request, response) {
+
+    const data = await parseRequestBodyJSON(request);
+
+    const comment = {
+        username: data.username,
+        story_id: new ObjectId(data.story_id),
+        comment: data.comment,
+    }
+
+    const commentsCollection = Mongod.db(db).collection(collections['comments']);
+
+    await commentsCollection.insertOne(comment);
+
+    return sendJSONResponse(response, 200, { message: `User ${data.username}'s comment ${data.comment} successfully submitted!` });
+
+}

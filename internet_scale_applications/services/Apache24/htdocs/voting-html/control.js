@@ -381,7 +381,6 @@ async function deleteCandidate() {
 
 /* Utility Style Functions (click events, etc):*/
 
-//stub for now
 function toggleModalDisplay(modalId) {
     const modal = document.getElementById(modalId);
     modal.style.display = modal.style.display == "none" ? "block" : "none";

@@ -9,10 +9,35 @@
 <body>
 
     <div class="adminUser" id="adminDiv">
-        <h1 class="adminUser"> Hello Admin User! </h1>
+        <h3 class="adminUser"> Welcome Admin User! </h3>
         <button class="adminUser" id="createStory"> Create Story </button>
         <br>
+        <button class="adminUser" id="deleteStory" onclick="deleteStory()"> Delete Currently Displayed Story </button>
         <br>
+        <br>
+
+        <div id="modalCreateStory" class="modal">
+            <div id="storyContent" class="modal-content">
+                <span id="closeStory" class="modalClose">&times;</span>
+
+                <label for="title">Title:</label>
+                <br><br>
+                <input type="text" id="storyTitle" placeholder="Enter title here" />
+
+                <br>
+                <br>
+
+                <label for="story">Story:</label>
+                <br><br>
+                <textarea id="storyText" placeholder="Enter story content here" rows="10" cols="50"></textarea>
+
+                <br><br>
+
+                <button id="submitStory" onclick="createStory()">Submit Story</button>
+
+            </div>
+        </div>
+
     </div>
     <br>
 
@@ -21,16 +46,15 @@
 
         <div class="storyDiv">
 
-            <h1 id="storyTitle"> Title of Story! </h1>
+            <h1 id="titleBox"> Title of Story! </h1>
 
-
-            <h2 id="storyContent"> Content of Story! </h2>
+            <h2 id="contentBox"> Content of Story! </h2>
 
             <br>
             <br>
 
         </div>
-
+        <br>
         <br>
 
         <div class="advertisementDiv">
@@ -45,25 +69,52 @@
         </div>
 
         <br>
+    </div>
 
-        <h1> Comments: </h1>
-        <div class="commentDiv">
+    <h1> Comments: </h1>
+    <button id="createComment">Create Comment?</button>
 
-            <br>
-            <br>
+    <div id="modalCreateComment" class="modal">
+        <div id="commentContent" class="modal-content">
+            <span id="closeComment" class="modalClose">&times;</span>
+
+
+            <label for="comment">Comment Body:</label>
+            <br><br>
+            <textarea id="commentText" placeholder="Enter story content here" rows="10" cols="50"></textarea>
+
+            <br><br>
+
+            <button id="submitComment" onclick="deployComment()">Submit Comment</button>
 
         </div>
+    </div>
 
+
+    <br><br>
+    <div class="commentDiv">
 
         <br>
-
-        <button class="arrowButton" id="previousStory"> Previous Story</button>
-        <button class="arrowButton" id="nextStory"> Next Story </button>
-
-        <br>
+        <ul id="commentList"></ul>
         <br>
 
-        <button onclick=" signOut()" id="signOut">Sign Out</button>
+    </div>
+    </div>
+
+    <br>
+
+    </div>
+
+
+    <br>
+
+    <button class="arrowButton" id="previousStory" onclick="previousStory()"> Previous Story</button>
+    <button class="arrowButton" id="nextStory" onclick="nextStory()"> Next Story </button>
+
+    <br>
+    <br>
+
+    <button onclick=" signOut()" id="signOut">Sign Out</button>
 
     </div>
 </body>

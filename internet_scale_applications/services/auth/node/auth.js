@@ -212,7 +212,6 @@ async function handleSessionToken(request, response) {
 
     jwt.verify(token, SecretKey, (err, decoded) => {
         if (err) {
-            console.error("Error parsing token");
             return sendJSONResponse(response, 403, { message: "Bad Request, Invalid Session Token/User" }, {});
         } else {
             let data = {
