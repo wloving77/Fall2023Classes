@@ -1,0 +1,9 @@
+{
+    "language_servers": {
+        "python": {
+            "serverSettings": {
+                "jupyter_server": true
+            }
+        }
+   }
+}
