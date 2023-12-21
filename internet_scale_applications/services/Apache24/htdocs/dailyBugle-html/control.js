@@ -225,20 +225,19 @@ function checkAdmin() {
 
 /* Logic for rotating advertisements: */
 
-var intervalImage = setInterval(rotateImage, 2000);
-var globalImgIndex = 1;
+var intervalImage = setInterval(rotateImage, 5000);
+var globalImgIndex = 0;
 var globalAdImages = ['./advertisements/bose.jpeg', './advertisements/cool-car.jpeg', './advertisements/dog-food.jpeg',
     './advertisements/hydroflask.jpeg', './advertisements/kubernetes.webp'];
 
 function rotateImage() {
 
-    if (globalImgIndex > globalAdImages.length) {
-        globalImgIndex = 0
+    if (globalImgIndex == globalAdImages.length) {
+        globalImgIndex = -1
     }
-    document.getElementById("advertisementImage").setAttribute("src", globalAdImages[globalImgIndex]);
-
     globalImgIndex++;
 
+    document.getElementById("advertisementImage").setAttribute("src", globalAdImages[globalImgIndex]);
 
 }
 

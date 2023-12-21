@@ -1,1 +1,1 @@
-https://wloving77.shinyapps.io/shinyHWK/#
+Here is our final product. A clustering with fully contiguous districts with a reasonable distribution of the population between them. This is an equitable, fair, and non-partial districting of the state of Virginia based on a combination of tract-level census and geospatial data. 

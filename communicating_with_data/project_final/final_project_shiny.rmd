@@ -97,7 +97,7 @@ ui <- fluidPage(
     mainPanel(
       fluidRow(
       column(12,  # Full-width column
-        plotOutput("wealth_by_industry", height="325px", width="500px")
+        plotOutput("wealth_by_industry", height="600px", width="100%")
       )
     )
     )
@@ -157,7 +157,7 @@ ui <- fluidPage(
 
     ), 
     mainPanel(
-      plotlyOutput("world_map",height = "325px", width = "100%")
+      plotlyOutput("world_map",height = "800px", width = "100%")
     )
   )
 )
